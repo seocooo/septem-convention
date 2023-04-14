@@ -1,0 +1,83 @@
+// @use "sass:math";
+// @use "sass:selector";
+
+// @mixin triangle($size, $color, $direction) {
+//   height: 0;
+//   width: 0;
+
+//   border-color: transparent;
+//   border-style: solid;
+//   border-width: math.div($size, 2);
+
+//   @if ($direction == "up") {
+//     border-bottom-color: $color;
+//   } @else if ($direction == "right") {
+//     border-left-color: $color;
+//   } @else if ($direction == "down") {
+//     border-top-color: $color;
+//   } @else if ($direction == "left") {
+//     border-right-color: $color;
+//   } @else {
+//     @error "Unknown direction #{$direction}.";
+//   }
+
+//   // example
+//   // @include triangle(5px, black, right);
+// }
+
+// @mixin cssVar($key, $val:null, $prefix: $prefix) {
+
+//   // @debug "debug: " $prefix;
+//   @if global-variable-exists(val) {
+//     #{$prefix}-#{$key}: #{$val};
+//   }
+//   @else if type-of($key) == "map" {
+//     @each $oKey, $oVal in $key {
+//       --#{$prefix}-#{$oKey}: #{$oVal};
+//     }
+//   }
+// }
+
+// @mixin unify-parent($child) {
+//   @at-root #{selector.unify(&, $child)} {
+//     @content;
+//   }
+// }
+
+// // 추후 개선 해야 함.
+// @mixin parent-selector($new-class, $parent-index: null) {
+//   $selectorArr: &;
+//   $new-item: null;
+
+//   @each $item in $selectorArr {
+//     $lengs : length($item);
+//     @if $parent-index == null {
+//       $parent-index: $lengs - 1;
+//     }
+//     $parent-no: $lengs - $parent-index;
+//     $select-item: nth($item, $parent-no);
+//     $select-re-item: selector.append($select-item, $new-class);
+//     $new-item: set-nth($item, $parent-no, $select-re-item);
+//     // @debug ('select index: #{$parent-no}');
+//     // @debug ('item: #{$item}, #{$lengs}');
+//     // @debug ('$select-item: #{$select-item}');
+//     // @debug ('$select-re-item: #{$select-re-item}');
+//   }
+//   @at-root #{$new-item} {
+//     @content;
+//   }
+
+// }
+
+// @mixin img-asset($imgFilename: null, $bgsize: false) {
+//   @if $imgFilename {
+//     width: width($imgFilename); /* 320px */
+//     height: height($imgFilename); /* 240px */
+//     @if $bgsize == true {
+//       background: url(../images/#{$imgFilename}) no-repeat;
+//       background-size: size($imgFilename); /* 320px 240px*/
+//     }
+//   }
+// }
+
+

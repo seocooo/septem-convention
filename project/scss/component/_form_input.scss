@@ -1,0 +1,140 @@
+.#{$base} { //.ng
+	$base: &;
+
+	// input[type="text"],
+	// input[type="tel"],
+	// input[type="password"],
+	// input[type="number"]{}
+
+	.form-label{
+		display:block;
+		@include body03;
+		margin-top:var(--mg-02);
+		margin-bottom:var(--input-mg);
+	}
+
+	.form-control,
+	.form-select{
+		width:100%;
+		min-height: var(--input-in-h);
+		font-size:var(--fz-02);
+		border-radius: var(--input-bdr);
+		letter-spacing: var(--input-ls);
+		box-sizing:border-box;
+		word-break:keep-all;
+	}
+	.form-select{
+		position: relative;
+		text-align: left;
+		padding: 15px 0 15px 20px;
+		color:var(--fc-05);
+		&:after{
+			content:'';
+			position:absolute;
+			right:0;
+			top:50%;
+			transform:translate(-50%, -50%);
+			width:24px;
+			height:24px;
+			background:url('../img/arrow_down.png') center /cover no-repeat;
+		}
+	}
+	.form-group{
+		display:flex;
+		position:relative;
+		align-items:center;
+		min-height:var(--input-h);
+		flex:0 0 20px;
+		border:1px solid var(--btn-bdc-01);
+		border-radius: var(--bdr-04);
+		overflow:hidden;
+		&._focus{
+			border-color:var(--bdc-p);
+		}
+		&._val{
+			.btn-reset{display:block;}
+			.form-select{color:var(--fc-01);}
+		}
+		&._chk_ok{
+			.btn-reset{
+				background-position-x:center;
+			}
+			&+.form-chk-txt{
+				color:var(--main);
+			}
+		}
+		&._chk_error{
+			border-color:var(--bdc-e);
+			.btn-reset{
+				background-position-x:right;
+			}
+			&+.form-chk-txt{
+				color:var(--error);
+			}
+		}
+		&._readonly,
+		&._disabled{
+			background-color:var(--bgc-gray-01);
+			color:var(--fc-05);
+			.form-control,
+			.form-select{
+				background: transparent;
+				color:var(--fc-05);
+			}
+		}
+		.unit{margin-right:8px;}
+	}
+	.form-control{
+		padding-left:20px;
+		border:0;
+		border-radius:0;
+		&::placeholder{
+			color:var(--fc-05)
+		}
+		&:focus{
+			outline: none;
+			&:before{
+				content:'';
+				position:absolute;
+				left:0;
+				right:0;
+				top:0;
+				bottom:0;
+				border:1px solid var(--main);
+				border-radius: var(--bdr-04);
+			}
+		}
+		&:read-only,
+		&:disabled{
+			&+.btn-reset{
+				display:none;
+			}
+		}
+	}
+	input[type="tel"],
+	.form-value{text-align:right}
+
+	.form-item{
+		display:flex;
+		align-items:center;
+		.form-group{flex:1}
+		.form-group+.form-group{margin-left:6px}
+		.dash{padding:0 10px}
+	}
+	.btn-reset{
+		display:none;
+		flex-shrink:0;
+		width:40px;
+		height:var(--input-in-h);
+		background:url('../img/input_btn.png') left /120px 40px no-repeat;
+	}
+	.form-value{
+		margin-top:var(--input-mg);
+	}
+	.form-chk-txt{
+		margin-top:var(--input-mg);
+	}
+	.form-txt{
+		margin-top:var(--input-mg);
+	}
+}

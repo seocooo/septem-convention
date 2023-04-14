@@ -1,0 +1,206 @@
+@charset 'UTF-8';
+/* 금융상품몰 플랫폼 앱 Variables */
+/*! Version: 0.1 Copyright ⓒSeptem UI Team (2023) */
+
+/* 
+	클래스명 정의는 emmit 약어 위주로 정의한다.
+	c:color
+	f:font / fz:font-size / fw:font-weight
+	bg:background
+	bd:border
+*/
+@font-face{
+    font-family:'Roboto'; font-weight:400; font-style:normal; font-display:swap; /*  */
+    src:url('../font/Roboto/Roboto-Regular.woff') format('woff'), url('../font/Roboto/Roboto-Regular.woff2') format('woff2');
+    unicode-range:U+0020-003F;
+}
+@font-face{
+    font-family:'Roboto'; font-weight:500; font-style:normal; font-display:swap; /*  */
+    src:url('../font/Roboto/Roboto-Medium.woff') format('woff'), url('../font/Roboto/Roboto-Regular.woff2') format('woff2');
+    unicode-range:U+0020-003F;
+}
+@font-face{
+    font-family:'Roboto'; font-weight:700; font-style:normal; font-display:swap;
+    src:url('../font/Roboto/Roboto-Bold.woff') format('woff'), url('../font/Roboto/Roboto-Bold.woff2') format('woff2');
+    unicode-range:U+0020-003F;
+}
+@font-face{
+  font-family:'Noto Sans KR'; font-weight:400; font-style:normal; font-display:swap;
+  src:url('../font/Noto_Sans_KR/NotoSans-Regular.woff') format('woff'), url('../font/Noto_Sans_KR/NotoSans-Regular.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Noto Sans KR'; font-weight:500; font-style:normal; font-display:swap;
+  src:url('../font/Noto_Sans_KR/NotoSans-Medium.woff') format('woff'), url('../font/Noto_Sans_KR/NotoSans-Medium.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Noto Sans KR'; font-weight:700; font-style:normal; font-display:swap;
+  src:url('../font/Noto_Sans_KR/NotoSans-Bold.woff') format('woff'), url('./Noto_Sans_KR/NotoSans-Bold.woff2') format('woff2');
+}
+
+:root{
+	--main:var(--green-01);
+	--sub-01:var(--blue-01);
+	--sub-02:var(--gray-02);
+	--error:var(--red-01);
+  
+	--green-01:#02aa5f;
+	--green-02:#29b475;
+	--green-03:#50b270;
+	--blue-01:#685efd;
+	--red-01:#fe6262;
+	--gray-01:#ebebec; 
+	--gray-02:#f4f6f9;
+	--black-01:#111;
+	--black-05:#505050;
+	--black-07:#767676;
+
+	/* --gray-0:#fff;
+	--gray-50:#fafafa;
+	--gray-100:#f5f5f5;
+	--gray-200:#eee;
+	--gray-300:#e0e0e0;
+	--gray-400:#bebebe;
+	--gray-500:#909090;
+	--gray-600:#767676;
+	--gray-700:#505050;
+	--gray-800:#424242;
+	--gray-900:#111; */
+  
+	--white:#fff;
+	--black:var(--fc-01);
+  
+	--fc-01:#111;
+	--fc-05:#505050;
+	--fc-07:#767676;
+	--fc-09:#909090;
+	--fc-error:var(--red-01);
+	--fc-point:var(--green-01);
+	
+	/* --fw-r:400; 
+	--fw-m:500;
+	--fw-b:700; */
+  
+	--bdc-01:#f1f1f5;
+	--bdc-02:#e5e5ec;
+	--bdc-03:#e1e1e1;
+	--bdc-04:#d1d1d1;
+	--bdc-05:#ccc;
+	--bdc-06:#999;
+	--bdc-black:var(--black-05);
+	--bdc-point:var(--green-02);
+	--bdc-error:var(--red-01);
+
+	--bgc-01:#f3f5f8;
+	--bgc-02:#f1f8f5;
+	--bgc-03:#ecf2fd;
+	--bgc-04:#efebfd;
+	--bgc-05:#d4d4de;
+	--bgc-06:#e8e8e8;
+
+	--bgc-green-01:#eaf7f1;
+	--bgc-blue-01:#f0efff;
+	--bgc-red-01:#f8e7e9;
+	--bgc-gray-01:#f8f8fa;
+	--bgc-gray-02:#f3f2f7;
+	--bgc-gray-03:#eee;
+	
+	--shadow-01:0 4px 8px rgba(0, 0, 0, .05);
+	--shadow-02:0 2px 4px rgba(0, 0, 0, .1);
+	--shadow-03:0 1px 2px rgba(0, 0, 0, .05);
+	--shadow-02-bd:2px solid var(--main);
+
+	--ff-noto:'Noto Sans KR', stem-ui, -apple-system, sans-serif;
+	--ff-roboto:'Roboto', 'Noto Sans KR', stem-ui, -apple-system, sans-serif;
+	--ls-01:-.0125em;
+	--ls-02:0;
+	--ls-03:-.025em;
+
+	--wrap-pdrl:20px;
+	--wrap-pd:0 var(--wrap-pdrl);
+
+	/* --h01:30px;
+	--h02:36px;
+	--h03:42px;
+	--h04:48px;
+	--h05:54px;
+	--h05-in:52px; */
+
+	--bdr-01:6px;
+	--bdr-02:8px;
+	--bdr-03:10px;
+	--bdr-04:12px;
+	--bdr-05:15px;
+
+	/* --mg-01:8px;
+	--mg-02:15px;
+	--mg-03:24px; */
+
+	--mgt-n:32px;
+
+	--btn-bdc-01:var(--bdc-03);
+	--btn-bdc-02:var(--main);
+
+	--btn-bgc-01:var(--gray-01);
+
+	--hr-c:var(--bgc-01);
+	--hr-h:10px;
+	--hr-mg:40px;
+
+	/* --fz-14:14px;
+	--fz-15:15px;
+	--fz-16:16px;
+	--fz-18:18px;
+	--fz-20:20px;
+	--fz-24:24px;
+	--fz-30:30px;
+	
+	--lh-20:20px;
+	--lh-22:22px;
+	--lh-24:24px;
+	--lh-26:26px;
+	--lh-30:30px;
+	--lh-34:34px;
+	--lh-40:40px; */
+
+	--body-bg:var(--white);
+	--body-c:var(--black);
+	--body-ff:var(--ff-roboto);
+	--body-fz:14px;
+	--body-fw:normal;
+	--body-text-align:left;
+
+	
+	/* reboot */
+	--heading-fz:var(--fz-b);
+	--heading-mg:0;
+	/* --heading-h1-fz:var(--fz-06);
+	--heading-h2-fz:var(--fz-05);
+	--heading-h3-fz:var(--fz-04);
+	--heading-h4-fz:var(--fz-03);
+	--heading-h5-fz:var(--fz-02);
+	--heading-h6-fz:var(--fz-01);
+	--heading-h1-lh:var(--lh-06);
+	--heading-h2-lh:var(--lh-05);
+	--heading-h3-lh:var(--lh-04);
+	--heading-h4-lh:var(--lh-03);
+	--heading-h5-lh:var(--lh-02);
+	--heading-h6-lh:var(--lh-01); */
+	--dt-fz:var(--fz-b);
+	--strong-fz:var(--fz-b);
+	--small-fz:.875em;
+	--mark-pd:1em;
+	--mark-bg-c:var(--green-01);
+	--link-c:inherit;
+	--link-hover-c:inherit;
+	--link-decoration:none;
+	--pre-c:var(--black);
+	--code-ff:var(--body-ff);
+	--code-fs:1em;
+	--code-fc:var(--black);
+	--kbd-pd:10px;
+	--kbd-bg:var(--gray-bg-01);
+	--kbd-bd-r:var(--bd-r-01);
+	--kbd-kbd-fz:var(--fz-b);
+	--legend-mb:0;
+	--legend-fs:0;
+}

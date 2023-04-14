@@ -1,0 +1,180 @@
+<article id="form_input" class="ng ng_form">
+	<h1 class="ng_h1-title">인풋과 셀렉트</h1>
+	<div class="ng_code-box">
+		<h2 class="ng_h2-title">셀렉트</h2>
+
+		<div class="ng_code-preview">
+<strong class="form-label">선택</strong>
+<div class="form-group">
+	<button title="선택" class="form-select">선택</button>
+</div>
+		</div>
+
+		<div class="ng_code-preview">
+<strong class="form-label">선택</strong>
+<div class="form-group _val">
+	<button title="선택" class="form-select">선택된 값</button>
+</div>
+
+<strong class="form-label">선택</strong>
+<div class="form-group _val _disabled">
+	<button title="선택" class="form-select" disabled>선택되어 있는 수정 불가능한 값</button>
+</div>
+		</div>
+	</div>
+
+	<div class="ng_code-box">
+		<h2 class="ng_h2-title">인풋 텍스트</h2>
+
+		<div class="ng_code-preview">
+<strong class="form-label">입력전</strong>
+<div class="form-group">
+	<input type="text" class="form-control" title="타이틀" value="" placeholder="플레이스홀더">
+	<button class="btn-reset" title="입력값 초기화"></button>
+</div>
+		</div>
+
+		<div class="ng_code-preview">
+<strong class="form-label">포커스</strong>
+<div class="form-group _focus">
+	<input type="text" class="form-control" title="타이틀" value="" placeholder="플레이스홀더">
+	<button class="btn-reset" title="입력값 초기화"></button>
+</div>
+
+<strong class="form-label">포커스+값</strong>
+<div class="form-group _focus _val">
+	<input type="text" class="form-control" title="타이틀" value="인풋값" placeholder="플레이스홀더">
+	<button class="btn-reset" title="입력값 초기화"></button>
+</div>
+
+<strong class="form-label">값</strong>
+<div class="form-group _val">
+	<input type="text" class="form-control" title="타이틀" value="인풋값" placeholder="플레이스홀더">
+	<button class="btn-reset" title="입력값 초기화"></button>
+</div>
+
+<strong class="form-label">값+체크완료</strong>
+<div class="form-group _val _chk_ok">
+	<input type="text" class="form-control" title="타이틀" value="인풋값" placeholder="플레이스홀더">
+	<button class="btn-reset" title="입력값 초기화"></button>
+</div>
+<p class="form-chk-txt">이름이 정확합니다.</p>
+
+<strong class="form-label">값+체크오류</strong>
+<div class="form-group _val _chk_error">
+	<input type="text" class="form-control" title="타이틀" value="인풋값" placeholder="플레이스홀더">
+	<button class="btn-reset" title="입력값 초기화"></button>
+</div>
+<p class="form-chk-txt">한글만 입력 가능합니다.</p>
+
+<strong class="form-label">값+readonly</strong>
+<div class="form-group _val _readonly">
+	<input type="text" class="form-control" title="타이틀" value="인풋값" placeholder="플레이스홀더" readonly>
+	<button class="btn-reset" title="입력값 초기화"></button>
+</div>
+
+<strong class="form-label">값+disabled</strong>
+<div class="form-group _val _disabled">
+	<input type="text" class="form-control" title="타이틀" value="인풋값" placeholder="플레이스홀더" disabled>
+	<button class="btn-reset" title="입력값 초기화"></button>
+</div>
+		</div>
+	</div>
+
+	<div class="ng_code-box">
+		<h2 class="ng_h2-title">인풋 금액</h2>
+		<div class="ng_code-preview">
+
+<strong class="form-label">금액</strong>
+<div class="form-group">
+	<input type="tel" class="form-control" title="금액" value="" placeholder="금액을입력하세요">
+	<span class="unit">원</span>
+	<button class="btn-reset" title="입력값 초기화"></button>
+</div>
+<p class="form-value">원</em></p>
+
+<strong class="form-label">금액</strong>
+<div class="form-group">
+	<input type="tel" class="form-control" title="금액" value="" placeholder="금액을입력하세요">
+	<span class="unit">만원</span>
+	<button class="btn-reset" title="입력값 초기화"></button>
+</div>
+<p class="form-value">1억 6000만원</em></p>
+<p class="form-text">신청금액은 100만원 단위로 가능합니다.</p>
+
+<strong class="form-label">금액</strong>
+<div class="form-group _val">
+	<input type="tel" class="form-control" title="금액" value="160,000,000">
+	<span class="unit">만원</span>
+	<button class="btn-reset" title="입력값 초기화"></button>
+</div>
+<p class="form-value">1억 6000만원</em></p>
+<p class="form-text">신청금액은 100만원 단위로 가능합니다.</p>
+
+<strong class="form-label">금액</strong>
+<div class="form-group _val _chk_error">
+	<input type="tel" class="form-control" title="금액">
+	<span class="unit">원</span>
+</div>
+<div class="form-text">We'll never share your email with anyone else.</div>
+		</div>
+	</div>
+
+	<div class="ng_code-box">
+		<h2 class="ng_h2-title">폼그룹</h2>
+		<div class="ng_code-preview">
+<strong class="form-label">동/호수</strong>
+<div class="form-item">
+	<div class="form-group">
+		<input type="tel" class="form-control _ar" title="동" placeholder="입력">
+		<span class="unit">동</span>
+	</div>
+	<div class="form-group">
+		<input type="tel" class="form-control" title="호" placeholder="입력">
+		<span class="unit">호</span>
+	</div>
+</div>
+		</div>
+		<div class="ng_code-preview">
+<strong class="form-label">주민등록번호</strong>
+<div class="form-item">
+	<div class="form-group">
+		<input type="tel" class="form-control" title="주민번호 앞자리">
+	</div>
+	<span class="dash">-</span>
+	<div class="form-group">
+		<input type="password" class="form-control" title="주민번호 뒷자리">
+	</div>
+</div>
+		</div>
+		<div class="ng_code-preview">
+<strong class="form-label">전화번호</strong>
+<div class="form-item">
+	<div class="form-group">
+		<input type="tel" class="form-control" title="전화번호 앞자리">
+	</div>
+	<span class="dash">-</span>
+	<div class="form-group">
+		<input type="tel" class="form-control" title="전화번호 가운데자리">
+	</div>
+	<span class="dash">-</span>
+	<div class="form-group">
+		<input type="tel" class="form-control" title="전화번호 뒷자리">
+	</div>
+</div>
+		</div>
+		<div class="ng_code-preview">
+<strong class="form-label">이메일주소</strong>
+<div class="form-item">
+	<div class="form-group">
+		<input type="text" class="form-control" title="이메일주소 앞자리">
+	</div>
+	<span class="dash">-</span>
+	<div class="form-group">
+		<a href="javascript:;" title="이메일주소 뒷자리 선택" class="form-select"></a>	
+	</div>
+		</div>
+	</div>
+</div>
+	
+</article>

@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>Septem NH UI/UX 가이드 시스템</title>
+	<link rel="stylesheet" href="./com/css/septem_pub_base.css">
+	<link rel="stylesheet" href="./com/css/septem_pub_guide.css">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/var.css">
+	<link rel="stylesheet" href="../css/comm.css">
+	<link rel="stylesheet" href="../css/form.css">
+	<link rel="stylesheet" href="../css/comp.css">
+	<link rel="stylesheet" href="../css/popup.css">
+	<link rel="stylesheet" href="../css/layout.css">
+	<script src="./com/js/lib/sniffer.min.js"></script>
+
+	<script src="./com/js/lib/jquery-3.6.4.min.js"></script>
+	<script src="./com/js/lib/anime-3.2.1.min.js"></script>
+	<script src="./com/js/common.js"></script>
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<!-- highlights -->
+	<link rel="stylesheet" href="./com/css/lib/github-dark-dimmed.min.css">
+	<link rel="stylesheet" href="./com/css/lib/highlightjs-copy.min.css">
+	<script src="./com/js/lib/highlight.min.js"></script>
+	<script src="./com/js/lib/highlightjs-copy.min.js"></script>
+	<script>
+		hljs.addPlugin(new CopyButtonPlugin());
+		hljs.highlightAll();
+	</script>
+	<style>
+		.ng_aside a { border:2px solid #fff; }
+		.ng_code-preview {max-width:589px; border: 1px solid #02aa5f;padding: 2rem;border-radius: 10px;}
+	</style>
+</head>
+<body>
+<!-- wrap -->
+<div class="ng_wrap">
+	<!-- Header -->
+	<header class="ng_header">
+		<div class="ng_header-inner">
+			<h1 class="ng_title">UI/UX 가이드<span>샘플</span></h1>
+			<div class="ng_l-menu">
+				<!-- <a href="#!" title="뒤로가기" role="button" class="ng_btn-back">back</a> -->
+				<button type="button" title="뒤로가기" class="ng_btn ng_btn-back"></button>
+			</div>
+			<nav class="ng_r-menu">
+				<ul class="ng_nav" style="display:none">
+					<li class="ng_nav-list ng-active"><a href="#!">퍼블리스트</a></li>
+					<li class="ng_nav-list"><a href="#!">UI가이드</a></li>
+					<li class="ng_nav-list"><a href="#!">아이콘 모음</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<!-- //Header -->
+
+	<!-- Container -->
+	<div class="ng_main">
+		<aside class="ng_aside">
+			<nav>
+				<ul>
+					<li>
+						<img src="./com/img/ico_code.svg" alt>개요 : var
+						<ul>
+							<li><a href="#start_folder">색상</a></li>
+						</ul>
+					</li>
+					<li><img src="./com/img/ico_format_size.svg" alt>공통 : comm
+						<ul>
+							<li><a href="#cont_typo">타이포그래피</a></li>
+							<li><a href="#cont_table">테이블</a></li>
+							<li><a href="#cont_list">리스트</a></li>
+							<li><a href="#cont_term">약관</a></li>
+						</ul>
+					</li>
+					<li><img src="./com/img/ico_input.svg" alt>폼 : form
+						<ul>
+							<li><a href="#form_input">인풋과 셀렉트</a></li>
+							<li><a href="#form_check">체크박스와 라디오</a></li>
+							<li><a href="#comp_btn">버튼</a></li>
+						</ul>
+					</li>
+					<li>
+						<img src="./com/img/ico_tab.svg" alt>컴포넌트 : comp
+						<ul>
+							<li><a href="#comp_acc">아코디언</a></li>
+							<li><a href="#!">토글(콜랩스)</a></li>					
+							<li><a href="#comp_tab">탭</a></li>
+							<li><a href="#!">스크롤스파이</a></li>
+						</ul>
+					</li>
+					<li>
+						<img src="./com/img/ico_tab.svg" alt>팝업 : popup
+						<ul>
+							<li><a href="#!">팝업</a></li>
+							<li><a href="#!">툴팁(팝오버)</a></li>
+						</ul>
+					</li><li>
+						<img src="./com/img/ico_dashboard.svg" alt>레이아웃 : layout
+						<ul>
+							<li><a href="#layout_header">헤더</a></li>
+							<li><a href="#!">푸터</a></li>
+							
+							<li><a href="#layout_breadcrumb">스탭</a></li>
+							<li><a href="#!">프로그래스</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+
+		<div class="ng_container">
+			<section class="ng_section">
+				<!-- <div class="ng_section-header">
+					<h2 class="ng_h3-title"># 레이아웃</h2>
+				</div> -->
+				<div class="ng_section-contents">
+					<article id="start_folder" class="ng ng_component">
+						<h1 class="ng_h1-title">색상</h1>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">Primary</h2>
+							<ul class="color_list">
+								<li>
+									<div class="color_sample" style="background-color:var(--main)"></div>
+									<dl>
+										<dt>--main</dt>
+										<dd>--green-01</dd>
+										<dd>#00AB5F</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--sub-01)"></div>
+									<dl>
+										<dt>--sub-01</dt>
+										<dd>--blue-01</dd>
+										<dd>#685EFD</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--sub-02)"></div>
+									<dl>
+										<dt>--sub-02</dt>
+										<dd>--gray-02</dd>
+										<dd>#F4F6F9</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--error)"></div>
+									<dl>
+										<dt>--error</dt>
+										<dd>--red-01</dd>
+										<dd>#E24949</dd>
+									</dl>
+								</li>
+							</ul>
+						</div>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">Base</h2>
+							<p class="ng_text">
+								Base 컬러는 변수명으로 사용하지 않는다.<br>
+								사용하실 곳에 새로운 변수로 지정하여 사용
+							</p>
+							<ul class="color_list">
+								<li>
+									<div class="color_sample" style="background-color:var(--green-01)"></div>
+									<dl>
+										<dt>--green-01</dt>
+										<dd>#00AB5F</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--green-02)"></div>
+									<dl>
+										<dt>--green-02</dt>
+										<dd>#29B475</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--green-03)"></div>
+									<dl>
+										<dt>--green-03</dt>
+										<dd>#50B270</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--blue-01)"></div>
+									<dl>
+										<dt>--blue-01</dt>
+										<dd>#685EFD</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--red-01)"></div>
+									<dl>
+										<dt>--red-01</dt>
+										<dd>#F8E7E9</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--gray-01)"></div>
+									<dl>
+										<dt>--gray-01</dt>
+										<dd>#EBEBEC</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--gray-02)"></div>
+									<dl>
+										<dt>--gray-02</dt>
+										<dd>#F4F6F9</dd>
+									</dl>
+								</li>
+							</ul>
+							<ul class="color_list">
+								<li>
+									<div class="color_sample" style="background-color:var(--gray-0)"></div>
+									<dl>
+										<dt>--gray-0</dt>
+										<dd>#FFFFFF</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--gray-50)"></div>
+									<dl>
+										<dt>--gray-50</dt>
+										<dd>#F8F8F8</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--gray-100)"></div>
+									<dl>
+										<dt>--gray-100</dt>
+										<dd>#E6E6E6</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--gray-200)"></div>
+									<dl>
+										<dt>--gray-200</dt>
+										<dd>#D9D9D9</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--gray-300)"></div>
+									<dl>
+										<dt>--gray-300</dt>
+										<dd>#BFBFBF</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--gray-400)"></div>
+									<dl>
+										<dt>--gray-400</dt>
+										<dd>#A6A6A6</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--gray-500)"></div>
+									<dl>
+										<dt>--gray-500</dt>
+										<dd>#909090</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--gray-600)"></div>
+									<dl>
+										<dt>--gray-600</dt>
+										<dd>#777777</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--gray-700)"></div>
+									<dl>
+										<dt>--gray-700</dt>
+										<dd>#555555</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--gray-800)"></div>
+									<dl>
+										<dt>--gray-800</dt>
+										<dd>#343434</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--gray-900)"></div>
+									<dl>
+										<dt>--gray-900</dt>
+										<dd>#121212</dd>
+									</dl>
+								</li>
+							</ul>
+							<ul class="color_list">
+								<li>
+									<div class="color_sample" style="background-color:var(--white)"></div>
+									<dl>
+										<dt>--white</dt>
+										<dd>--gray-0</dd>
+										<dd>#FFFFFF</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--black)"></div>
+									<dl>
+										<dt>--black</dt>
+										<dd>--gray-900</dd>
+										<dd>#121212</dd>
+									</dl>
+								</li>
+							</ul>
+						</div>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">fc : color</h2>
+							<ul class="color_list">
+								<li>
+									<div class="color_sample" style="background-color:var(--fc-01)"></div>
+									<dl>
+										<dt>--fc-01</dt>
+										<dd>--black</dd>
+										<dd>#121212</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--fc-05)"></div>
+									<dl>
+										<dt>--fc-05</dt>
+										<dd>#505050</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--fc-07)"></div>
+									<dl>
+										<dt>--fc-07</dt>
+										<dd>#767676</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--fc-09)"></div>
+									<dl>
+										<dt>--fc-09</dt>
+										<dd>#909090</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--fc-0B)"></div>
+									<dl>
+										<dt>--fc-0B</dt>
+										<dd>플레이스홀더</dd>
+										<dd>#BFBFBF</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--fc-error)"></div>
+									<dl>
+										<dt>--fc-error</dt>
+										<dd>--red-01</dd>
+										<dd>#fe6262</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--fc-point)"></div>
+									<dl>
+										<dt>--fc-point</dt>
+										<dd>--green-01</dd>
+										<dd>#02aa5f</dd>
+									</dl>
+								</li>
+							</ul>
+						</div>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">bdc : border-color</h2>
+							<ul class="color_list">
+								<li>
+									<div class="color_sample" style="background-color:var(--bdc-01)"></div>
+									<dl>
+										<dt>--bdc-01</dt>
+										<dd>#F3F2F7</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--bdc-02)"></div>
+									<dl>
+										<dt>--bdc-02</dt>
+										<dd>#EAE9EF</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--bdc-03)"></div>
+									<dl>
+										<dt>--bdc-03</dt>
+										<dd>#E1E1E1</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--bdc-04)"></div>
+									<dl>
+										<dt>--bdc-04</dt>
+										<dd>#DDDDDD</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--bdc-05)"></div>
+									<dl>
+										<dt>--bdc-05</dt>
+										<dd>#CCCCCC</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--bdc-06)"></div>
+									<dl>
+										<dt>--bdc-06</dt>
+										<dd>#999999</dd>
+									</dl>
+								</li>
+							</ul>
+							<ul class="color_list">
+								<li>
+									<div class="color_sample" style="background-color:var(--bdc-black)"></div>
+									<dl>
+										<dt>--bdc-black</dt>
+										<dd>--black-05</dd>
+										<dd>#505050</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--bdc-point)"></div>
+									<dl>
+										<dt>--bdc-point</dt>
+										<dd>--green-02</dd>
+										<dd>#29B475</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--bdc-error)"></div>
+									<dl>
+										<dt>--bdc-error</dt>
+										<dd>--red-01</dd>
+										<dd>#E24949</dd>
+									</dl>
+								</li>
+							</ul>
+						</div>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">bgc : background-color</h2>
+							<ul class="color_list">
+								<li>
+									<div class="color_sample" style="background-color:var(--bgc-green-01)"></div>
+									<dl>
+										<dt>--bgc-green-01</dt>
+										<dd>#EAF9F1</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--bgc-blue-01)"></div>
+									<dl>
+										<dt>--bgc-blue-01</dt>
+										<dd>#F0EFFF</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--bgc-red-01)"></div>
+									<dl>
+										<dt>--bgc-red-01</dt>
+										<dd>#F8E7E9</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--bgc-gray-01)"></div>
+									<dl>
+										<dt>--bgc-gray-01</dt>
+										<dd>#F8F8FA</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--bgc-gray-02)"></div>
+									<dl>
+										<dt>--bgc-gray-02</dt>
+										<dd>#F3F2F7</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="background-color:var(--bgc-gray-03)"></div>
+									<dl>
+										<dt>--bgc-gray-03</dt>
+										<dd>#EEEEEE</dd>
+									</dl>
+								</li>
+							</ul>
+						</div>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">shadow : box-shadow</h2>
+							<ul class="color_list">
+								<li>
+									<div class="color_sample" style="box-shadow:var(--shadow-01)"></div>
+									<dl>
+										<dt>--shadow-01</dt>
+										<dd>0px 4px 8px rgba(0, 0, 0, 0.05)</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="color_sample" style="box-shadow:var(--shadow-02);border:var(--shadow-02-bd)"></div>
+									<dl>
+										<dt>--shadow-02</dt>
+										<dd>0px 4px 8px rgba(0, 0, 0, 0.1)</dd>
+										<dt>--shadow-02-bd</dt>
+										<dd>2px solid var(--main);</dd>
+									</dl>
+								</li>
+							</ul>
+						</div>
+					</article>
+					<article id="cont_typo" class="ng ng_content">
+						<h1 class="ng_h1-title">타이포그래피</h1>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">Heading</h2>
+							<p class="ng_text">
+								H1~H6 태그는 마크업의미에서만 사용하고 스타일하지 않는다.<br>
+								H1 태그는 heading 안에 있는 제목에만 사용한다.
+							</p>
+<div class="ng_code-preview">
+<p class="h1">.h1 NH 금융상품몰 플랫폼</p>
+<p class="h2">.h2 NH 금융상품몰 플랫폼</p>
+<p class="h3">.h3 NH 금융상품몰 플랫폼</p>
+<p class="h4">.h4 NH 금융상품몰 플랫폼</p>
+<p class="h5">.h5 NH 금융상품몰 플랫폼</p>
+<p class="h6">.h6 NH 금융상품몰 플랫폼</p>
+
+
+<div class="title-group">
+	<strong class="title">계약기간</strong>
+</div>
+
+<div class="title-group">
+	<strong class="title">우대쿠폰<em>0.0%</em></strong>
+	<button class="btn btn-sm">쿠폰사용</button>
+</div>
+							</div>					
+						</div>
+					</article>
+
+					<article id="cont_table" class="ng ng_content">
+						<h1 class="ng_h1-title">테이블</h1>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">기본형1</h2>
+							<p class="ng_text">
+								<strong>정렬기본 : </strong>th, td : 가운데 정렬
+							</p>
+<div class="ng_code-preview">
+<div class="table">
+	<table>
+		<caption>테이블 이름</caption>
+		<colgroup>
+			<col width="30%">
+			<col width="">
+			<col width="">
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col">Title 1</th>
+				<th scope="col">Title 2</th>
+				<th scope="col">Title 3</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Text</td>
+				<td>Text</td>
+				<td>Text</td>
+			</tr>
+			<tr>
+				<td>Text</td>
+				<td>Text</td>
+				<td>Text</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="ng_code-preview">
+<div class="table">
+	<table>
+		<caption>테이블 이름</caption>
+		<colgroup>
+			<col width="30%">
+			<col width="">
+			<col width="">
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col">Title 1</th>
+				<th scope="col">Title 2</th>
+				<th scope="col">Title 3</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">TitleA</th>
+				<td>Text</td>
+				<td>Text</td>
+			</tr>
+			<tr>
+				<th scope="row">TitleB</th>
+				<td>Text</td>
+				<td>Text</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="ng_code-preview">
+<div class="table">
+	<table>
+		<caption>테이블 이름</caption>
+		<colgroup>
+			<col style="width:15%">
+			<col style="width:25%">
+			<col style="width:55%">
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col">Title1</th>
+				<th class="ac" scope="col" colspan="2">Title2</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="rowgroup" rowspan="2">TitleA</th>
+				<th scope="row">Sub</th>
+				<td>Text</td>
+			</tr>
+			<tr>
+				<th scope="row">Sub</th>
+				<td>Text</td>
+			</tr>
+			<tr>
+				<th scope="rowgroup" rowspan="2">TitleB</th>
+				<th scope="row">Sub</th>
+				<td>Text</td>
+			</tr>
+			<tr>
+				<th scope="row">Sub</th>
+				<td>Text</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="ng_code-preview">
+<div class="table">
+	<table>
+		<caption>테이블 이름</caption>
+		<colgroup>
+			<col width="">
+			<col width="">
+			<col width="">
+			<col width="">
+		</colgroup>
+		<thead class="colgroup">
+			<tr>
+				<th scope="col" colspan="2">자동화기기</th>
+				<th scope="col" rowspan="2">전자금융<br>(이체)</th>
+				<th scope="col" rowspan="2">창구거래</th>
+			</tr>
+			<tr>
+				<th scope="col">인출</th>
+				<th scope="col">이체</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>30만원</td>
+				<td>30만원</td>
+				<td colspan="2">100만원</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+							<h2 class="ng_h2-title">기본형2</h2>
+							<p class="ng_text">
+								<strong>정렬기본 : </strong>th, td 왼쪽 정렬
+							</p>
+<div class="ng_code-preview">
+<div class="table type2">
+	<table>
+		<caption>테이블 이름</caption>
+		<colgroup>
+			<col width="27%">
+			<col>
+		</colgroup>
+		<tbody>
+			<tr>
+				<th scope="row">타이틀</th>
+				<td>내용</td>
+			</tr>
+			<tr>
+				<th scope="row">타이틀</th>
+				<td>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</td>
+			</tr>
+			<tr>
+				<th scope="row">타이틀</th>
+				<td>내용</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+						</div>
+					</article>
+
+					<article id="cont_list" class="ng ng_content">
+						<h1 class="ng_h1-title">리스트</h1>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">list Dot</h2>
+<div class="ng_code-preview">
+<ul class="list-dot">
+	<li>내용이 들어갑니다.</li>
+	<li>상품가입이 원활하게 완료되지 않으신 경우, 상품가입 내역에서 처리결과를 반드시 확인하시기 바랍니다.</li>
+</ul>
+
+</div>
+							<h2 class="ng_h2-title">list Dash</h2>
+<div class="ng_code-preview">
+<ul class="list-dash">
+	<li>내용이 들어갑니다.</li>
+	<li>상품가입이 원활하게 완료되지 않으신 경우, 상품가입 내역에서 처리결과를 반드시 확인하시기 바랍니다.</li>
+</ul>
+
+</div>
+							<h2 class="ng_h2-title">list Dot > Dash</h2>
+<div class="ng_code-preview">
+<ul class="list-dot">
+	<li>
+		내용이 들어갑니다.
+		<ul class="list-dash">
+			<li>내용이 들어갑니다.</li>
+			<li>상품가입이 원활하게 완료되지 않으신 경우, 상품가입 내역에서 처리결과를 반드시 확인하시기 바랍니다.</li>
+		</ul>
+	</li>
+	<li>상품가입이 원활하게 완료되지 않으신 경우, 상품가입 내역에서 처리결과를 반드시 확인하시기 바랍니다.</li>
+</ul>
+
+</div>
+							<h2 class="ng_h2-title">list Info - 아코디언형</h2>
+<div class="ng_code-preview">
+<div class="info-list-box">
+	<div class="accordion-title-wrap">
+		<p class="list-title">알아두세요</p>
+		<button type="button" aria-expanded="true" class="accordion-button"></button>
+	</div>
+	<ul class="list-dot accordion-collapse collapse show">
+		<li>내용이 들어갑니다.</li>
+		<li>상품가입이 원활하게 완료되지 않으신 경우, 상품가입 내역에서 처리결과를 반드시 확인하시기 바랍니다.</li>
+	</ul>
+</div>
+
+</div>
+							<h2 class="ng_h2-title">list Info - 텍스트형</h2>
+<div class="ng_code-preview">
+<div class="info-list-box">
+	<p class="list-title">알아두세요</p>
+	<p class="list-dot">
+		대출희망정보를 바탕으로 고객님께 맞는 대출상품을 자동으로 제안 드립니다. 대출 상품명, 가능금액, 예상금리는 대출을 조회한 당일만 유효하며, 고객님의 신용정보 변경 시 대출실행이 제한될 수 있습니다. (자세한 내용은 대출 실행 시 제공되는 대출거래약정서, 상품설명서 등을 참조하시기 바랍니다.)
+	</p>
+</div>
+
+</div>
+							<h2 class="ng_h2-title">list Table - 우측정렬</h2>
+							<p class="ng_text">
+								<strong>좌측 정렬</strong> : 기본 텍스트 (일반 텍스트 및 숫자)<br>
+								<strong>우측정렬</strong> : 금액 및 % 값 텍스트
+							</p>
+<div class="ng_code-preview">
+<div class="list-table-box">
+	<ul>
+		<li>
+			<p class="list-table-title">이름</p>
+			<p class="list-table-text">김농협</p>
+		</li>
+		<li>
+			<span class="list-table-title">휴대폰번호</span>
+			<p class="list-table-text">010-1234-5678</p>
+		</li>
+		<li>
+			<span class="list-table-title">생년월일</span>
+			<p class="list-table-text">1990-01-01</p>
+		</li>
+	</ul>
+</div>
+</div>
+
+							<h2 class="ng_h2-title">list Table - 좌측정렬</h2>
+<div class="ng_code-preview">
+<div class="list-table-box type-left">
+	<ul>
+		<li>
+			<p class="list-table-title">자택주소</p>
+			<p class="list-table-text">11234<br>경기도 의왕시 성고개로 53<br>에이스청계타워 3층</p>
+		</li>
+		<li>
+			<span class="list-table-title">자택 전화번호</span>
+			<p class="list-table-text">031-1111-****</p>
+		</li>
+		<li>
+			<span class="list-table-title">직장주소</span>
+			<p class="list-table-text">11234<br>경기도 의왕시 성고개로 53<br>에이스청계타워 3층</p>
+		</li>
+		<li>
+			<span class="list-table-title">직장 전화번호</span>
+			<p class="list-table-text">031-1111-****</p>
+		</li>
+		<li>
+			<span class="list-table-title">휴대전화</span>
+			<p class="list-table-text">031-1111-****</p>
+		</li>
+		<li>
+			<span class="list-table-title">이메일주소</span>
+			<p class="list-table-text">****kim@nonghyup.com</p>
+		</li>
+	</ul>
+</div>
+
+</div>
+<h2 class="ng_h2-title">list Table - 아코디언형 (닫힘)</h2>
+<div class="ng_code-preview">
+<div class="list-table-box">
+	<ul class="list-main">
+		<li>
+			<p class="list-table-title">대출 신청금액</p>
+			<p class="list-table-text"><strong class="data-value"><em class="data">100000</em><span class="won">원</span></strong></p>
+		</li>
+		<li>
+			<span class="list-table-title">대출금리</span>
+			<p class="list-table-text"><strong class="data-value point-color"><em class="data">4.82</em><span class="unit">%</span></strong><span class="mor">(6개월 MOR)</span></p>
+		</li>
+	</ul>
+</div>
+<div class="accordion-button-wrap"><button type="button" aria-expanded="false" class="accordion-button collapsed">상세보기</button></div>
+
+</div>
+<h2 class="ng_h2-title">list Table - 아코디언형 (펼침)</h2>
+<div class="ng_code-preview">
+<div class="list-table-box">
+	<ul class="list-main">
+		<li>
+			<p class="list-table-title">대출 신청금액</p>
+			<p class="list-table-text"><strong class="data-value"><em class="data">100000</em><span class="won">원</span></strong></p>
+		</li>
+		<li>
+			<span class="list-table-title">대출금리</span>
+			<p class="list-table-text"><strong class="data-value point-color"><em class="data">4.82</em><span class="unit">%</span></strong><span class="mor">(6개월 MOR)</span></p>
+		</li>
+	</ul>
+	<div class="accordion-collapse collapse show">
+		<ul class="list-sub">
+			<li>
+				<p class="list-table-title">기준금리(A)</p>
+				<p class="list-table-text"><strong class="data-value"><em class="data">3.42</em><span class="unit">%</span></strong></p>
+			</li>
+			<li>
+				<span class="list-table-title">가산금리(B)</span>
+				<p class="list-table-text"><strong class="data-value"><em class="data">1.90</em><span class="unit">%</span></strong></p>
+			</li>
+			<li>
+				<span class="list-table-title">우대금리(C)</span>
+				<p class="list-table-text"><strong class="data-value"><em class="data">0.50</em><span class="unit">%</span></strong></p>
+				<ul class="list-form">
+					<li>
+						<div class="form-check">
+							<input type="checkbox" value id="chk0301" class="check-input">
+							<label for="chk0301" class="form-check-label">급여이체 50만원 이상</label>
+						</div>
+						<p class="list-table-text"><strong class="data-value"><em class="data">0.50</em><span class="unit">%</span></strong></p>
+					</li>
+					<li>
+						<div class="form-check">
+							<input type="checkbox" value id="chk0302" class="check-input">
+							<label for="chk0302" class="form-check-label">신용카드보유 (NH채움카드)</label>
+						</div>
+						<p class="list-table-text"><strong class="data-value"><em class="data">0.20</em><span class="unit">%</span></strong></p>
+					</li>
+					<li>
+						<div class="form-check">
+							<input type="checkbox" value id="chk0303" class="check-input">
+							<label for="chk0303" class="form-check-label">우량등급 우대금리<br>(통신등급 1~3등급)</label>
+						</div>
+						<p class="list-table-text"><strong class="data-value"><em class="data">0.20</em><span class="unit">%</span></strong></p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<ul class="list-total">
+			<li>
+				<p class="list-table-title">예상금리(A+B-C)</p>
+				<p class="list-table-text"><strong class="data-value point-color"><em class="data">4.82</em><span class="unit">%</span></strong></p>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="accordion-button-wrap"><button type="button" aria-expanded="true" class="accordion-button">상세닫기</button></div>
+
+</div>
+
+<div class="ng_code-box">
+	<h2 class="ng_h2-title">아코디언 라디오 리스트</h2>
+	<p class="ng_desc-type1"> </p>
+	<div class="ng_code-preview">
+<div class="select-list-box">
+	<div class="select-item">
+		<div class="accordion-title-wrap">
+			<p class="list-title">1. 대출 신청 목적</p>
+			<button type="button" aria-expanded="true" class="accordion-button"></button>
+		</div>
+		<div class="accordion-collapse collapse show">
+			<div class="form-items-check form-item-col-5">
+				<div class="form-check">
+					<input type="radio" name="rdo10" id="rdo1001" class="check-input">
+					<label for="rdo1001" class="form-check-label">가계자금</label>
+				</div>
+				<div class="form-check">
+					<input type="radio" name="rdo10" id="rdo1002" class="check-input">
+					<label for="rdo1002" class="form-check-label">사업자금</label>
+				</div>
+				<div class="form-check">
+					<input type="radio" name="rdo10" id="rdo1003" class="check-input" checked>
+					<label for="rdo1003" class="form-check-label">주택자금</label>
+				</div>
+				<div class="form-check">
+					<input type="radio" name="rdo10" id="rdo1004" class="check-input">
+					<label for="rdo1004" class="form-check-label">경조자금</label>
+				</div>
+			</div>
+		</div>
+		<p class="form-value" style="display:block;">주택자금</p>
+	</div>
+	<div class="select-item">
+		<div class="accordion-title-wrap">
+			<p class="list-title">2. 자산규모</p>
+			<button type="button" aria-expanded="true" class="accordion-button"></button>
+		</div>
+		<div class="accordion-collapse collapse show">
+			<div class="form-items-check form-item-row">
+				<div class="form-check">
+					<input type="radio" name="rdo11" id="rdo1101" class="check-input" checked>
+					<label for="rdo1101" class="form-check-label">2천만원 미만</label>
+				</div>
+				<div class="form-check">
+					<input type="radio" name="rdo11" id="rdo1102" class="check-input">
+					<label for="rdo1102" class="form-check-label">2천만 ~ 5천만원 미만</label>
+				</div>
+				<div class="form-check">
+					<input type="radio" name="rdo11" id="rdo1103" class="check-input">
+					<label for="rdo1103" class="form-check-label">5천만 ~ 1억원 미만</label>
+				</div>
+			</div>
+		</div>
+		<p class="form-value" style="display:block;">2천만원 미만</p>
+	</div>
+	<div class="select-item">
+		<div class="accordion-title-wrap">
+			<p class="list-title">3.연체여부</p>
+			<button type="button" aria-expanded="true" class="accordion-button"></button>
+		</div>
+		<div class="accordion-collapse collapse show">
+			<div class="form-items-check form-item-col-5">
+				<div class="form-check">
+					<input type="radio" name="rdo12" id="rdo1201" class="check-input" checked>
+					<label for="rdo1201" class="form-check-label">없음</label>
+				</div>
+				<div class="form-check">
+					<input type="radio" name="rdo12" id="rdo1202" class="check-input">
+					<label for="rdo1202" class="form-check-label">있음</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="agree-item">
+		<div class="form-check">
+			<input type="checkbox" value="" id="chk1701" class="check-input">
+			<label for="chk1701" class="form-check-label">신청하신 대출상품 적합 여부 확인을 위해 본인의 개인 정보를 수집, 이용, 제공 동의하는 것에 동의합니다.</label>
+		</div>
+	</div>
+</div>
+
+		</div>
+</div>
+
+						</div>
+					</article>
+
+					<article id="cont_term" class="ng ng_content">
+						<h1 class="ng_h1-title">약관</h1>
+						<div class="ng_code-box">
+<div class="ng_code-preview">
+<div class="term-box-list">
+	<div class="term-box">
+		<div class="js-toggle-wrap active">
+			<div class="form-check">
+				<input type="checkbox" aria-expanded="true" value id="chk0400" class="js-toggle-button">
+				<label for="chk0400" class="form-check-label">전체동의</label>
+			</div>
+			<ul class="js-toggle-cont" style="display:block;">
+				<li>
+					<div class="form-check">
+						<input type="checkbox" title="약관상세보기 팝업열림" value id="chk0401" class="sub-check-input">
+						<label for="chk0401">기본약관</label>
+					</div>
+					<button title="약관상세보기 팝업열림" class="term-arrow"></button>
+				</li>
+				<li>
+					<div class="form-check">
+						<input type="checkbox" title="약관상세보기 팝업열림" value id="chk0402" class="sub-check-input">
+						<label for="chk0402">개인(신용)정보수집이용 및 제공 관련 고객 권리 안내문</label>
+					</div>
+					<button title="약관상세보기 팝업열림" class="term-arrow"></button>
+				</li>
+				<li>
+					<div class="form-check">
+						<input type="checkbox" title="약관상세보기 팝업열림" value id="chk0403" class="sub-check-input">
+						<label for="chk0403">[필수] (비여신)개인(신용)정보 수집·이용 동의서</label>
+					</div>
+					<button title="약관상세보기 팝업열림" class="term-arrow"></button>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="term-box">
+			<div class="form-check">
+				<input type="checkbox" value id="chk0501" class="check-input">
+				<label for="chk0501" class="form-check-label">[선택] 개인(신용)정보 수집, 이용, 제공 동의(상품서비스 안내 등)</label>
+			</div>
+			<button title="약관상세보기 팝업열림" class="term-arrow"></button>
+	</div>
+	<div class="term-box">
+		<div class="js-toggle-wrap active">
+			<div class="form-check">
+				<input type="checkbox" aria-expanded="true" value id="chk0601" class="js-toggle-button">
+				<label for="chk0601" class="form-check-label">[필수] 불법/탈법 차명거래 금지 실명 확인</label>
+			</div>
+			<ul class="js-toggle-cont" style="display:block;">
+				<p class="term-text">「금융실명거래 및 비밀보장에 관한 법률」제 3조 3
+					항에 따라 누구든지 불법재산의 은닉 자금세탁 행위
+					공중협박자금조달행위 및 강제집행의 면탈 그 밖의
+					탈법행위를 목적으로 타인의 실명으로 금융거래를
+					하여서는 아니되며, 이를 위반 시 5년 이하의 징역 또
+					는 5천만원 이하의 벌금에 처해질 수 있습니다.</p>
+			</ul>
+		</div>
+	</div>
+	<div class="term-total">
+		<div class="form-check">
+			<input type="checkbox" value id="chk0701" class="check-input">
+			<label for="chk0701" class="form-check-label">본인은 위 예금상품에 대한 주요 내용을 충분히 확인하고 예금을 신청합니다.</label>
+		</div>
+	</div>
+</div>
+
+</div>
+						</div>
+					</article>
+					
+					<article id="form_input" class="ng ng_form">
+						<h1 class="ng_h1-title">인풋과 셀렉트</h1>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">셀렉트</h2>
+							<div class="ng_code-preview">
+<div class="form-group">
+	<strong class="form-label">선택</strong>
+	<div class="form-item">
+		<button title="선택" class="form-select">선택</button>
+	</div>
+</div>
+							</div>
+
+							<div class="ng_code-preview">
+<div class="form-group">
+	<strong class="form-label">선택</strong>
+	<div class="form-item o_val">
+		<button title="선택" class="form-select">선택된 값</button>
+	</div>
+</div>
+
+<div class="form-group">
+	<strong class="form-label">선택</strong>
+	<div class="form-item o_val disabled">
+		<button title="선택" class="form-select" disabled>선택되어 있는 수정 불가능한 값</button>
+	</div>
+</div>
+
+<div class="form-group">
+	<strong class="form-label">대출만기일</strong>
+	<div class="form-item o_val">
+		<button title="선택" class="form-select form-select-date">2023.06.01</button>
+	</div>
+</div>
+							</div>
+						</div>
+
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">인풋 텍스트</h2>
+							<div class="ng_code-preview">
+<div class="form-group">
+    <strong class="form-label">입력전</strong>
+    <div class="form-item">
+        <button title="입력값 초기화" class="btn-reset" button></button>
+    </div>
+</div>
+							</div>
+						
+							<div class="ng_code-preview">
+<div class="form-group">
+	<strong class="form-label">포커스</strong>
+	<div class="form-item focus">
+		<input type="txt" title="타이틀" value class="text-input" placeholder="플레이스홀더">
+		<button title="입력값 초기화" class="btn-reset"></button>
+	</div>
+</div>
+					
+<div class="form-group">
+	<strong class="form-label">포커스+값</strong>
+	<div class="form-item focus o_val">
+		<input type="txt" title="타이틀" value="인풋값" class="text-input" placeholder="플레이스홀더">
+		<button title="입력값 초기화" class="btn-reset"></button>
+	</div>
+</div>
+
+<div class="form-group">
+	<strong class="form-label">값</strong>
+	<div class="form-item o_val">
+		<input type="txt" title="타이틀" value="인풋값" class="text-input" placeholder="플레이스홀더">
+		<button title="입력값 초기화" class="btn-reset"></button>
+	</div>
+</div>
+
+<div class="form-group">
+	<strong class="form-label">값+체크완료</strong>
+	<div class="form-item o_val o_chk_ok">
+		<input type="txt" title="타이틀" value="인풋값" class="text-input" placeholder="플레이스홀더">
+		<button title="입력값 초기화" class="btn-reset"></button>
+	</div>
+</div>
+<p class="form-chk-txt">이름이 정확합니다.</p>
+
+<div class="form-group">
+	<strong class="form-label">값+체크오류</strong>
+	<div class="form-item o_val o_chk_error">
+		<input type="txt" title="타이틀" value="인풋값" class="text-input" placeholder="플레이스홀더">
+		<button title="입력값 초기화" class="btn-reset"></button>
+	</div>
+</div>
+<p class="form-chk-txt">한글만 입력 가능합니다.</p>
+
+<div class="form-group">
+	<strong class="form-label">값+readonly</strong>
+	<div class="form-item o_val readonly">
+		<input type="txt" title="타이틀" value="인풋값" class="text-input" placeholder="플레이스홀더" readonly>
+		<button title="입력값 초기화" class="btn-reset"></button>
+	</div>
+</div>
+
+<div class="form-group">
+	<strong class="form-label">값+disabled</strong>
+	<div class="form-item o_val disabled">
+		<input type="txt" title="타이틀" value="인풋값" class="text-input" placeholder="플레이스홀더" disabled>
+		<button title="입력값 초기화" class="btn-reset"></button>
+	</div>
+</div>
+							</div>
+						</div>
+					
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">인풋 금액</h2>
+							<div class="ng_code-preview">
+
+<div class="form-group">
+	<strong class="form-label">금액</strong>
+	<div class="form-item amt">
+		<input type="tel" title="금액" value class="text-input" placeholder="금액을입력하세요">
+		<span class="unit">원</span>
+		<button title="입력값 초기화" class="btn-reset"></button>
+	</div>
+</div>
+<p class="form-value amt">원</p>
+
+<div class="form-group">
+	<strong class="form-label amt">금액</strong>
+	<div class="form-item">
+		<input type="tel" title="금액" value class="text-input" placeholder="금액을입력하세요">
+		<span class="unit">만원</span>
+		<button title="입력값 초기화" class="btn-reset"></button>
+	</div>
+</div>
+<p class="form-value amt">1억 6000만원</p>
+<p class="form-txt">신청금액은 100만원 단위로 가능합니다.</p>
+
+<div class="form-group">
+	<strong class="form-label">금액</strong>
+	<div class="form-item amt o_val">
+		<input type="tel" title="금액" value="160,000,000" class="text-input">
+		<span class="unit">만원</span>
+		<button title="입력값 초기화" class="btn-reset"></button>
+	</div>
+</div>
+<p class="form-value amt">1억 6000만원</p>
+<p class="form-txt">신청금액은 100만원 단위로 가능합니다.</p>
+
+<div class="form-group">
+	<strong class="form-label">금액 값+체크완료</strong>
+	<div class="form-item amt o_val o_chk_ok">
+		<input type="txt" title="타이틀" value="인풋값" class="text-input" placeholder="플레이스홀더">
+		<button title="입력값 초기화" class="btn-reset"></button>
+	</div>
+</div>
+<p class="form-chk-txt">이름이 정확합니다.</p>
+
+<div class="form-group">
+	<strong class="form-label">금액 값+체크오류</strong>
+	<div class="form-item amt o_val o_chk_error">
+		<input type="tel" title="금액" value="100" class="text-input">
+		<span class="unit">원</span>
+		<button title="입력값 초기화" class="btn-reset"></button>
+	</div>
+</div>
+<p class="form-value amt">1억 6000만원</p>
+<div class="form-txt">We'll never share your email with anyone else.</div>
+
+<div class="form-group">
+	<strong class="form-label">금액 값+readonly</strong>
+	<div class="form-item amt o_val readonly">
+		<input type="tel" title="타이틀" value="100" class="text-input" placeholder="플레이스홀더" readonly>
+		<span class="unit">원</span>
+		<button title="입력값 초기화" class="btn-reset"></button>
+	</div>
+</div>
+<p class="form-value amt">1억 6000만원</p>
+
+<div class="form-group">
+	<strong class="form-label">금액 값+disabled</strong>
+	<div class="form-item amt o_val disabled">
+		<input type="tel" title="타이틀" value="100" class="text-input" placeholder="플레이스홀더" disabled>
+		<span class="unit">원</span>
+		<button title="입력값 초기화" class="btn-reset"></button>
+	</div>
+</div>
+<p class="form-value amt">1억 6000만원</p>
+							</div>
+						</div>
+						
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">인풋 기간</h2>
+							<div class="ng_code-preview">
+<div class="form-range">
+	<input type="range" title="계약기간" value="12" id="myinput" max="24" min="6" step="6" list="tickmarks">
+	<datalist id="markers">
+		<option value="6">6개월</option>
+		<option value="12">12개월</option>
+		<option value="18">18개월</option>
+		<option value="24">24개월</option>
+	</datalist>
+</div>
+							</div>
+						</div>
+
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">패스워드</h2>
+							<div class="ng_code-preview">
+
+<div class="form-group">
+	<strong class="form-label">패스워드</strong>
+	<div class="form-item pw">
+		<input type="password" title="패스워드" value class="text-input" placeholder="4자리 숫자 입력">
+		<button title="입력값 초기화" class="btn-reset"></button>
+	</div>
+</div>
+
+<div class="form-group">
+	<strong class="form-label">패스워드</strong>
+	<div class="form-item pw o_val">
+		<input type="password" title="패스워드" value="1" class="text-input">
+	</div>
+</div>
+
+<div class="form-group">
+	<strong class="form-label">패스워드 값+체크완료</strong>
+	<div class="form-items-row">
+		<div class="form-item pw o_val">
+			<input type="password" title="패스워드" value="100" class="text-input">
+		</div>
+		<div class="form-item pw o_val o_chk_ok">
+			<input type="password" title="패스워드 재입력" value="100" class="text-input">
+		</div>
+		<!-- <div class="form-txt">We'll never share your email with anyone else.</div> -->
+	</div>
+</div>
+
+<div class="form-group">
+	<strong class="form-label">패스워드 값+체크오류</strong>
+	<div class="form-items-row">
+		<div class="form-item pw o_val">
+			<input type="password" title="패스워드" value="100" class="text-input">
+		</div>
+		<div class="form-item pw o_val o_chk_error">
+			<input type="password" title="패스워드 재입력" value="100" class="text-input">
+		</div>
+	</div>
+</div>
+<div class="form-txt o_chk_error">비밀번호가 일치하지 않습니다.</div>
+							</div>
+						</div>
+					
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">폼그룹</h2>
+							<div class="ng_code-preview">
+<div class="form-group">
+	<strong class="form-label">주소</strong>
+	<div class="form-items-row">
+		<div class="form-item readonly">
+			<input type="txt" title="우편번호" class="text-input" placeholder="우편번호 검색" readonly>
+			<button title="우편번호 검색" class="btn-search">버튼</button>
+		</div>
+		<div class="form-item">
+			<input type="txt" title="상세주소" class="text-input" placeholder="상세주소">
+		</div>
+	</div>
+</div>
+							</div>
+							<div class="ng_code-preview">
+<div class="form-group">
+	<strong class="form-label">동/호수</strong>
+	<div class="form-items">
+		<div class="form-item">
+			<input type="tel" title="동" class="text-input _ar" placeholder="입력">
+			<span class="unit">동</span>
+		</div>
+		<div class="form-item">
+			<input type="tel" title="호" class="text-input" placeholder="입력">
+			<span class="unit">호</span>
+		</div>
+	</div>
+</div>
+							</div>
+							<div class="ng_code-preview">
+<div class="form-group">
+	<strong class="form-label">휴대폰 번호</strong>
+	<div class="form-items-row">
+		<div class="form-items-check">
+			<div class="form-check">
+				<input type="radio" value name="rdo07" id="rdo0701" class="check-input">
+				<label for="rdo0701" class="form-check-label">SKT<br>(알뜰폰 포함)</label>
+			</div>
+			<div class="form-check">
+				<input type="radio" value name="rdo07" id="rdo0702" class="check-input">
+				<label for="rdo0702" class="form-check-label">KT<br>(알뜰폰 포함)</label>
+			</div>
+			<div class="form-check">
+				<input type="radio" value name="rdo07" id="rdo0703" class="check-input">
+				<label for="rdo0703" class="form-check-label">LG U+<br>(알뜰폰 포함)</label>
+			</div>
+		</div>
+		<div class="form-items _col-46">
+			<div class="form-item o_val">
+				<a href="javascript:;" title="휴대폰번호 앞자리 선택" class="form-select">010</a>	
+			</div>
+			<div class="form-item">
+				<input type="tel" title="휴대폰번호 뒷자리" class="text-input" placeholder="[-] 없이 휴대폰 번호 입력">
+				<button class="btn-reset"></button>
+			</div>
+		</div>
+	</div>
+</div>
+							</div>
+							<div class="ng_code-preview">
+<div class="form-group">
+	<strong class="form-label">주민등록번호</strong>
+	<div class="form-item">
+		<input type="tel" title="주민번호 앞자리" class="text-input">
+		<span class="symbol">-</span>
+		<input type="password" title="주민번호 뒷자리" class="text-input">
+	</div>
+</div>
+		</div>
+		<div class="ng_code-preview">
+<div class="form-group">
+	<strong class="form-label">전화번호</strong>
+	<div class="form-items">
+		<div class="form-item">
+			<input type="tel" title="전화번호 앞자리" class="text-input">
+		</div>
+		<span class="symbol">-</span>
+		<div class="form-item">
+			<input type="tel" title="전화번호 가운데자리" class="text-input">
+		</div>
+		<span class="symbol">-</span>
+		<div class="form-item">
+			<input type="tel" title="전화번호 뒷자리" class="text-input">
+		</div>
+	</div>
+</div>
+		</div>
+		<div class="ng_code-preview">
+<div class="form-group">
+	<strong class="form-label">이메일주소</strong>
+	<div class="form-items">
+		<div class="form-item">
+			<input type="txt" title="이메일주소 앞자리" class="text-input">
+		</div>
+		<span class="symbol">-</span>
+		<div class="form-item">
+			<a href="javascript:;" title="이메일주소 뒷자리 선택" class="form-select"></a>	
+		</div>
+	</div>
+</div>
+						</div>
+					</div>
+						
+					</article>
+
+					<article id="form_check" class="ng ng_form">
+						<h1 class="ng_h1-title">체크박스와 라디오</h1>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">체크박스</h2>
+							<div class="ng_code-preview">
+<div class="form-check">
+	<input type="checkbox" value id="chk0101" class="check-input">
+	<label for="chk0101" class="form-check-label">
+		Default checkbox
+	</label>
+</div>
+<div class="form-check">
+	<input type="checkbox" value id="chk0102" class="check-input" checked>
+	<label for="chk0102" class="form-check-label">
+		Checked checkbox
+	</label>
+</div>
+<div class="form-check">
+	<input type="checkbox" value id="chk0103" class="check-input" disabled>
+	<label for="chk0103" class="form-check-label">
+		Checked disabled checkbox
+	</label>
+</div>
+<div class="form-check">
+	<input type="checkbox" value id="chk0104" class="check-input" checked disabled>
+	<label for="chk0104" class="form-check-label">
+		Checked disabled checkbox
+	</label>
+</div>
+		</div>
+	</div>
+
+	<div class="ng_code-box">
+		<h2 class="ng_h2-title">라디오</h2>
+		<p class="ng_desc-type1"> - input checkbox와 rario에서 id와 for의 <code class="badge">.rdo01</code>은 name. 그 뒤 <code class="badge">01</code>은 name 내의 번호로 정합니다.</p>
+		<div class="ng_code-preview">
+<div class="form-check">
+	<input type="radio" name="rdo01" id="rdo0101" class="check-input">
+	<label for="rdo0101" class="form-check-label">
+		Default radio
+	</label>
+</div>
+<div class="form-check">
+	<input type="radio" name="rdo01" id="rdo0102" class="check-input" checked>
+	<label for="rdo0102" class="form-check-label">
+		Checked radio
+	</label>
+</div>
+<div class="form-check">
+	<input type="radio" name="rdo11" id="rdo1101" class="check-input" disabled>
+	<label for="rdo0101" class="form-check-label">
+		Disabled radio
+	</label>
+</div>
+<div class="form-check">
+	<input type="radio" name="rdo11" id="rdo1102" class="check-input" disabled checked>
+	<label for="rdo0102" class="form-check-label">
+		Checked disabled radio
+	</label>
+</div>
+							</div>
+						</div>
+					
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">체크박스 인라인</h2>
+							<div class="ng_code-preview">
+<div class="form-check form-check-inline">
+	<input type="checkbox" value id="chk0201" class="check-input">
+	<label for="chk0201" class="form-check-label">
+		Default checkbox
+	</label>
+</div>
+<div class="form-check form-check-inline">
+	<input type="checkbox" value id="chk0202" class="check-input" checked>
+	<label for="chk0202" class="form-check-label">
+		Checked checkbox
+	</label>
+</div>
+<div class="form-check form-check-inline">
+	<input type="checkbox" value id="chk0203" class="check-input" disabled>
+	<label for="chk0203" class="form-check-label">
+		Checked disabled checkbox 
+	</label>
+</div>
+<div class="form-check form-check-inline">
+	<input type="checkbox" value id="chk0204" class="check-input" checked disabled>
+	<label for="chk0204" class="form-check-label">
+		Checked disabled checkbox
+	</label>
+</div>
+							</div>
+						</div>
+					
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">라디오 그룹 - 1/n</h2>
+							<p class="ng_desc-type1"> - input checkbox와 rario에서 id와 for의 <code class="badge">.rdo01</code>은 name. 그 뒤 <code class="badge">01</code>은 name 내의 번호로 정합니다.</p>
+							<div class="ng_code-preview">
+<div class="form-items-check">
+	<div class="form-check">
+		<input type="radio" name="rdo02" id="rdo0201" class="check-input">
+		<label for="rdo0201" class="form-check-label">
+			Default radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input type="radio" name="rdo02" id="rdo0202" class="check-input" checked>
+		<label for="rdo0202" class="form-check-label">
+			Default checked radio
+		</label>
+	</div>
+</div>
+<br>
+<div class="form-items-check">
+	<div class="form-check">
+		<input type="radio" name="rdo03" id="rdo0301" class="check-input">
+		<label for="rdo0301" class="form-check-label">
+			Default radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input type="radio" name="rdo03" id="rdo0302" class="check-input">
+		<label for="rdo0302" class="form-check-label">
+			Default checked radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input type="radio" name="rdo03" id="rdo0303" class="check-input" checked>
+		<label for="rdo0303" class="form-check-label">
+			Default checked radio
+		</label>
+	</div>
+</div>
+<br>
+<div class="form-items-check">
+	<div class="form-check">
+		<input type="radio" name="rdo04" id="rdo0401" class="check-input">
+		<label for="rdo0401" class="form-check-label">
+			Default radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input type="radio" name="rdo04" id="rdo0402" class="check-input">
+		<label for="rdo0402" class="form-check-label">
+			Default checked radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input type="radio" name="rdo04" id="rdo0403" class="check-input" checked>
+		<label for="rdo0403" class="form-check-label">
+			Default checked radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input type="radio" name="rdo04" id="rdo0404" class="check-input">
+		<label for="rdo0404" class="form-check-label">
+			Default checked radio
+		</label>
+	</div>
+</div>
+						</div>
+					</div>
+					
+					<div class="ng_code-box">
+						<h2 class="ng_h2-title">라디오 그룹 - 세로정렬</h2>
+						<p class="ng_desc-type1"> - input checkbox와 rario에서 id와 for의 <code class="badge">.rdo01</code>은 name. 그 뒤 <code class="badge">01</code>은 name 내의 번호로 정합니다.</p>
+						<div class="ng_code-preview">
+<div class="form-items-check form-item-row">
+	<div class="form-check">
+		<input type="radio" name="rdo05" id="rdo0501" class="check-input">
+		<label for="rdo0501" class="form-check-label">
+			Default radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input type="radio" name="rdo05" id="rdo0502" class="check-input" checked>
+		<label for="rdo0502" class="form-check-label">
+			Default checked radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input type="radio" name="rdo05" id="rdo0503" class="check-input" checked>
+		<label for="rdo0503" class="form-check-label">
+			Default checked radio
+		</label>
+	</div>
+</div>
+							</div>
+						</div>
+					
+					<div class="ng_code-box">
+						<h2 class="ng_h2-title">라디오 그룹 - 1/2</h2>
+						<p class="ng_desc-type1"> </p>
+						<div class="ng_code-preview">
+<div class="form-items-check form-item-col-5">
+	<div class="form-check">
+		<input type="radio" name="rdo06" id="rdo0601" class="check-input">
+		<label for="rdo0601" class="form-check-label">
+			Default radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input type="radio" name="rdo06" id="rdo0602" class="check-input" checked>
+		<label for="rdo0602" class="form-check-label">
+			Default checked radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input type="radio" name="rdo06" id="rdo0603" class="check-input" checked>
+		<label for="rdo0603" class="form-check-label">
+			Default checked radio
+		</label>
+	</div>
+</div>
+							</div>
+					</div>
+						
+					</article>
+
+					<article id="comp_btn" class="ng ng_component">
+						<h1 class="ng_h1-title">버튼</h1>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">버튼 기본형</h2>
+							<div class="ng_code-preview">
+<div>
+	<button type="button" class="btn btn-point">btn-point</button>
+	<button type="button" class="btn btn-point" disabled>btn-point:disabled</button>
+</div>
+</div>
+</div>
+
+<div class="ng_code-box">
+<h2 class="ng_h2-title">버튼 라인형</h2>
+<div class="ng_code-preview">
+<div>
+	<button type="button" class="btn btn-line-point">btn-line-point</button>
+	<button type="button" class="btn btn-line-default">btn-line-default</button>
+	<a href="javascript:;" role="button" class="btn btn-line-secondary">btn-line-secondary</a>
+	<button type="button" class="btn btn-line-default" disabled>btn-line-default:disabled</button>
+	<button type="button" class="btn btn-line-secondary" disabled>btn-line-secondary:disabled</button>
+</div>
+					</div>
+					</div>
+					
+					<div class="ng_code-box">
+					<h2 class="ng_h2-title">텍스트 버튼</h2>
+						<div class="ng_code-preview">
+<a href="javascript:;" title="링크페이지로 이동" class="link link-default">Link-default</a>
+<a href="javascript:;" title="링크페이지로 이동" class="link link-point">Link-point</a>
+						</div>
+					</div>
+					
+					<div class="ng_code-box">
+						<h2 class="ng_h2-title">버튼 크기</h2>
+						<p class="ng_desc-type1">
+							- 버튼의 크기를 <code class="badge">.btn-lg</code> 나 <code class="badge">.btn-sm</code>을 적용해 변경할 수 있습니다.<br>
+							- 기본 사이즈는 <code class="badge point">.btn-md</code>이다.
+						</p>
+						<div class="ng_code-preview">
+<button type="button" class="btn btn-point btn-lg">.btn-lg h32</button>
+<button type="button" class="btn btn-default btn-md">.btn-md h36</button>
+<button type="button" class="btn btn-line-point btn-sm">.btn-sm h30</button>
+<button type="button" class="btn btn-line-default btn-sm">.btn-sm h30</button>
+						</div>
+					</div>
+					
+					<div class="ng_code-box">
+						<h2 class="ng_h2-title">버튼그룹 - progress</h2>
+						<p class="ng_desc-type1"> - progress 버튼은 <code class="badge">.btn-group-progress</code>으로 감쌉니다.</p>
+						<div class="ng_code-preview">
+<div role="group" aria-label="진행 버튼" class="btn-group-progress">
+	<button type="button" class="btn btn-default">취소</button>
+	<button type="button" class="btn btn-point" disabled>확인</button>
+</div>
+<br>
+<div role="group" aria-label="진행 버튼" class="btn-group-progress">
+	<button type="button" class="btn btn-cancel">취소</button>
+	<button type="button" class="btn btn-point">확인</button>
+</div>
+<br>
+<div role="group" aria-label="진행 버튼" class="btn-group-progress half">
+	<button type="button" class="btn btn-cancel">취소</button>
+	<button type="button" class="btn btn-point">확인</button>
+</div>
+<br>
+<div role="group" aria-label="진행 버튼" class="btn-group-progress">
+	<button type="button" class="btn btn-point" disabled>확인</button>
+</div>
+<br>
+<div role="group" aria-label="진행 버튼" class="btn-group-progress">
+	<button type="button" class="btn btn-point">확인</button>
+</div>
+						</div>
+					</div>
+					
+					<div class="ng_code-box">
+						<h2 class="ng_h2-title">버튼그룹 - inline</h2>
+						<p class="ng_desc-type1">
+							- inline 버튼은 <code class="badge">.btn-group-inline</code>으로 감쌉니다.<br>
+							- 버튼의 크기를 <code class="badge">.btn-md</code>를 적용해 변경할 수 있습니다.
+						</p>
+						<div class="ng_code-preview">
+							<div class="btn-group-inline">
+								<button class="btn btn-inline">인증번호 전송</button>
+							</div>
+
+							<div class="btn-group-inline">
+								<button class="btn btn-inline btn-md">인증번호 전송</button>
+							</div>
+							
+							<div class="btn-group-inline">
+								<button class="btn btn-inline btn-md btn-bdc01">대출 한도/금리 다시 조회</button>
+							</div>
+						</div>
+					</div>
+					
+					</article>
+
+					<article id="comp_acc" class="ng ng_component">
+						<h1 class="ng_h1-title">아코디언</h1>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">아코디언 일반</h2>
+							<div class="ng_code-preview">
+<div class="accordion">
+	<div class="accordion-item">
+		<h2 id="headingOne" class="accordion-header">
+		<button type="button" aria-expanded="true" class="accordion-button">
+			Accordion Item #1
+		</button>
+		</h2>
+		<div class="accordion-collapse collapse show">
+		-
+		</div>
+	</div>
+	<div class="accordion-item">
+		<h2 id="headingTwo" class="accordion-header">
+		<button type="button" aria-expanded="false" class="accordion-button collapsed">
+			Accordion Item #2
+		</button>
+		</h2>
+		<div class="accordion-collapse collapse">
+			<div class="accordion-body">
+				nnnnnn
+			</div>
+		</div>
+	</div>
+	<div class="accordion-item">
+		<h2 id="headingThree" class="accordion-header">
+		<button type="button" aria-expanded="false" class="accordion-button collapsed">
+			Accordion Item #3
+		</button>
+		</h2>
+		<div id="collapseThree" class="accordion-collapse collapse">
+			<div class="accordion-body">
+				ccccc
+			</div>
+		</div>
+	</div>
+</div>
+							</div>
+						</div>
+						<!-- <div class="ng_code-box">
+							<h2 class="ng_h2-title">아코디언 일반</h2>
+							<div class="ng_code-preview">
+					<div class="accordion">
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingOne">
+							<button class="accordion-button" type="button" aria-expanded="true">
+								Accordion Item #1
+							</button>
+							</h2>
+							<div id="collapseOne" class="accordion-collapse collapse show">
+								<div class="accordion-body">
+									<strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the though the transition does limit overflow.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingTwo">
+							<button class="accordion-button collapsed" type="button" aria-expanded="false">
+								Accordion Item #2
+							</button>
+							</h2>
+							<div id="collapseTwo" class="accordion-collapse collapse">
+								<div class="accordion-body">
+									<strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the though the transition does limit overflow.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingThree">
+							<button class="accordion-button collapsed" type="button" aria-expanded="false">
+								Accordion Item #3
+							</button>
+							</h2>
+							<div id="collapseThree" class="accordion-collapse collapse">
+								<div class="accordion-body">
+									<strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the , though the transition does limit overflow.
+								</div>
+							</div>
+						</div>
+						</div>
+							</div>
+						</div> -->
+					</article>
+
+					<article id="comp_tab" class="ng ng_component">
+						<h1 class="ng_h1-title">탭</h1>
+						<p class="ng_desc-type1"> - tab 활성화시 <code class="badge">ng-active</code> 클레스 추가.</p>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">탭 기본</h2>
+							<div class="ng_code-preview">
+<div class="ng_tabs">
+	<ul role="tablist" class="ng_tabs-nav">
+		<li class="ng_tabs-list ng-active"><a href="#!" role="tab" class="ng_tabs-item">입출금</a></li>
+		<li class="ng_tabs-list"><a href="#!" role="tab" class="ng_tabs-item">예적금/신탁</a></li>
+		<li class="ng_tabs-list"><a href="#!" role="tab" class="ng_tabs-item">대출</a></li>
+		<li class="ng_tabs-list"><a href="#!" role="tab" class="ng_tabs-item">펀드</a></li>
+		<li class="ng_tabs-list"><a href="#!" role="tab" class="ng_tabs-item">외화</a></li>
+	</ul>
+	<div class="ng_tabs-container">
+		<div role="tabpanel" class="ng_tabs-panel"><p>텝 컨텐츠1</p></div>
+		<div role="tabpanel" class="ng_tabs-panel">
+
+			<!-- sub tabs -->
+			<div class="ng_tabs">
+				<ul role="tablist" class="ng_tabs-nav">
+					<li class="ng_tabs-list"><a href="#!" role="tab" class="ng_tabs-item">입출금</a></li>
+					<li class="ng_tabs-list"><a href="#!" role="tab" class="ng_tabs-item">예적금/신탁</a></li>
+					<li class="ng_tabs-list ng-active"><a href="#!" role="tab" class="ng_tabs-item">대출</a></li>
+					<li class="ng_tabs-list"><a href="#!" role="tab" class="ng_tabs-item">펀드</a></li>
+					<li class="ng_tabs-list"><a href="#!" role="tab" class="ng_tabs-item">외화</a></li>
+				</ul>
+
+			</div>
+			<!-- //sub tabs -->
+
+		</div>
+		<div role="tabpanel" class="ng_tabs-panel"><p>텝 컨텐츠3</p></div>
+		<div role="tabpanel" class="ng_tabs-panel"><p>텝 컨텐츠4</p></div>
+		<div role="tabpanel" class="ng_tabs-panel"><p>텝 컨텐츠5</p></div>
+	</div>
+</div>
+							</div>
+						</div>
+					</article>
+
+					<article id="layout_header" class="ng ng_layout">
+						<h1 class="ng_h1-title">헤더</h1>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">header</h2>
+							<p class="ng_text">
+								h1 태그는 header 안에 있는 제목에만 사용한다.
+							</p>
+<div class="ng_code-preview">
+<header class="header">
+	<button title="뒤로가기" class="btn-back"></button>
+	<h1>대출신청</h1>
+	<button title="메인으로" class="btn-home"></button>
+	<button title="전체메뉴" class="btn-menu"></button>
+</header>
+</div>					
+						</div>
+					</article>
+
+					<article id="layout_breadcrumb" class="ng ng_layout">
+						<h1 class="ng_h1-title">스탭</h1>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">breadcrumb</h2>
+<div class="ng_code-preview">
+<nav aria-label="breadcrumb" class="breadcrumb">
+	<h2 class="breadcrumb-tit">상품 추천</h2>
+	<ol>
+		<li aria-current="page" class="breadcrumb-item _active">STEP 3</li>
+		<li class="breadcrumb-item">/ 8</li>
+	</ol>
+</nav>
+</div>					
+						</div>
+					</article>
+
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<!-- //Container -->
+
+	<!-- Footer -->
+	<footer class="ng_footer">
+		<div class="ng_footer-inner">
+			<p>&copy; Septem Corp. All rights reserved.</p>
+		</div>
+	</footer>
+	<!-- //Footer -->
+</div><!-- //wrap -->
+
+<script>
+$('.ng_code-preview').each(function(){
+	let html = $(this).html().replace(/</g, '&lt;').replace(/>/g, '&gt;');
+	$(`<pre><code data-lang="html">${html}</code></pre>`).insertAfter(this);
+});
+</script>
+<script>
+const items = document.querySelectorAll('.ng_aside a');
+const eventHandler = {
+	mouseenter: function() {
+		const title = this.querySelector('h1').innerText;
+		const selectItem = Array.from(items).reduce((matched, obj)=> {
+			if (matched) { return matched; }
+			if (title == obj.innerText) { return obj;	}
+		}, false);		
+		if (selectItem) {
+			$(items).removeAttr('style');
+			$(selectItem).css({borderRadius: '11px', color: '#000',border:'2px solid #02aa5f'})
+			// $(this).css({backgroundColor: 'beige'})
+		}
+	},
+	mouseleave: function() {
+		$(items).removeAttr('style');
+		// $(this).css({backgroundColor: ''})
+	}
+}
+$('article.ng').on(eventHandler);
+$(window).on({scroll: ()=> {
+	const scrollY = window.pageYOffset;
+	const offsetTop = $('.ng_h1-title').offset().top;
+	const dpStyle = (scrollY > offsetTop) ? 'none' : 'flex';
+	document.querySelector('.ng_nav').style.display = dpStyle;
+}})
+
+</script>
+</body>
+</html>

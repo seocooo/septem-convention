@@ -1,0 +1,184 @@
+// Variables
+
+// prefix
+$prefix: "ng";
+$base: $prefix;
+$css-prefix: "--#{$prefix}"; // --ng
+$ani-prefix: "ani-#{$prefix}"; // ani-ng
+
+/* 
+	클래스명 정의
+	c : color
+	f : font
+	bg : background
+	bd : border
+*/
+.#{$base} { //.ng
+	$base: &;
+	.ng_main {
+		--ng_c-main:#00AB5F;
+		// --ng_c-sub-01:#685EFD;
+		// --ng_c-sub-02:#F4F6F9;
+		// --ng_c-error: #E24949;
+	
+		// --ng_gray-0: #FFFFFF;
+		// --ng_gray-50: #F8F8F8;
+		// --ng_gray-100: #E6E6E6;
+		// --ng_gray-200: #D9D9D9;
+		// --ng_gray-300: #BFBFBF;
+		// --ng_gray-400: #A6A6A6;
+		// --ng_gray-500: #909090;
+		// --ng_gray-600: #777777;
+		// --ng_gray-700: #555555;
+		// --ng_gray-800: #343434;
+		// --ng_gray-900: #121212;
+	
+		// --ng_white: var(--ng_gray-0);
+		// --ng_black: var(--ng_gray-900);
+	
+		// --ng_fc-01: var(--ng_black);
+		// --ng_fc-02: var(--ng_gray-800);
+		// --ng_fc-03: var(--ng_gray-700);
+		// --ng_fc-04: var(--ng_gray-500);
+		// --ng_fc-05: var(--ng_gray-300);
+	
+		// --ng_fw-r: 400; 
+		// --ng_fw-m: 500;
+		// --ng_fw-b: 700;
+
+		// --ng_gray-bg-01: var(--ng_gray-50);
+		// --ng_gray-bg-02: #F3F2F7;
+		// --ng_green-bg-01: #EAF9F1;
+	
+		// --ng_green-01: var(--ng_green-bg-01);
+		// --ng_green-02: #29B475;
+		// --ng_blue-01: #F0EFFF;
+		// --ng_blue-02: #685EFD;
+		// --ng_red-01: #F8E7E9;
+		// --ng_red-02: var(--ng_c-error);
+		// --ng_gray-01: #EBEBEC; 
+	
+		// --ng_select-c: var(--ng_green-02);
+		// --ng_error-c: var(--ng_red-02);
+		
+		// --ng_shadow-01: 0px 4px 8px rgba(0, 0, 0, 0.1);
+		// --ng_shadow-02: 0px 2px 4px rgba(0, 0, 0, 0.1);
+		// --ng_shadow-02-bd: 2px solid var(--ng_c-main);
+
+		// --ng_font-f-noto: 'Noto Sans KR', stem-ui, -apple-system, sans-serif;
+		// --ng_font-f-roboto: 'Roboto', 'Noto Sans KR', stem-ui, -apple-system, sans-serif;
+		--ng_ff-D2: 'D2', stem-ui, -apple-system, sans-serif;
+		--ng_ls-01: -0.025em;
+
+		// --ng_line-c-01: #F3F2F7;
+		// --ng_line-c-02: #EAE9EF;
+		// --ng_line-c-03: #E1E1E1;
+		// --ng_line-c-04: #DDDDDD;
+		// --ng_line-c-05: #CCCCCC;
+		// --ng_line-c-06: #999999;
+
+		// --ng_input-line-color:var(--ng_line-c-01);
+
+		// --ng_pd01: 15px 20px;	
+		// --ng_pd02: 13px 15px;
+
+		// --ng_h01: 30px;
+		// --ng_h02: 36px;
+		// --ng_h03: 42px;
+		// --ng_h04: 48px;
+		// --ng_h05: 54px;
+	
+		// --ng_bdc-01: var(--ng_line-c-03);
+		// --ng_bdc-02: var(--ng_c-main);
+
+		// --ng_bdr-01: 6px;
+		// --ng_bdr-02: 8px;
+		// --ng_bdr-03: 10px;
+		// --ng_bdr-04: 12px;
+		// --ng_bdr-05: 15px;
+
+		// --ng_hr-c: var(--ng_gray-bg-01);
+		// --ng_hr-h: 10px
+		// --ng_hr-mg: 40px;
+
+		// --ng_fz-01: 14px;
+		// --ng_fz-02: 16px;
+		// --ng_fz-03: 18px;
+		// --ng_fz-04: 20px;
+		// --ng_fz-05: 24px;
+		// --ng_fz-06: 30px;
+		
+
+		// --ng_lh-01: 22px;
+		// --ng_lh-02: 24px;
+		// --ng_lh-03: 26px;
+		// --ng_lh-04: 30px;
+		// --ng_lh-05: 34px;
+		// --ng_lh-06: 40px;
+
+		// --ng_body-bg:				var(--ng_white)
+		// --ng_body-c:				var(--ng_fc-03);
+		--ng_body-ff:				var(--ng_ff-D2);
+		// --ng_body-fz:				var(--ng_fz-01);
+		// --ng_body-fw:				var(--ng_fw-r);
+		// --ng_body-text-align:		left;
+
+		// --ng_input-h:				var(--ng_h01);
+		// --ng_input-font-size:		var(--ng_font-s-02);
+		// --ng_input-padding:		15px 20px;
+		// --ng_input-lh:				var(--ng_lh-05);
+		// --ng_input-bd-c:			var(--ng_bd-c-01);
+		// --ng_input-bd-c-active:	var(--ng_c-main);
+		// --ng_input-bd-c-error:		var(--ng_c-error); 
+		// --ng_input-bd:				1px 1px 1px 1px solid var(--ng_input-bd-c);
+		// --ng_input-bd-r:			var(--ng_bd-r-05);
+
+		// --ng_radio-h: var(--ng_h02);
+		
+		//reboot
+		--ng_heading-font-w:		var(--ng_font-w-b);
+		--ng_heading-h1-font-w:	var(--ng_font-w-r);
+		--ng_heading-h1-font-s:	var(--ng_font-s-02);
+		--ng_heading-h2-font-s:	var(--ng_font-s-05);
+		--ng_heading-h3-font-s:	var(--ng_font-s-04);
+		--ng_heading-h4-font-s:	var(--ng_font-s-03);
+		--ng_heading-h5-font-s:	var(--ng_font-s-02);
+		--ng_heading-h6-font-s:	var(--ng_font-s-01);
+		--ng_heading-h1-font-lh:	var(--ng_lh-02);
+		--ng_heading-h2-font-lh:	var(--ng_lh-05);
+		--ng_heading-h3-font-lh:	var(--ng_lh-04);
+		--ng_heading-h4-font-lh:	var(--ng_lh-03);
+		--ng_heading-h5-font-lh:	var(--ng_lh-02);
+		--ng_heading-h6-font-lh:	var(--ng_lh-01);
+		--ng_dt-font-w:			var(--ng_font-w-b);
+		--ng_strong-font-w:		var(--ng_font-w-b);
+		--ng_small-font-size:		.875em;
+		--ng_mark-pd:				1em;
+		--ng_mark-bg-c:			var(--ng_green-01);
+		--ng_link-c:				inherit;
+		--ng_link-hover-c:			inherit;
+		--ng_link-decoration:		none;
+		--ng_font-family-code:		var(--ng_font-f-roboto);
+		--ng_pre-c:				var(--ng_black);
+		--ng_code-font-f:			var(--ng_body-font);
+		--ng_code-font-s:			1em;
+		--ng_code-font-c:			var(--ng_black);
+		--ng_kbd-pd:				10px;
+		--ng_kbd-bg:				var(--ng_gray-bg-01);
+		--ng_kbd-bd-r:				var(--ng_bd-r-01);
+		--ng_kbd-kbd-font-w:		var(--ng_font-w-b);
+		--ng_legend-mb:			0px;
+		--ng_legend-font-s:		0px;
+
+		--ng_table-caption:			.5rem .5rem;
+		--ng_table-cell-pd:			.5rem .5rem;
+		--ng_table-cell-vertical-a:	top;
+		--ng_table-c:					var(--ng_body-c);
+		--ng_table-bg:					transparent;
+		--ng_table-th-font-w:			var(--ng_font-w-r);
+		--ng_table-accent-bg:			transparent;
+	}
+}
+@mixin text01{font-size:var(--ng_font-s-03);line-height:var(--ng_lh-03);letter-spacing:var(--ng_ls-01);}
+@mixin text02{font-size:var(--ng_font-s-02);line-height:var(--ng_lh-02);letter-spacing:var(--ng_ls-01);}
+@mixin text03{font-size:var(--ng_font-s-01);line-height:var(--ng_lh-01);letter-spacing:var(--ng_ls-01);}

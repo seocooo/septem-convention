@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-title" content="NH Bank">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta name="robots" content="no-index,follow">
+	<title>:::NH통합스마트뱅킹 || 펀드리스트:::</title>
+	<script src="../com/js/head.js"></script>
+</head>
+<body>
+	<!-- wrap -->
+	<div class="wrap">
+
+		<!-- header -->
+		<header class="header">
+			<button title="뒤로가기" class="btn-back"></button>
+			<h1>대출신청</h1>
+			<button title="메인으로" class="btn-home"></button>
+			<button title="전체메뉴" class="btn-menu"></button>
+		</header>
+		<!-- //header -->
+
+		<!-- container -->
+		<div class="container">
+
+			<nav aria-label="breadcrumb" class="breadcrumb">
+				<h2 class="breadcrumb-tit">대출 희망정보 입력</h2>
+				<ol>
+					<li aria-current="page" class="breadcrumb-item _active">STEP 2</li>
+					<li class="breadcrumb-item">/ 8</li>
+				</ol>
+			</nav>
+
+			<section class="sec">
+				<div class="process-tit-wrap">
+					<strong class="h4">직장인을 위한 신용대출</strong>
+				</div>
+			</section>
+
+			<section class="sec">
+				
+				<div class="form-group">
+					<strong class="form-label">희망금액</strong>
+					<div class="form-item">
+						<input type="txt" title="희망금액" value class="text-input" placeholder="100만원 이상 입력해주세요.">
+						<button title="입력값 초기화" class="btn-reset"></button>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<strong class="form-label">상환방법</strong>
+					<div class="form-items-check form-item-row">
+						<div class="form-check">
+							<input type="radio" name="rdo05" id="rdo0501" class="check-input" checked>
+							<label for="rdo0501" class="form-check-label">
+								한꺼번에 갚기<br>(일시상환 대출)
+							</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" name="rdo05" id="rdo0502" class="check-input">
+							<label for="rdo0502" class="form-check-label">
+								나눠서 갚기<br>(분할상환 대출)
+							</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" name="rdo05" id="rdo0503" class="check-input">
+							<label for="rdo0503" class="form-check-label">
+								수시로갚기<br>(마이너스대출)
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<strong class="form-label">대출기간</strong>
+					<div class="form-items-check form-item-col-5">
+						<div class="form-check">
+							<input type="radio" name="rdo05" id="rdo0501" class="check-input" checked>
+							<label for="rdo0501" class="form-check-label">
+								1년
+							</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" name="rdo05" id="rdo0502" class="check-input">
+							<label for="rdo0502" class="form-check-label">
+								2년
+							</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" name="rdo05" id="rdo0503" class="check-input">
+							<label for="rdo0503" class="form-check-label">
+								3년
+							</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" name="rdo05" id="rdo0503" class="check-input">
+							<label for="rdo0503" class="form-check-label">
+								4년
+							</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" name="rdo05" id="rdo0503" class="check-input">
+							<label for="rdo0503" class="form-check-label">
+								5년
+							</label>
+						</div>
+					</div>
+				</div>
+
+			</section>
+		</div>
+		<!-- // container -->
+
+		<!-- footer -->
+		<footer role="group" aria-label="진행 버튼" class="footer btn-group-progress">
+			<button type="button" class="btn btn-default">취소</button>
+			<button type="button" class="btn btn-point">다음</button>
+		</footer>
+		<!-- // footer -->
+
+	</div>
+	<!-- // wrap -->
+
+</body>
+</html>

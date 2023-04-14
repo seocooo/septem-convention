@@ -1,0 +1,25 @@
+
+@charset 'UTF-8';
+/*!
+ * Ve000000rsion: 0.1
+ * Copyright ⓒSeptem UI Team (2023)
+ */
+
+
+@import 'base';
+
+
+ // css variable setting
+//  :root {
+//   @include cssVar((
+//     'font': $font-family-base,
+//   ));
+//}
+ @import './variables';
+//  @import "./mixin";
+
+ @import './reboot';
+ @import './webfont';
+ @import './typo';
+ @import './component';
+ @import './cssanimation';

@@ -1,0 +1,21 @@
+.ng_tabs {
+  $tabs: &;
+  &-nav {
+    display: flex;
+  }
+  &-list {
+    flex:1 auto; height: var(--tab-height, 44px); overflow: hidden; background: papayawhip;
+    &:first-child { border-top-left-radius: var(--tab-round, 12px); }
+    &:last-child { border-top-right-radius: var(--tab-round, 12px); }
+    &.ng-active {
+      background: darkorchid;
+      #{$tabs}-item { color:#fff; }
+    }
+  }
+  &-item {
+    display: flex; height:100%; place-content: center; place-items: center;
+  }
+
+  &-container {padding: 1rem 1.5rem;}
+  &-panel:not(.ng-active) { display: none; }
+}

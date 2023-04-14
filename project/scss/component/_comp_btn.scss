@@ -1,0 +1,58 @@
+
+// .#{$base} {
+//   $base: &;
+
+//   .btn{
+//     display:inline-flex;
+//     align-items:center;
+//     justify-content:center;
+//     font-size:12px;
+//     padding:0 15px;height:30px;border-radius:15px;
+//     &:disabled{background-color:$disabled;color:$disabled-color}
+//     &-lg{padding:0 15px;height:32px;border-radius:16px;}
+//     &-sm{padding:0 10px;height:24px;border-radius:12px;}
+//   }
+  
+//   @each $name, $bg, $color in $btn-color {
+//     .btn-#{$name} {
+//       background-color:$bg;
+//       color:$color;
+//     }
+//   }
+
+//   @each $name, $color, $none, $bdcolor  in $btn-color {
+//     .btn-line-#{$name} {
+//       color:$color;
+//       border:1px solid $bdcolor;
+//       background-color:$white;    
+//     }
+//   }
+
+//   [class*="btn-line"]:disabled {
+//     color:$disabled-color;
+//     border-color: $disabled;
+//     background-color: $white;
+//   }
+
+//   @each $name, $color in $btn-color {
+//     .link-#{$name} {
+//       color:$color;
+//       text-decoration:underline;
+//       text-underline-position:under;
+//     }
+//   }
+
+//   [class*="btn-group"]{
+//     display:flex;
+//     padding:0 16px;  
+//     .btn{
+//       flex:1 1 50%;
+//       height:54px;
+//       border-radius:8px;
+//       font-size:16px;
+//       &.btn-cancel{flex-basis:30%;}
+//       &:nth-child(n+2){margin-left:12px;}
+//       &-md{height:42px;border-radius:5px;}
+//     }
+//   }
+// }

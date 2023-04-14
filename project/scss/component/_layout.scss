@@ -1,0 +1,78 @@
+
+
+// 임시 소스
+$side-padding: 1.5rem;
+html, body {font-size: 14px;}
+.blind {position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;margin:-1px;overflow:hidden}
+button, a { padding:6px 12px; }
+
+.#{$base} { //.ng
+  $base: &;
+  &-show {display: var(#{$css-prefix}-show, block) !important;}
+  &-hide {display: none !important;}
+  &-ishow {display: inline-block !important;}
+  &-flex {display: flex !important;}
+  &-iflex {display: inline-flex !important;}
+  &-fade {animation: #{$ani-prefix}-fade .35s forwards ease-out;}
+
+  // nav & tab
+  &_nav { display: flex; align-items: center; }
+  &_nav-fill { width: 100%; flex-wrap: wrap; }
+  &_nav-list {
+    &#{$base}_active {
+      --bg-color: rgba(255,0,0, 0.5);
+    }
+    // flex: 1 auto;
+    @at-root .ng_nav-fill & { flex:1 } // 균등하게.
+  }
+
+  //.ng_gnb
+  &_gnb {
+    padding-left: $side-padding; padding-right: $side-padding;
+    .ng_nav-list > a {display: flex; align-items: center;justify-content: center; height: 40px; background: var(--bg-color, #fafafa); }
+  }
+
+  // .ng_header
+  &_header {
+    &-inner { display: flex; align-items:center; width: 100%; height: 80px; padding-left: $side-padding;padding-right: $side-padding; }
+    .ng_l-menu {order: 1;margin-right: 8px;}
+    .ng_title {order: 2;flex:1 auto;}
+    .ng_r-menu {order: 3;margin-left: auto;}
+  }
+
+  // ng_main
+  &_main {
+    position: relative; padding: 3rem $side-padding; display: grid;align-content: stretch;
+    grid-template-areas: "sidebar main";
+    grid-template-columns: 200px 1fr;
+    @media screen and (max-width: 980px) {
+      grid-template-columns: 0 5fr;
+    }
+  }
+
+  // ng_aside
+  &_aside {
+    @media screen and (max-width: 980px) {
+      display: none;
+    }
+    position: sticky; top:0; left:0;grid-area: sidebar;
+    a { display: block; font-size: 1rem; line-height: 1.5;}
+  }
+
+  // ng_container
+  &_container {
+    grid-area: main;
+  }
+
+  // ng_footer
+  &_footer {
+    padding-left: $side-padding;padding-right: $side-padding;
+  }
+
+  // ng_component
+  &_component {
+    margin-top: 50px;
+    .ng_desc-type1 { margin-bottom: 1.5rem; }
+  }
+
+}

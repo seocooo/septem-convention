@@ -1,0 +1,90 @@
+//
+// Headings
+//
+.h1 {
+	font-size: var(--heading-h1-fz);
+	line-height: var(--heading-h1-lh);
+	font-weight: var(--fw-b);
+}
+
+.h2 {
+	font-size: var(--heading-h2-fz);
+	line-height: var(--heading-h2-lh);
+	font-weight: var(--fw-b);
+}
+
+.h3 {
+	font-size: var(--heading-h3-fz);
+	line-height: var(--heading-h3-lh);
+	font-weight: var(--fw-b);
+}
+
+.h4 {
+	font-size: var(--heading-h4-fz);
+	line-height: var(--heading-h4-lh);
+	font-weight: var(--fw-b);
+}
+
+.h5 {
+	font-size: var(--heading-h5-fz);
+	line-height: var(--heading-h5-lh);
+	font-weight: var(--fw-b);
+}
+
+.h6 {
+	font-size: var(--heading-h6-fz);
+	line-height: var(--heading-h6-lh);
+	font-weight: var(--fw-b);
+}
+
+//
+// body
+//
+@mixin body01{
+	font-size:var(--fz-03);
+	line-height:var(--lh-03);
+	letter-spacing:var(--ls-01);
+}
+@mixin body02{
+	font-size:var(--fz-02);
+	line-height:var(--lh-02);
+	letter-spacing:var(--ls-01);
+}
+@mixin body03{
+	font-size:var(--fz-01);
+	line-height:var(--lh-01);
+	letter-spacing:var(--ls-01);
+}
+
+//
+// list
+//
+.list01{
+	font-size:var(--fz-03);
+	line-height:var(--lh-03);
+	letter-spacing:var(--ls-01);
+}
+.list02{
+	font-size:var(--fz-02);
+	line-height:var(--lh-02);
+	letter-spacing:var(--ls-01);
+}
+.list03{
+	font-size:var(--fz-01);
+	line-height:var(--lh-01);
+	letter-spacing:var(--ls-01);	
+}
+
+//
+// table
+//
+.table01{
+	font-size:var(--fz-02);
+	line-height:var(--lh-02);
+	letter-spacing:var(--ls-01);
+}
+.table02{
+	font-size:var(--fz-01);
+	line-height:var(--lh-01);
+	letter-spacing:var(--ls-01);
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-title" content="NH Bank">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta name="robots" content="no-index,follow">
+	<title>:::NH통합스마트뱅킹 || 펀드리스트:::</title>
+	<script src="../com/js/head.js"></script>
+</head>
+<body>
+	<!-- wrap -->
+	<div class="wrap">
+
+		<!-- header -->
+		<header class="header">
+			<button title="뒤로가기" class="btn-back"></button>
+			<h1>예금</h1>
+			<button title="메인으로" class="btn-home"></button>
+			<button title="전체메뉴" class="btn-menu"></button>
+		</header>
+		<!-- //header -->
+
+		<!-- container -->
+		<div class="container">
+
+			<nav aria-label="breadcrumb" class="breadcrumb">
+				<h2 class="breadcrumb-tit">예금신청 정보입력</h2>
+				<ol>
+					<li aria-current="page" class="breadcrumb-item _active">STEP 2</li>
+					<li class="breadcrumb-item">/ 4</li>
+				</ol>
+			</nav>
+
+			<section class="sec">
+				<div class="process-tit-wrap">
+					<strong class="h4">정보를 입력해주세요</strong>
+				</div>
+			</section>
+
+			<section class="sec">
+				<div class="title-group">
+					<strong class="title">계약기간</strong>
+				</div>
+				<div class="form-range">
+					<input type="range" title="계약기간" value="12" id="myinput" max="24" min="6" step="6" list="tickmarks">
+					<div id="rangeV" class="range-value"><span class="range-bubble">12개월</span></div>
+					<datalist id="tickmarks">
+						<option value="6">6개월</option>
+						<option value="12">12개월</option>
+						<option value="18">18개월</option>
+						<option value="24">24개월</option>
+					  </datalist>
+				</div>
+				<div class="title-group">
+					<strong class="title">우대쿠폰<em class="title-sub">0.0%</em></strong>
+					<button class="btn btn-sm">쿠폰사용</button>
+				</div>  
+			</section>
+			<hr>
+		</div>
+		<!-- // container -->
+
+		<!-- footer -->
+		<footer role="group" aria-label="진행 버튼" class="footer btn-group-progress">
+			<button type="button" class="btn btn-default">취소</button>
+			<button type="button" class="btn btn-point" disabled>다음</button>
+		</footer>
+		<!-- // footer -->
+
+	</div>
+	<!-- // wrap -->
+
+	<script>
+		const slider = document.getElementById("myinput");
+		const min = slider.min;
+		const max = slider.max;
+		const value = slider.value;
+		const bgc = '#ddd';
+		const bgp = '#02AA5F';
+		slider.style.background = `linear-gradient(to right, ${bgp} 0%, ${bgp} ${(value-min)/(max-min)*100}%, ${bgc} ${(value-min)/(max-min)*100}%, ${bgc} 100%)`
+		slider.oninput = function() {
+		this.style.background = `linear-gradient(to right, ${bgp} 0%, ${bgp} ${(this.value-this.min)/(this.max-this.min)*100}%, ${bgc} ${(this.value-this.min)/(this.max-this.min)*100}%, ${bgc} 100%)`
+		};
+	</script>
+
+</body>
+</html>

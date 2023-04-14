@@ -1,0 +1,217 @@
+<article id="form_check" class="ng ng_form">
+	<h1 class="ng_h1-title">체크박스와 라디오</h1>
+	<div class="ng_code-box">
+		<h2 class="ng_h2-title">체크박스</h2>
+		<div class="ng_code-preview">
+<div class="form-check">
+	<input class="form-check-input" type="checkbox" value="" id="chk0101">
+	<label class="form-check-label" for="chk0101">
+		선택되지 않은 체크박스
+	</label>
+</div>
+<div class="form-check">
+	<input class="form-check-input" type="checkbox" value="" id="chk0102" checked>
+	<label class="form-check-label" for="chk0102">
+		선택된 체크박스
+	</label>
+</div>
+<div class="form-check">
+	<input class="form-check-input" type="checkbox" value="" id="chk0103" disabled>
+	<label class="form-check-label" for="chk0103">
+		선택되지 않은 disabled 체크박스
+	</label>
+</div>
+<div class="form-check">
+	<input class="form-check-input" type="checkbox" value="" id="chk0104" checked disabled>
+	<label class="form-check-label" for="chk0104">
+		선택된 disabled 체크박스
+	</label>
+</div>
+		</div>
+	</div>
+
+	<div class="ng_code-box">
+		<h2 class="ng_h2-title">라디오</h2>
+		<p class="ng_desc-type1"> - input checkbox와 rario에서 id와 for의 <code class="badge">.rdo01</code>은 name. 그 뒤 <code class="badge">01</code>은 name 내의 번호로 정합니다.</p>
+		<div class="ng_code-preview">
+<div class="form-check">
+	<input class="form-check-input" type="radio" name="rdo01" id="rdo0101">
+	<label class="form-check-label" for="rdo0101">
+		선택되지 않은 라디오
+	</label>
+</div>
+<div class="form-check">
+	<input class="form-check-input" type="radio" name="rdo01" id="rdo0102" checked>
+	<label class="form-check-label" for="rdo0102">
+		선택된 라디오
+	</label>
+</div>
+<div class="form-check">
+	<input class="form-check-input" type="radio" name="rdo11" id="rdo1101" disabled>
+	<label class="form-check-label" for="rdo0101">
+		선택되지 않은 라디오
+	</label>
+</div>
+<div class="form-check">
+	<input class="form-check-input" type="radio" name="rdo11" id="rdo1102" disabled checked>
+	<label class="form-check-label" for="rdo0102">
+		선택된 라디오
+	</label>
+</div>
+		</div>
+	</div>
+
+	<div class="ng_code-box">
+		<h2 class="ng_h2-title">체크박스 인라인</h2>
+		<div class="ng_code-preview">
+<div class="form-check form-check-inline">
+	<input class="form-check-input" type="checkbox" value="" id="chk0201">
+	<label class="form-check-label" for="chk0201">
+		Default checkbox
+	</label>
+</div>
+<div class="form-check form-check-inline">
+	<input class="form-check-input" type="checkbox" value="" id="chk0202" checked>
+	<label class="form-check-label" for="chk0202">
+		Checked checkbox
+	</label>
+</div>
+<div class="form-check form-check-inline">
+	<input class="form-check-input" type="checkbox" value="" id="chk0203" disabled>
+	<label class="form-check-label" for="chk0203">
+		Checked disabled checkbox 
+	</label>
+</div>
+<div class="form-check form-check-inline">
+	<input class="form-check-input" type="checkbox" value="" id="chk0204" checked disabled>
+	<label class="form-check-label" for="chk0204">
+		Checked disabled checkbox
+	</label>
+</div>
+		</div>
+	</div>
+
+	<div class="ng_code-box">
+		<h2 class="ng_h2-title">라디오 그룹 - 1/n</h2>
+		<p class="ng_desc-type1"> - input checkbox와 rario에서 id와 for의 <code class="badge">.rdo01</code>은 name. 그 뒤 <code class="badge">01</code>은 name 내의 번호로 정합니다.</p>
+		<div class="ng_code-preview">
+<div class="form-group-check">
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rdo02" id="rdo0201">
+		<label class="form-check-label" for="rdo0201">
+			Default radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rdo02" id="rdo0202" checked>
+		<label class="form-check-label" for="rdo0202">
+			Default checked radio
+		</label>
+	</div>
+</div>
+<br>
+<div class="form-group-check">
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rdo03" id="rdo0301">
+		<label class="form-check-label" for="rdo0301">
+			Default radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rdo03" id="rdo0302">
+		<label class="form-check-label" for="rdo0302">
+			Default checked radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rdo03" id="rdo0303" checked>
+		<label class="form-check-label" for="rdo0303">
+			Default checked radio
+		</label>
+	</div>
+</div>
+<br>
+<div class="form-group-check">
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rdo04" id="rdo0401">
+		<label class="form-check-label" for="rdo0401">
+			Default radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rdo04" id="rdo0402">
+		<label class="form-check-label" for="rdo0402">
+			Default checked radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rdo04" id="rdo0403" checked>
+		<label class="form-check-label" for="rdo0403">
+			Default checked radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rdo04" id="rdo0404">
+		<label class="form-check-label" for="rdo0404">
+			Default checked radio
+		</label>
+	</div>
+</div>
+	</div>
+</div>
+
+<div class="ng_code-box">
+	<h2 class="ng_h2-title">라디오 그룹 - 세로정렬</h2>
+	<p class="ng_desc-type1"> - input checkbox와 rario에서 id와 for의 <code class="badge">.rdo01</code>은 name. 그 뒤 <code class="badge">01</code>은 name 내의 번호로 정합니다.</p>
+	<div class="ng_code-preview">
+<div class="form-group-check form-group-row">
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rdo05" id="rdo0501">
+		<label class="form-check-label" for="rdo0501">
+			Default radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rdo05" id="rdo0502" checked>
+		<label class="form-check-label" for="rdo0502">
+			Default checked radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rdo05" id="rdo0503" checked>
+		<label class="form-check-label" for="rdo0503">
+			Default checked radio
+		</label>
+	</div>
+</div>
+		</div>
+	</div>
+
+<div class="ng_code-box">
+	<h2 class="ng_h2-title">라디오 그룹 - 1/2</h2>
+	<p class="ng_desc-type1"> </p>
+	<div class="ng_code-preview">
+<div class="form-group-check form-group-col-5">
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rdo06" id="rdo0601">
+		<label class="form-check-label" for="rdo0601">
+			Default radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rdo06" id="rdo0602" checked>
+		<label class="form-check-label" for="rdo0602">
+			Default checked radio
+		</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rdo06" id="rdo0603" checked>
+		<label class="form-check-label" for="rdo0603">
+			Default checked radio
+		</label>
+	</div>
+</div>
+		</div>
+	</div>
+	
+</article>

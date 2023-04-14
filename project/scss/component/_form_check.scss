@@ -1,0 +1,112 @@
+// .#{$base} { //.ng
+// 	$base: &;
+// 	$margin: 6px;
+// 	label{min-height:24px;line-height:24px;}
+// 	input[type="checkbox"]{
+// 		width:24px;height:24px;background:url('../img/input_chk.png') 0 0 /96px 24px no-repeat;
+// 		vertical-align:top;
+// 		&:checked{
+// 			background-position-x:-24px;
+// 		}
+// 		&:disabled{
+// 			background-position-x:-48px;
+// 			&:checked{
+// 				background-position-x:-72px;
+// 			}
+// 		}
+// 	}
+// 	input[type="radio"]{
+// 		width:28px;height:28px;background:url('../img/input_rdo.png') 0 0 /112px 28px no-repeat;
+// 		vertical-align:top;
+// 		&:checked{
+// 			background-position-x:-28px;
+// 		}
+// 		&:disabled{
+// 			background-position-x:-56px;
+// 			&:checked{
+// 				background-position-x:-84px;
+// 			}
+// 		}			
+// 	}
+// 	.form-check{
+// 		display:block
+// 	}
+// 	.form-check +.form-check{margin-top:$margin;}
+// 	.form-check-inline{
+// 		display:inline;
+// 		margin-right:10px
+// 	}
+// 	.form-group-check{
+// 		display:flex;
+// 		.form-check{
+// 			display:inline-flex;
+// 			align-items: center;
+// 		    justify-content: center;
+// 			flex:1;
+// 			margin-top:0;
+// 			border:1px solid #ebebeb;
+// 			position:relative;
+// 			min-height:48px;
+// 			border-radius: $margin;
+// 			&:nth-child(n+2){margin-left:$margin;}
+// 			input{
+// 				position:absolute;
+// 				left:0;
+// 				width:100%;
+// 				top:0;
+// 				height:100%;
+// 				background:none;
+// 				&+label{
+// 					display:block;
+// 					padding:7px;
+// 					text-align:center;
+// 					color:#888;
+// 				}
+// 				&:checked:before{
+// 					content:'';
+// 					position:absolute;
+// 					left:-1px;
+// 					right:-1px;
+// 					top:-1px;
+// 					bottom:-1px;
+// 					border:2px solid var(--c-main);
+// 					border-radius:$margin;
+// 				}
+// 				&:checked+label{
+// 					color:var(--c-main);
+// 					font-weight:bold
+// 				}
+// 			}
+// 		}
+// 		&.form-group-col-5{
+// 			flex-wrap : wrap;
+// 			.form-check{
+// 				margin-top:0;
+// 				margin-left:0;
+// 				&:nth-child(2n){margin-left:$margin;}
+// 				&:nth-child(n+3){margin-top:$margin;}
+// 				flex: 0 0 calc(50% - ($margin/2));
+// 			}
+// 		}
+// 		&.form-group-row{
+// 			flex-direction:column;
+// 			input{
+// 				&+label{
+// 					width:100%;
+// 					text-align:left;
+// 				}
+// 				&:checked+label:after{
+// 					content:'';
+// 					position:absolute;
+// 					right:0;
+// 					width:24px;height:24px;background:url('../img/input_rdobox.png') 0 0 /cover no-repeat;
+// 					vertical-align:middle;
+// 				}
+// 			}
+// 			.form-check{
+// 				flex:none;
+// 				&:nth-child(n+2){margin-top:$margin;}
+// 			}
+// 		}
+// 	}
+// }

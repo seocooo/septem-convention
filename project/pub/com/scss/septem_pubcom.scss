@@ -1,0 +1,28 @@
+
+@charset "UTF-8";
+/*!
+ * Ve000000rsion: 0.1
+ * Copyright ⓒSeptem UI Team (2023)
+ */
+
+
+
+@import "ng_base";
+
+
+ // css variable setting
+//  :root {
+//   @include cssVar((
+//     'font': $font-family-base,
+//     // 'color1': $font-base-color
+//   ));
+// }
+@import "./ng_webfont";
+@import "./ng_variables";
+@import "./ng_reset";
+@import "./ng_skipnavi";
+@import "./ng_layout";
+@import "./ng_list";
+//  @import "./typography";
+//  @import "./component";
+//  @import "./cssanimation";

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-title" content="NH Bank">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta name="robots" content="no-index,follow">
+	<title>:::NH통합스마트뱅킹 || 펀드리스트:::</title>
+	<script src="../com/js/head.js"></script>
+</head>
+<body>
+	<!-- wrap -->
+	<div class="wrap">
+
+		<!-- header -->
+		<header class="header">
+			<button title="뒤로가기" class="btn-back"></button>
+			<h1>대출신청</h1>
+			<button title="메인으로" class="btn-home"></button>
+			<button title="전체메뉴" class="btn-menu"></button>
+		</header>
+		<!-- //header -->
+
+		<!-- container -->
+		<div class="container">
+
+			<nav aria-label="breadcrumb" class="breadcrumb">
+				<h2 class="breadcrumb-tit">대출신청 정보입력</h2>
+				<ol>
+					<li aria-current="page" class="breadcrumb-item _active">STEP 5</li>
+					<li class="breadcrumb-item">/ 8</li>
+				</ol>
+			</nav>
+
+			<section class="sec">
+				<div class="process-tit-wrap">
+					<strong class="h4">직장인을 위한 신용대출</strong>
+				</div>
+			</section>
+
+			<section class="sec">
+				<div class="list-table-box">
+					<ul class="list-main">
+						<li>
+							<span class="list-table-title">대출 신청금액</span>
+							<p class="list-table-text"><strong class="data-value"><em class="data">100000</em><span class="won">원</span></strong></p>
+						</li>
+						<li>
+							<span class="list-table-title">대출금리</span>
+							<p class="list-table-text"><strong class="data-value point-color"><em class="data">4.82</em><span class="unit">%</span></strong><span class="mor">(6개월 MOR)</span></p>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="sec">
+				<div class="form-group">
+					<strong class="form-label">대출신청금액</strong>
+					<div class="form-item">
+						<input type="txt" title="대출신청금액" value class="text-input" placeholder="최소 100만원 ~ 최대 3000만원">
+						<span class="unit">만원</span>
+						<button title="입력값 초기화" class="btn-reset"></button>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<strong class="form-label">상환방법</strong>
+					<div class="form-items-check form-item-row">
+						<div class="form-check">
+							<input type="radio" name="rdo05" id="rdo0501" class="check-input" checked>
+							<label for="rdo0501" class="form-check-label">
+								원금만기일시상환
+							</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" name="rdo05" id="rdo0502" class="check-input">
+							<label for="rdo0502" class="form-check-label">
+								원리금균등분할상환
+							</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" name="rdo05" id="rdo0503" class="check-input">
+							<label for="rdo0503" class="form-check-label">
+								만기일시상환
+							</label>
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<strong class="form-label">이자 자동이체일</strong>
+					<div class="form-item">
+						<button title="선택" class="form-select">선택</button>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<strong class="form-label">대출만기일</strong>
+					<div class="form-item o_val">
+						<button title="선택" class="form-select form-select-date">2023.06.01</button>
+					</div>
+					<div class="btn-group-inline">
+						<button class="btn btn-inline btn-md btn-bdc01">대출 한도/금리 다시 조회</button>
+					</div>
+				</div>
+
+			</section>
+		</div>
+		<!-- // container -->
+
+		<!-- footer -->
+		<footer role="group" aria-label="진행 버튼" class="footer btn-group-progress">
+			<button type="button" class="btn btn-default">취소</button>
+			<button type="button" class="btn btn-point">다음</button>
+		</footer>
+		<!-- // footer -->
+
+	</div>
+	<!-- // wrap -->
+
+</body>
+</html>

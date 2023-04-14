@@ -1,0 +1,33 @@
+@charset 'UTF-8';
+/* 금융상품몰 플랫폼 앱 layout */
+/*! Version: 0.1 Copyright ⓒSeptem UI Team (2023) */
+
+/* --------------------------
+		wrap
+-------------------------- */
+.wrap{display:flex;height:100%;flex-direction:column;}
+.container{min-height:calc(100vh - 60px - 94px);padding-bottom:40px;}
+.footer{position:-webkit-sticky;position:sticky;bottom:0;left:0;width:100%;}
+/* --------------------------
+		header
+-------------------------- */
+.header{display:flex;position:-webkit-sticky;position:sticky;top:0;height:60px;padding:18px var(--wrap-pdrl);background-color:#fff;align-items:center;}
+.header h1{width:100%;font-size:16px;font-weight:500;letter-spacing:var(--ls-03);}
+.btn-back{width:24px;height:24px;margin-right:8px;background:url('../img/btn_back.svg');flex-shrink:0;}
+.btn-home{width:24px;height:24px;margin-left:8px;background:url('../img/btn_home.svg');flex-shrink:0;}
+.btn-menu{width:24px;height:24px;padding-left:15px;background:url('../img/btn_menu.svg');flex-shrink:0;}
+
+/* --------------------------
+		container
+-------------------------- */
+.breadcrumb{display:flex;height:54px;padding:var(--wrap-pd);box-shadow:var(--shadow-03);align-items:center;justify-content:space-between;}
+.breadcrumb .breadcrumb-tit{font-size:14px;font-weight:500;letter-spacing:var(--ls-03);}
+.breadcrumb .breadcrumb-item{display:inline-block;color:var(--fc-09);list-style:none;}
+.breadcrumb .breadcrumb-item._active{font-weight:700;color:var(--black);}
+
+.sec{margin-top:var(--mgt-n);padding:0 var(--wrap-pdrl);}
+
+hr{border-top-width:10px;}
+/* --------------------------
+		footer
+-------------------------- */
