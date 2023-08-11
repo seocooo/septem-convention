@@ -11,19 +11,27 @@
 /* --------------------------
 		header
 -------------------------- */
-.header{display:flex;position:-webkit-sticky;position:sticky;top:0;height:60px;padding:18px var(--wrap-pdrl);background-color:#fff;align-items:center;}
+.header{display:flex;position:-webkit-sticky;position:sticky;top:0;height:60px;padding:0 var(--wrap-pdrl);background-color:#fff;align-items:center;}
 .header h1{width:100%;font-size:16px;font-weight:500;letter-spacing:var(--ls-03);}
-.btn-back{width:24px;height:24px;margin-right:8px;background:url('../img/btn_back.svg');flex-shrink:0;}
-.btn-home{width:24px;height:24px;margin-left:8px;background:url('../img/btn_home.svg');flex-shrink:0;}
-.btn-menu{width:24px;height:24px;padding-left:15px;background:url('../img/btn_menu.svg');flex-shrink:0;}
+.header [class^="ic-"]{flex-shrink:0;}
+.header .header-start{height:100%; padding-right:8px;}
+.header .header-end{display:flex; height:100%; margin-left: auto; padding-left:8px;}
+.header .header-end button,.header .header-start button{display: flex; height:100%; align-items: center;}
+.header .header-end button + button{margin-left:15px;}
+
 
 /* --------------------------
 		container
 -------------------------- */
 .breadcrumb{display:flex;height:54px;padding:var(--wrap-pd);box-shadow:var(--shadow-03);align-items:center;justify-content:space-between;}
-.breadcrumb .breadcrumb-tit{font-size:14px;font-weight:500;letter-spacing:var(--ls-03);}
+.breadcrumb .breadcrumb-title{font-size:14px;font-weight:500;letter-spacing:var(--ls-03);}
 .breadcrumb .breadcrumb-item{display:inline-block;color:var(--fc-09);list-style:none;}
-.breadcrumb .breadcrumb-item._active{font-weight:700;color:var(--black);}
+.breadcrumb .breadcrumb-item.cs_active{font-weight:700;color:var(--black);}
+
+.progress + .progress{margin-top:15px;}
+.progress-bar{width:100%;height:16px;-webkit-appearance:none;appearance:none;}
+.progress-bar::-webkit-progress-bar{border-radius:10px;background-color:var(--bgc-06);}
+.progress-bar::-webkit-progress-value{border-radius:10px;background-color:var(--main);}
 
 .sec{margin-top:var(--mgt-n);padding:0 var(--wrap-pdrl);}
 
