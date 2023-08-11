@@ -1351,7 +1351,7 @@
 								<strong class="c-primary">아코디언 버튼</strong> : 아코디언 확장시 <code class="badge">.cs_collapsed</code> 클래스 삭제<br>
 								<strong class="c-primary">아코디언 컨텐츠</strong> : 아코디언 확장시 <code class="badge">.cs_show</code> 클래스 추가
 							</p>
-<div class="ng_code-preview">
+<!-- <div class="ng_code-preview">
 <div class="info-list">
 	<div class="accordion-item">
 		<div class="accordion-header">
@@ -1369,13 +1369,13 @@
 		</div>
 	</div>
 </div>
+</div> -->
 
-</div>
 <div class="ng_code-preview">
 <div class="info-list">
 	<div class="accordion-item">
 		<div class="accordion-header">
-			<button type="button" aria-expanded="true" class="js_accordion-btn">
+			<button type="button" aria-expanded="true" class="js_accordion-btn cs_collapsed">
 				<span class="accordion-title">알아두세요</span>
 			</button>
 		</div>
@@ -1389,8 +1389,23 @@
 		</div>
 	</div>
 </div>
-
 </div>
+
+<script>
+	$(function(){
+		const $accordionBtn = $('.accordion-item .js_accordion-btn');
+		const $this = $(this)
+		$accordionBtn.on('click', function(){
+			console.log($this)
+			if($accordionBtn.hasClass('cs_collapsed')){
+				$accordionBtn.removeClass('cs_collapsed')
+			}else{
+				$accordionBtn.addClass('cs_collapsed')
+			}
+			$this.find('.accordion-collapse').toggleClass('cs_show');
+		})
+	});
+</script>
 							<h2 class="ng_h2-title">Info List - 텍스트형</h2>
 <div class="ng_code-preview">
 <div class="info-list">
