@@ -73,21 +73,50 @@ $(function () {
 
 // 팝업
 $(function () {
-  $(".btn-modal").click(function () {
-    const targetPopup = $(this).attr("aria-controls");
-    $("#" + targetPopup)
-      .show()
-      .attr("aria-hidden", "false");
-    // $("#popupDim").show();
+  $(".js_modal-open").on("click", function (e) {
+    e.preventDefault();
+    const targetModalId = $(this).attr("href") || $(this).data("modal");
+    openModal(targetModalId);
+  });
+  $(".modal .js_modal-close, .modal-dim").on("click", function () {
+    closeModal($(this).closest(".modal").attr("id"));
   });
 
-  $(".btn-close, .modal-dim").click(function () {
-    $(".modal").hide().attr("aria-hidden", "true");
-  });
-
-  $(".modal").click(function (event) {
-    event.stopPropagation(); // 팝업 내부를 클릭하면 닫히지 않도록 중지
+  $(".modal").on("keydown", function (event) {
+    if (event.key === "Escape") {
+      const modalID = $(this).attr("id");
+      closeModal(modalID);
+    }
   });
 });
+
+function openModal(modalID) {
+  // 이미 #이 있는지 확인 후 처리
+  if (!modalID.startsWith("#")) {
+    modalID = "#" + modalID;
+  }
+
+  const $modalId = $(modalID);
+  $modalId
+    .fadeIn(function () {
+      const modalTitle = $modalId.find(".modal-title");
+      modalTitle.attr("tabindex", -1).focus();
+      //   if ($modalId.hasClass("st_bottom-sheet") === true) {
+      //     console.log("bottom-sheet");
+      //     const innerHeight = $modalId.find(".modal-inner").outerHeight();
+      //     $modalId.find(".modal-inner").css("bottom", "-" + innerHeight + "px");
+      //   }
+    })
+    .attr("aria-hidden", "false");
+  $("body").css("overflow", "hidden");
+}
+function closeModal(modalID) {
+  // 이미 #이 있는지 확인 후 처리
+  if (!modalID.startsWith("#")) {
+    modalID = "#" + modalID;
+  }
+  $(modalID).fadeOut().attr("aria-hidden", "true");
+  $("body").css("overflow", "");
+}
 
 // 아코디안

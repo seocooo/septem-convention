@@ -134,7 +134,7 @@
 .modal .modal-dim{ position: fixed; top:0; right:0; bottom: 0; left:0; z-index: var(--pop-z-index); background-color: rgba(0, 0, 0, 0.7);}
 .modal .modal-header{display:flex; padding: 13px 0; align-items: center; }/*김범석: 23-08-10 padding: 22px 0; 수정 */
 .modal .modal-content{height:100%;}
-.modal .modal-inner{display: flex; position: fixed; top:0; right:0; bottom: 0; left: 0; z-index: var(--pop-z-index); padding: 24px 20px 20px; background-color: var(--white); flex-direction: column;}/*김범석: 23-08-10 padding: 30px 20px 40px; 수정 */
+.modal .modal-inner{display: flex; position: fixed; top:0; right:0; bottom: 0px; left: 0; z-index: var(--pop-z-index); padding: 24px 20px 20px; background-color: var(--white); flex-direction: column;}/*김범석: 23-08-10 padding: 30px 20px 40px; 수정 */
 .modal .modal-title{font-size:16px; color:var(--black-01);}
 .modal .modal-cont-text{ color: var(--fc-05);line-height:24px;}
 .modal .modal-cont-text + .modal-cont-text{margin-top:8px;}

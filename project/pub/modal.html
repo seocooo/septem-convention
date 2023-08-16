@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Popup Example</title>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+	<style>
+		.modal {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		justify-content: center;
+		align-items: center;
+		}
+
+		.modal-content {
+		background-color: white;
+		padding: 20px;
+		border-radius: 5px;
+		position: relative;
+		}
+
+		.close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		cursor: pointer;
+		}
+	</style>
+  </head>
+
+  <body>
+	<a href="#modal1" role="button" class="pop_open">Open Link Modal</a>
+	<button data-modal="modal2" class="pop_open">Open Button Modal</button>
+
+	<div role="dialog" aria-labelledby="modal1-label" aria-modal="true" id="modal1" class="modal">
+	<div class="modal-content">
+		<h2 id="modal1-label">Link Modal</h2>
+		<button aria-label="Close" onclick="closeModal('modal1')" class="close">&times;</button>
+		<p>This is the link modal content.</p>
+	</div>
+	</div>
+
+	<div role="dialog" aria-labelledby="modal2-label" aria-modal="true" id="modal2" class="modal">
+	<div class="modal-content">
+		<h2 id="modal2-label">Button Modal</h2>
+		<button aria-label="Close" onclick="closeModal('modal2')" class="close">&times;</button>
+		<p>This is the button modal content.</p>
+	</div>
+	</div>
+	<!-- <a href="#modal1" class="pop_open">Open Link Modal</a>
+	<button data-modal="modal2" class="pop_open">Open Button Modal</button>
+
+	<div id="modal1" class="modal">
+	<div class="modal-content">
+		<span onclick="closeModal('modal1')" class="close">&times;</span>
+		<p>This is the link modal content.</p>
+	</div>
+	</div>
+
+	<div id="modal2" class="modal">
+	<div class="modal-content">
+		<span onclick="closeModal('modal2')" class="close">&times;</span>
+		<p>This is the button modal content.</p>
+	</div>
+	</div> -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+		$(".pop_open").on("click", function(event) {
+			event.preventDefault();
+			const targetModalID = $(this).attr("href") || $(this).data("modal");
+			openModal(targetModalID);
+		});
+
+		$(".modal .close").on("click", function() {
+			const modalID = $(this).closest(".modal").attr("id");
+			closeModal(modalID);
+		});
+
+		$(".modal").on("keydown", function(event) {
+			if (event.key === "Escape") {
+			const modalID = $(this).attr("id");
+			closeModal(modalID);
+			}
+		});
+		});
+
+		function openModal(modalID) {
+		// 이미 #이 있는지 확인 후 처리
+		if (!modalID.startsWith("#")) {
+				modalID = "#" + modalID;
+			}
+			$(modalID).fadeIn();
+		$("body").addClass("modal-open");
+		}
+
+		function closeModal(modalID) {
+		// 이미 #이 있는지 확인 후 처리
+		if (!modalID.startsWith("#")) {
+				modalID = "#" + modalID;
+			}
+			$(modalID).fadeIn();
+		$("body").removeClass("modal-open");
+		}
+	</script>
+
+    <!-- <script>
+		$(document).ready(function() {
+			console.log("ready")
+
+			$(".pop_open").on("click", function() {
+				const targetModalID = $(this).attr("href") || $(this).data("modal");
+				openModal(targetModalID);
+				console.log("pop_open")
+			});
+
+			$(".modal .close").on("click", function() {
+				closeModal($(this).closest(".modal").attr("id"));
+			});
+		});
+		
+		function openModal(modalID) {
+			// 이미 #이 있는지 확인 후 처리
+			if (!modalID.startsWith("#")) {
+				modalID = "#" + modalID;
+			}
+			$(modalID).fadeIn();
+		}
+
+		function closeModal(modalID) {
+			// 이미 #이 있는지 확인 후 처리
+			if (!modalID.startsWith("#")) {
+				modalID = "#" + modalID;
+			}
+			$(modalID).fadeOut();
+		}
+	</script> -->
+	
+	<script>
+		// $(document).ready(function() {
+		// $(".pop_open").each(function() {
+		// 	if ($(this).attr("href")) {
+		// 	const $getHref = $(this).attr("href");
+		// 	const $cleanHref = $getHref.slice(1); // 맨 앞의 '#' 제거
+		// 	console.log('link');
+		// 	$(this).on("click", function() {
+		// 		$("#" + $cleanHref).fadeIn();
+		// 	});
+		// 	} else {
+		// 	console.log('btn');
+		// 	$(this).on("click", function() {
+		// 		$("#modal2").fadeIn();
+		// 	});
+		// 	}
+		// });
+		// });
+
+		// function closeModal(modalID) {
+		// $("#" + modalID).fadeOut();
+		// }
+
+	</script>
+  </body>
+
+</html>
