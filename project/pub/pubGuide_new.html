@@ -1034,25 +1034,6 @@
 	</div>
 </div>
 </div>
-
-<script>
-	$(function(){
-		const $accordionBtn = $('.accordion-item .js_accordion-btn');
-		const $this = $(this)
-		$accordionBtn.on('click', function(){
-			console.log($this)
-			if($accordionBtn.hasClass('cs_collapsed')){
-				$accordionBtn.removeClass('cs_collapsed');
-				$accordionBtn.attr('aria-expanded','true')
-
-			}else{
-				$accordionBtn.addClass('cs_collapsed')
-				$accordionBtn.attr('aria-expanded','false')
-			}
-			$this.find('.accordion-collapse').toggleClass('cs_show');
-		})
-	});
-</script>
 							<h2 class="ng_h2-title">Info List - 텍스트형</h2>
 <div class="ng_code-preview">
 <div class="info-list">
@@ -1173,14 +1154,25 @@
 						<span class="table-list-title">우대금리(C)</span>
 						<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.50</em><span class="unit">%</span></strong></p>
 						<ul class="table-list-form">
-							<li>
+							<li class="type2">
+								<div class="form-check2">
+									<input type="checkbox" id="chk0300" class="check-input">
+									<label for="chk0300" class="form-check-label">급여이체 50만원 이상</label>
+									<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.50</em><span class="unit">%</span></strong></p>
+								</div>
+								<!--  -->
 								<div class="form-check">
 									<input type="checkbox" value id="chk0301" class="sub-check-input">
 									<label for="chk0301" class="form-check-label">급여이체 50만원 이상</label>
 									<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.50</em><span class="unit">%</span></strong></p>
 								</div>
 							</li>
-							<li>
+							<li class="type2">
+								<div class="form-check2">
+									<input type="checkbox" value id="chk03022" class="sub-check-input">
+									<label for="chk03022" class="form-check-label">신용카드보유 (NH채움카드)</label>
+									<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.20</em><span class="unit">%</span></strong></p>
+								</div>
 								<div class="form-check">
 									<input type="checkbox" value id="chk0302" class="sub-check-input">
 									<label for="chk0302" class="form-check-label">신용카드보유 (NH채움카드)</label>
@@ -1296,6 +1288,12 @@
 		</div>
 	</div>
 	<div class="agree-item">
+		
+		<div class="form-check2">
+			<input type="checkbox" id="chk0300" class="check-input">
+			<label for="chk0300" class="form-check-label">급여이체 50만원 이상</label>
+			<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.50</em><span class="unit">%</span></strong></p>
+		</div>
 		<div class="form-check">
 			<input type="checkbox" value id="chk1701" class="check-input">
 			<label for="chk1701" class="form-check-label">신청하신 대출상품 적합 여부 확인을 위해 본인의 개인 정보를 수집, 이용, 제공 동의하는 것에 동의합니다.</label>
@@ -1476,9 +1474,28 @@
 <div class="form-group">
 	<strong class="form-label">선택</strong>
 	<div class="form-item">
-		<button title="선택" onclick="modalOpen(modalB)" class="form-select">선택</button>
+		<button title="선택" data-modal="modal-select" class="form-select js_modal-open">선택</button>
 	</div>
-
+	
+	<div role="dialog" aria-hidden="true" aria-labelledby="modal1-label" id="modal-select" class="modal st_bottom-sheet">
+		<div class="modal-dim"></div>
+		<div class="modal-inner">
+			<div class="modal-header">
+				<div class="modal-title">셀렉트모달</div>
+			</div>
+			<div class="modal-content">
+				<div class="modal-select-list">
+					<ul>
+						<li class="modal-select-item"><a href="javascript:;">셀렉트 옵션1</a></li>
+						<li class="modal-select-item"><a href="javascript:;">셀렉트 옵션2</a></li>
+						<li class="modal-select-item"><a href="javascript:;">셀렉트 옵션3</a></li>
+						<li class="modal-select-item"><a href="javascript:;">셀렉트 옵션4</a></li>
+					</ul>
+				</div>
+			</div>
+			<button title="닫기" class="modal-close js_modal-close"><i class="ic-btn-close"></i></button>
+		</div>
+	</div>
 	<!-- SLIDE POPUP -->
 	<!-- <div class="modal_area">
 		<div id="modalB" class="modal slide" style="display:none;">
@@ -1997,6 +2014,33 @@
 		<h2 class="ng_h2-title">라디오</h2>
 		<p class="ng_desc-type1"> - input checkbox와 rario에서 id와 for의 <code class="badge">.rdo01</code>은 name. 그 뒤 <code class="badge">01</code>은 name 내의 번호로 정합니다.</p>
 		<div class="ng_code-preview">
+<!--  -->
+<div class="form-radio">
+	<input type="radio" name="rdo00" id="rdo099" class="check-input">
+	<label for="rdo099" class="form-check-label">
+		Default radio
+	</label>
+</div>
+<div class="form-radio">
+	<input type="radio" name="rdo00" id="rdo0100" class="check-input" checked>
+	<label for="rdo0100" class="form-check-label">
+		Checked radio
+	</label>
+</div>
+<div class="form-radio">
+	<input type="radio" name="rdo00" id="rdo01011" class="check-input" disabled>
+	<label for="rdo01011" class="form-check-label">
+		Disabled radio
+	</label>
+</div>
+<div class="form-radio">
+	<input type="radio" name="rdo00" id="rdo01022" class="check-input" disabled checked>
+	<label for="rdo01022" class="form-check-label">
+		Checked disabled radio
+	</label>
+</div>
+<hr>
+<!--  -->
 <div class="form-check">
 	<input type="radio" name="rdo01" id="rdo0101" class="check-input">
 	<label for="rdo0101" class="form-check-label">
@@ -2074,6 +2118,27 @@
 	<div class="form-check">
 		<input type="radio" name="rdo05" id="rdo0503" class="check-input" checked>
 		<label for="rdo0503" class="form-check-label">
+			Default checked radio
+		</label>
+	</div>
+</div>
+<hr>
+<div class="form-items-check">
+	<div class="form-radio">
+		<input type="radio" name="rdo016" id="rdo05011" class="check-input">
+		<label for="rdo05011" class="form-check-label">
+			Default radio
+		</label>
+	</div>
+	<div class="form-radio">
+		<input type="radio" name="rdo016" id="rdo05012" class="check-input">
+		<label for="rdo05012" class="form-check-label">
+			Default checked radio
+		</label>
+	</div>
+	<div class="form-radio">
+		<input type="radio" name="rdo016" id="rdo05013" class="check-input">
+		<label for="rdo05013" class="form-check-label">
 			Default checked radio
 		</label>
 	</div>
@@ -2850,7 +2915,7 @@ observer 옵션을 true로 설정하게 되면
 		</div>
 		<div class="modal-content">모달 콘텐츠</div>
 		<div class="modal-footer btn-group-progress">
-			<button type="button" class="btn st_line-default btn-close">취소</button>
+			<button type="button" class="btn st_line-default btn-close js_modal-close">취소</button>
 			<button type="button" class="btn st_primary">확인</button>
 		</div>
 		<button title="닫기" class="modal-close js_modal-close"><i class="ic-btn-close"></i></button>
@@ -2915,22 +2980,6 @@ observer 옵션을 true로 설정하게 되면
 		<button title="닫기" class="modal-close js_modal-close"><i class="ic-btn-close"></i></button>
 	</div>
 </div>
-<script>
-$(".pop_open").each(function(){
-	if($(this).attr("href")){
-		const $gatHref = $(this).attr("href");
-		const $cleanDate = $gatHref.slice(21, -1);
-		console.log('link');
-	} else if ( $(this).attr('onclick') ) {
-		const $getOnclick = $(this).attr("onclick");
-		const $cleanOnData = getOnclick.slice(10, -1);
-		console.log('btn');
-	}
-	$(this).on("click", function(modalID){
-		
-	})
-})
-</script>
 </div>					
 						</div>
 					</article>
@@ -3206,7 +3255,7 @@ const eventHandler = {
 </script>
 <script>
 
-// 기본형
+// swiper 기본형
 var swiper1 = new Swiper('#swiper1', {
 	slidesPerView: 1,
 	spaceBetween: 10,

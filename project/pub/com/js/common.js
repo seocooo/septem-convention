@@ -101,11 +101,10 @@ function openModal(modalID) {
     .fadeIn(function () {
       const modalTitle = $modalId.find(".modal-title");
       modalTitle.attr("tabindex", -1).focus();
-      //   if ($modalId.hasClass("st_bottom-sheet") === true) {
-      //     console.log("bottom-sheet");
-      //     const innerHeight = $modalId.find(".modal-inner").outerHeight();
-      //     $modalId.find(".modal-inner").css("bottom", "-" + innerHeight + "px");
-      //   }
+      if ($modalId.hasClass("st_bottom-sheet") === true) {
+        // console.log("bottom-sheet");
+        $modalId.find(".modal-inner").css("bottom", "0%");
+      }
     })
     .attr("aria-hidden", "false");
   $("body").css("overflow", "hidden");
@@ -115,8 +114,45 @@ function closeModal(modalID) {
   if (!modalID.startsWith("#")) {
     modalID = "#" + modalID;
   }
-  $(modalID).fadeOut().attr("aria-hidden", "true");
+
+  const $modalId = $(modalID);
+  if ($modalId.hasClass("st_bottom-sheet") === true) {
+    $modalId.find(".modal-inner").css("bottom", "-100%");
+  }
+  $modalId.fadeOut().attr("aria-hidden", "true");
   $("body").css("overflow", "");
 }
+//
 
-// 아코디안
+// $(".pop_open").each(function(){
+// 	if($(this).attr("href")){
+// 		const $gatHref = $(this).attr("href");
+// 		const $cleanDate = $gatHref.slice(21, -1);
+// 		console.log('link');
+// 	} else if ( $(this).attr('onclick') ) {
+// 		const $getOnclick = $(this).attr("onclick");
+// 		const $cleanOnData = getOnclick.slice(10, -1);
+// 		console.log('btn');
+// 	}
+// 	$(this).on("click", function(modalID){
+
+// 	})
+// })
+//
+// 아코디언
+
+$(function () {
+  const $accordionBtn = $(".accordion-item .js_accordion-btn");
+  const $this = $(this);
+  $accordionBtn.on("click", function () {
+    console.log($this);
+    if ($accordionBtn.hasClass("cs_collapsed")) {
+      $accordionBtn.removeClass("cs_collapsed");
+      $accordionBtn.attr("aria-expanded", "true");
+    } else {
+      $accordionBtn.addClass("cs_collapsed");
+      $accordionBtn.attr("aria-expanded", "false");
+    }
+    $this.find(".accordion-collapse").toggleClass("cs_show");
+  });
+});

@@ -82,6 +82,10 @@
 .table-list .table-list-form input[type='checkbox'].sub-check-input+label{color:var(--fc-05);line-height:22px;}
 .table-list .table-list-form .data-wrap{font-size:14px;}
 .table-list .table-list-form .form-check+.table-list-desc{line-height:22px;flex-shrink:0;}
+/* [2023-08-21] 김범석 : 스타일 수정 */
+.table-list .table-list-form .form-check2{display: flex; width: 100%; justify-content: space-between;}
+
+/* //[2023-08-21] 김범석 : 스타일 수정 */
 .table-list .table-list-total,.table-list .accordion-collapse{margin-top:20px;padding-top:20px;border-top:1px solid var(--bdc-02);}
 .table-list .table-list-total li{align-items:center;}
 .table-list .table-list-total .table-list-title{font-size:16px;font-weight:700;color:var(--fc-01);}
@@ -134,7 +138,7 @@
 .modal .modal-dim{ position: fixed; top:0; right:0; bottom: 0; left:0; z-index: var(--pop-z-index); background-color: rgba(0, 0, 0, 0.7);}
 .modal .modal-header{display:flex; padding: 13px 0; align-items: center; }/*김범석: 23-08-10 padding: 22px 0; 수정 */
 .modal .modal-content{height:100%;}
-.modal .modal-inner{display: flex; position: fixed; top:0; right:0; bottom: 0px; left: 0; z-index: var(--pop-z-index); padding: 24px 20px 20px; background-color: var(--white); flex-direction: column;}/*김범석: 23-08-10 padding: 30px 20px 40px; 수정 */
+.modal .modal-inner{display: flex; position: fixed; top:0; right:0; bottom: 0; left: 0; z-index: var(--pop-z-index); padding: 24px 20px 20px; background-color: var(--white); flex-direction: column;}/*김범석: 23-08-10 padding: 30px 20px 40px; 수정 */
 .modal .modal-title{font-size:16px; color:var(--black-01);}
 .modal .modal-cont-text{ color: var(--fc-05);line-height:24px;}
 .modal .modal-cont-text + .modal-cont-text{margin-top:8px;}
@@ -145,9 +149,12 @@
 .modal.st_center .modal-inner{position: fixed; top:50%; bottom:auto; left:50%; width:calc(100% - 40px); border-radius: 15px; transform: translate(-50%, -50%);}
 .modal.st_center .modal-content{height:100%;}
 /* 슬라이드 팝업(바텀시트) */
-.modal.st_bottom-sheet .modal-inner{position: fixed; top:auto; left:50%; width:100%; border-radius: 26px 26px 0px 0px; transform: translate(-50%, 0);}
+.modal.st_bottom-sheet .modal-inner{position: fixed; top:auto; bottom: -100%; left:50%; width:100%; border-radius: 26px 26px 0px 0px; transform: translate(-50%, 0); transition: bottom 0.3s ease-in-out;}
 .modal.st_bottom-sheet .modal-title{font-size:20px; font-weight:700; line-height:30px;}
 .modal.st_bottom-sheet .modal-close{position: absolute; top:40px; right: 20px;}
+/* 모달 셀렉트 */
+.modal-select-item a{display: block; width:100%; padding: 18px 0; border-bottom: 1px solid var(--gray-01);}
+.modal-select-item a + a{}
 
 /* 툴팁 */
 .tooltip{position: relative;}
