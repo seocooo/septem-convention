@@ -122,37 +122,65 @@ function closeModal(modalID) {
   $modalId.fadeOut().attr("aria-hidden", "true");
   $("body").css("overflow", "");
 }
-//
 
-// $(".pop_open").each(function(){
-// 	if($(this).attr("href")){
-// 		const $gatHref = $(this).attr("href");
-// 		const $cleanDate = $gatHref.slice(21, -1);
-// 		console.log('link');
-// 	} else if ( $(this).attr('onclick') ) {
-// 		const $getOnclick = $(this).attr("onclick");
-// 		const $cleanOnData = getOnclick.slice(10, -1);
-// 		console.log('btn');
-// 	}
-// 	$(this).on("click", function(modalID){
-
-// 	})
-// })
-//
-// 아코디언
-
+// 모달 셀렉트
 $(function () {
-  const $accordionBtn = $(".accordion-item .js_accordion-btn");
-  const $this = $(this);
-  $accordionBtn.on("click", function () {
-    console.log($this);
-    if ($accordionBtn.hasClass("cs_collapsed")) {
-      $accordionBtn.removeClass("cs_collapsed");
-      $accordionBtn.attr("aria-expanded", "true");
-    } else {
-      $accordionBtn.addClass("cs_collapsed");
-      $accordionBtn.attr("aria-expanded", "false");
-    }
-    $this.find(".accordion-collapse").toggleClass("cs_show");
+  $(".modal-select-item a").on("click", function () {
+    const $selectedItem = $(this).closest(".modal-select-item");
+    const selectedText = $selectedItem.text();
+
+    $selectedItem.addClass("cs_active").siblings().removeClass("cs_active");
+
+    const $modal = $(this).closest(".modal");
+    closeModal($modal.attr("id"));
+
+    const $formSelect = $modal.prev(".form-group").find(".form-select");
+    $formSelect.text(selectedText).val(selectedText);
+  });
+});
+
+// 아코디언
+$(function () {
+  const $accordionItems = $(".accordion-item");
+
+  $accordionItems.each(function () {
+    const $accordionBtn = $(this).find(".js_accordion-btn");
+    const $accordionCollapse = $(this).find(".accordion-collapse");
+
+    $accordionBtn.on("click", function () {
+      const isCollapsed = $accordionBtn.hasClass("cs_collapsed");
+
+      if (isCollapsed) {
+        $accordionBtn.removeClass("cs_collapsed");
+        $accordionBtn.attr("aria-expanded", "true");
+      } else {
+        $accordionBtn.addClass("cs_collapsed");
+        $accordionBtn.attr("aria-expanded", "false");
+      }
+
+      $accordionCollapse.toggleClass("cs_show", !isCollapsed);
+    });
+  });
+});
+
+// 탭
+$(function () {
+  $(".tab-item").on("click", function () {
+    const $clickedTab = $(this);
+    const panelId = $clickedTab.attr("aria-controls");
+
+    $clickedTab
+      .addClass("cs_active")
+      .attr("aria-selected", "true")
+      .parent()
+      .siblings()
+      .find(".tab-item")
+      .removeClass("cs_active")
+      .attr("aria-selected", "false");
+
+    $("#" + panelId)
+      .addClass("cs_active")
+      .siblings(".tab-panel")
+      .removeClass("cs_active");
   });
 });
