@@ -2598,8 +2598,8 @@
 				// $thisBtn.addClass("cs_active").siblings().removeClass("cs_active");
 				
 			});
-
-			$spyItem.click(function(){
+			// 
+			$('.btnBillMenu').click(function(){
 				var $thisBtn = $(this);
 				var $thisAttrMenu = $thisBtn.attr('data-bill-menu');
 				$('.billListCont .statusTit').each(function(){
@@ -2616,6 +2616,39 @@
 				});
 			});
 
+			$('.btnBillMenu').focus(function(){
+				var $this = $(this);
+				var $thisPosLeft = $this.position().left;
+				//console.log($thisPosLeft)
+				$('.billLisMenu').stop().animate({scrollLeft:$thisPosLeft},400,function(){});
+				
+			});
+
+			anchorWrap();
+
+			//앵커이동
+			function anchorWrap() {
+				$('.billLisMenu a').click(function(){
+					var $this = $(this);
+					var $thisAttr = $this.attr('anchor-title');
+					$('.inoutListWrap').each(function(){
+						var $thisTarget = $(this);
+						var $targetPo = $(this).offset().top;
+						var $heightHeader = $('.header').outerHeight();
+						var $heightTab = $('.billLisMenu').outerHeight();
+						var $hightM = $heightHeader + $heightTab;
+						if ($(this).attr('anchor-cont') == $thisAttr ) {
+							$(this).addClass('active');
+							$('html, body').stop().animate({scrollTop:$targetPo - $hightM -10},400,function(){
+								$('.billLisMenu a').removeClass('active').attr('aria-selected','false'); //2022-10-18 수정
+								$this.addClass('active').attr('aria-selected','true'); //2022-10-18 수정
+								$thisTarget.find('h3.tit').focus();
+							});
+						}
+					});
+				});
+			}
+			// 
 		})
 	</script>
 </div>
