@@ -2512,34 +2512,112 @@
 <div class="ng_code-preview">
 
 <div class="scrollspy">
-
-	<button type="button" class="btn st_primary st_sm">primary</button>
-	<a href="javascript:;" role="button" class="btn st_primary st_round">primary</a>
-	<button type="button" class="btn cs_disabled st_round" disabled>btn:disabled</button>
-	<button type="button" class="btn st_line-default st_round">line-default</button>
-	<button type="button" class="btn st_line-primary st_round">line-primary</button>
-	<button type="button" class="btn st_line-secondary st_round">line-secondary</button>
-	<button type="button" class="btn st_line-dark st_round">line-dark</button>
-	
-	<nav id="nav-example" class="nav-wrap">
-		<ul class="nav">
-			<li class="nav-list">
-				<a href="#scrollspy-heading1" class="nav-item cs_active">First</a>
-			</li>
-			<li class="nav-list">
-				<a href="#scrollspy-heading2" class="nav-item">Second</a>
-			</li>
-			<li class="nav-list">
-				<a href="#scrollspy-heading3" class="nav-item">Third</a>
-			</li>
-			<li class="nav-list">
-				<a href="#scrollspy-heading4" class="nav-item">Fourth</a>
-			</li>
-			<li class="nav-list">
-				<a href="#scrollspy-heading5" class="nav-item">Fifth</a>
-			</li>
+	<!--  st-sticky -->
+	<nav class="scrollspy-nav">
+		<ul>
+			<li><a href="javascript:;" data-bill-menu="dbm01" aria-selected="true" class="nav-item cs_active" anchor-title="dem01">First</a></li>
+			<li><a href="javascript:;" data-bill-menu="dbm02" aria-selected="false" class="nav-item" anchor-title="dem02">Second</a></li>
+			<li><a href="javascript:;" data-bill-menu="dbm03" aria-selected="false" class="nav-item" anchor-title="dem03">Third</a></li>
+			<li><a href="javascript:;" data-bill-menu="dbm04" aria-selected="false" class="nav-item" anchor-title="dem04">Fourth</a></li>
+			<li><a href="javascript:;" data-bill-menu="dbm05" aria-selected="false" class="nav-item" anchor-title="dem05">Fifth</a></li>
 		</ul>
 	</nav>
+	<div class="scrollspy-cont">
+		<div class="cont-list" anchor-cont="dem01">
+			<div class="cont-header">First</div>
+			<div class="cont-body">
+				<ul>
+					<li>content</li>
+					<li>content</li>
+				</ul>
+			</div>
+		</div>
+		<div class="cont-list" anchor-cont="dem02">
+			<div class="cont-header">Second</div>
+			<div class="cont-body">
+				<ul>
+					<li>content</li>
+					<li>content</li>
+				</ul>
+			</div>
+		</div>
+		<div class="cont-list" anchor-cont="dem03">
+			<div class="cont-header">Third</div>
+			<div class="cont-body">
+				<ul>
+					<li>content</li>
+					<li>content</li>
+				</ul>
+			</div>
+		</div>
+		<div class="cont-list" anchor-cont="dem04">
+			<div class="cont-header">Fourth</div>
+			<div class="cont-body">
+				<ul>
+					<li>content</li>
+					<li>content</li>
+				</ul>
+			</div>
+		</div>
+		<div class="cont-list" anchor-cont="dem05">
+			<div class="cont-header">Fifth</div>
+			<div class="cont-body">
+				<ul>
+					<li>content</li>
+					<li>content</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			const $headerHeight = $(".ng_header-inner").outerHeight()
+			const $thisTop = $(".scrollspy-nav").offset().top;
+			const $spyItem = $(".nav-item");
+			$(window).on("scroll",function(){
+				const $scrollTop = $("html, body").scrollTop();
+				const $scrollMove = $thisTop - $headerHeight;
+				if($scrollTop > $scrollMove){
+					$(".scrollspy-nav").addClass("st-sticky");
+				}else{
+					$(".scrollspy-nav").removeClass("st-sticky");
+				}
+			});
+
+			// $spyItem.each(function(){
+			// 	console.log($(this))
+			// 	if($(this).hasClass("cs_active")){
+			// 		$(this).attr("aria-selected", "true")
+			// 	}else{
+			// 		$(this).attr("aria-selected", "false")
+			// 	}
+			// });
+
+			$spyItem.on("click", function(){
+				var $thisBtn = $(this);
+				// $thisBtn.addClass("cs_active").siblings().removeClass("cs_active");
+				
+			});
+
+			$spyItem.click(function(){
+				var $thisBtn = $(this);
+				var $thisAttrMenu = $thisBtn.attr('data-bill-menu');
+				$('.billListCont .statusTit').each(function(){
+					var $this = $(this);
+					var $thisOffSet = $this.offset().top;
+					var $thisAttrCont = $this.attr('data-bill-cont')
+					if ($thisAttrCont == $thisAttrMenu) {
+						$('.billLisMenu a').removeClass('active').attr('aria-selected','false');
+						$thisBtn.addClass('active').attr('aria-selected','true');
+						$('html, body').stop().animate({scrollTop:$thisOffSet - 51 - 36},400,function(){
+							$this.focus()
+						});
+					}
+				});
+			});
+
+		})
+	</script>
 </div>
 <!-- <nav id="nav-example" class="nav-wrap">
 	<ul class="nav">
