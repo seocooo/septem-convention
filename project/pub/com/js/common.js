@@ -146,6 +146,9 @@ $(function () {
   $accordionItems.each(function () {
     const $accordionBtn = $(this).find(".js_accordion-btn");
     const $accordionCollapse = $(this).find(".accordion-collapse");
+    const $accordionWrapBtn = $(this).find(
+      ".accordion-btn-wrap .js_accordion-btn"
+    );
 
     $accordionBtn.on("click", function () {
       const isCollapsed = $accordionBtn.hasClass("cs_collapsed");
@@ -153,12 +156,14 @@ $(function () {
       if (isCollapsed) {
         $accordionBtn.removeClass("cs_collapsed");
         $accordionBtn.attr("aria-expanded", "true");
+        $accordionWrapBtn.text("상세닫기");
       } else {
         $accordionBtn.addClass("cs_collapsed");
         $accordionBtn.attr("aria-expanded", "false");
+        $accordionWrapBtn.text("상세보기");
       }
 
-      $accordionCollapse.toggleClass("cs_show", !isCollapsed);
+      $accordionCollapse.toggleClass("cs_show", isCollapsed);
     });
   });
 });

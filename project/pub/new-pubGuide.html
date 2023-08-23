@@ -995,31 +995,11 @@
 								<strong class="c-primary">아코디언 버튼</strong> : 아코디언 확장시 <code class="badge">.cs_collapsed</code> 클래스 삭제<br>
 								<strong class="c-primary">아코디언 컨텐츠</strong> : 아코디언 확장시 <code class="badge">.cs_show</code> 클래스 추가
 							</p>
-<!-- <div class="ng_code-preview">
-<div class="info-list">
-	<div class="accordion-item">
-		<div class="accordion-header">
-			<button type="button" aria-expanded="false" class="js_accordion-btn cs_collapsed">
-				<span class="accordion-title">알아두세요</span>
-			</button>
-		</div>
-		<div class="accordion-body">
-			<div class="accordion-collapse">
-				<ul class="text-list st_dot">
-					<li>내용이 들어갑니다.</li>
-					<li>상품가입이 원활하게 완료되지 않으신 경우, 상품가입 내역에서 처리결과를 반드시 확인하시기 바랍니다.</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-</div> -->
-
 <div class="ng_code-preview">
 <div class="info-list">
 	<div class="accordion-item">
 		<div class="accordion-header">
-			<button type="button" aria-expanded="true" class="js_accordion-btn cs_collapsed">
+			<button type="button" aria-expanded="true" class="js_accordion-btn ">
 				<span class="accordion-title">알아두세요</span>
 			</button>
 		</div>
@@ -1118,29 +1098,8 @@
 				</p>
 			</li>
 		</ul>
-	</div>
-	<div class="accordion-btn-wrap">
-		<button type="button" aria-expanded="false" class="js_accordion-btn cs_collapsed">상세보기</button>
-	</div>
-</div>
-
-</div>
-<h2 class="ng_h2-title">Table List - 아코디언형 (펼침)</h2>
-<div class="ng_code-preview">
-<div class="accordion-item">
-	<div class="table-list">
-		<ul class="table-list-main">
-			<li>
-				<p class="table-list-title">대출 신청금액</p>
-				<p class="table-list-desc"><strong class="data-wrap"><em class="data">100000</em><span class="unit">원</span></strong></p>
-			</li>
-			<li>
-				<span class="table-list-title">대출금리</span>
-				<p class="table-list-desc"><strong class="data-wrap c-primary"><em class="data">4.82</em><span class="unit">%</span></strong><span class="mor">(6개월 MOR)</span></p>
-			</li>
-		</ul>
 		<div class="accordion-body">
-			<div class="accordion-collapse cs_show">
+			<div class="accordion-collapse">
 				<ul class="table-list-sub">
 					<li>
 						<p class="table-list-title">기준금리(A)</p>
@@ -1188,7 +1147,75 @@
 		</div>
 	</div>
 	<div class="accordion-btn-wrap">
-		<button type="button" aria-expanded="true" class="js_accordion-btn">상세닫기</button>
+		<button type="button" aria-expanded="false" class="js_accordion-btn cs_collapsed">상세보기</button>
+	</div>
+</div>
+
+</div>
+<h2 class="ng_h2-title">Table List - 아코디언형 (펼침)</h2>
+<div class="ng_code-preview">
+<div class="accordion-item">
+	<div class="table-list">
+		<ul class="table-list-main">
+			<li>
+				<p class="table-list-title">대출 신청금액</p>
+				<p class="table-list-desc"><strong class="data-wrap"><em class="data">100000</em><span class="unit">원</span></strong></p>
+			</li>
+			<li>
+				<span class="table-list-title">대출금리</span>
+				<p class="table-list-desc"><strong class="data-wrap c-primary"><em class="data">4.82</em><span class="unit">%</span></strong><span class="mor">(6개월 MOR)</span></p>
+			</li>
+		</ul>
+		<div class="accordion-body">
+			<div class="accordion-collapse cs_show">
+				<ul class="table-list-sub">
+					<li>
+						<p class="table-list-title">기준금리(A)</p>
+						<p class="table-list-desc"><strong class="data-wrap"><em class="data">3.42</em><span class="unit">%</span></strong></p>
+					</li>
+					<li>
+						<span class="table-list-title">가산금리(B)</span>
+						<p class="table-list-desc"><strong class="data-wrap"><em class="data">1.90</em><span class="unit">%</span></strong></p>
+					</li>
+					<li>
+						<span class="table-list-title">우대금리(C)</span>
+						<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.50</em><span class="unit">%</span></strong></p>
+						<ul class="table-list-form">
+							<li>
+								<div class="form-check type2">
+									<input type="checkbox" id="chk03011" class="check-input">
+									<label for="chk03011" class="form-check-label">급여이체 50만원 이상</label>
+									<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.50</em><span class="unit">%</span></strong></p>
+								</div>
+							</li>
+							<li>
+								<div class="form-check type2">
+									<input type="checkbox" id="chk03012" class="check-input">
+									<label for="chk03012" class="form-check-label">신용카드보유 (NH채움카드)</label>
+									<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.20</em><span class="unit">%</span></strong></p>
+								</div>
+							</li>
+							<li>
+								<div class="form-check type2">
+									<input type="checkbox" id="chk03013" class="check-input">
+									<label for="chk03013" class="form-check-label">우량등급 우대금리<br>(통신등급 1~3등급)</label>
+									<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.20</em><span class="unit">%</span></strong></p>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="table-list-total">
+					<li>
+						<p class="table-list-title">예상금리(A+B-C)</p>
+						<p class="table-list-desc"><strong class="table-list-value c-primary"><em class="data">4.82</em><span class="unit">%</span></strong></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="accordion-btn-wrap">
+		<button type="button" aria-expanded="true" class="js_accordion-btn ">상세닫기</button>
 	</div>
 </div>
 
@@ -2154,7 +2181,24 @@
 	<button type="button" class="btn st_line-secondary">line-secondary</button>
 	<button type="button" class="btn st_line-dark">line-dark</button>
 </div>
+</div>
+</div>
 
+<div class="ng_code-box">
+<h2 class="ng_h2-title">버튼 라운드형</h2>
+<p class="ng_desc-type1">
+	- 버튼의 형태를 <code class="badge">.btn.st_round</code>을 적용해 변경할 수 있습니다.<br>
+</p>
+<div class="ng_code-preview">
+<div>
+	<button type="button" class="btn st_primary st_round">primary</button>
+	<a href="javascript:;" role="button" class="btn st_primary st_round">primary</a>
+	<button type="button" class="btn cs_disabled st_round" disabled>btn:disabled</button>
+	<button type="button" class="btn st_line-default st_round">line-default</button>
+	<button type="button" class="btn st_line-primary st_round">line-primary</button>
+	<button type="button" class="btn st_line-secondary st_round">line-secondary</button>
+	<button type="button" class="btn st_line-dark st_round">line-dark</button>
+</div>
 </div>
 </div>
 
@@ -2466,7 +2510,38 @@
 								스크롤 스파이 하고 싶은 요소에 <code class="badge">data-bs-spy="scroll"</code> 추가
 							</p>
 <div class="ng_code-preview">
-<nav id="nav-example" class="nav-wrap">
+
+<div class="scrollspy">
+
+	<button type="button" class="btn st_primary st_sm">primary</button>
+	<a href="javascript:;" role="button" class="btn st_primary st_round">primary</a>
+	<button type="button" class="btn cs_disabled st_round" disabled>btn:disabled</button>
+	<button type="button" class="btn st_line-default st_round">line-default</button>
+	<button type="button" class="btn st_line-primary st_round">line-primary</button>
+	<button type="button" class="btn st_line-secondary st_round">line-secondary</button>
+	<button type="button" class="btn st_line-dark st_round">line-dark</button>
+	
+	<nav id="nav-example" class="nav-wrap">
+		<ul class="nav">
+			<li class="nav-list">
+				<a href="#scrollspy-heading1" class="nav-item cs_active">First</a>
+			</li>
+			<li class="nav-list">
+				<a href="#scrollspy-heading2" class="nav-item">Second</a>
+			</li>
+			<li class="nav-list">
+				<a href="#scrollspy-heading3" class="nav-item">Third</a>
+			</li>
+			<li class="nav-list">
+				<a href="#scrollspy-heading4" class="nav-item">Fourth</a>
+			</li>
+			<li class="nav-list">
+				<a href="#scrollspy-heading5" class="nav-item">Fifth</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+<!-- <nav id="nav-example" class="nav-wrap">
 	<ul class="nav">
 		<li class="nav-list">
 			<a href="#scrollspy-heading1" class="nav-item cs_active">First</a>
@@ -2496,12 +2571,7 @@
 	<p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
 	<p id="scrollspy-heading5" class="h5">Fifth heading</p>
 	<p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
-</div>
-<script>
-	$(function(){
-		let link = $('.nav-item')
-	})
-</script>
+</div> -->
 </div>					
 						</div>
 					</article>
