@@ -53,10 +53,10 @@
 /* --------------------------
 		스크롤스파이
 -------------------------- */
-.scrollspy-nav{background-color: var(--white);}
-.scrollspy-nav.st-sticky{ position: fixed;top: 50px;}
+.scrollspy-nav{overflow-x: scroll;background-color: var(--white);}
+.scrollspy-nav.st-sticky{ position: fixed;top: 50px; width: calc(100% - 100px);}/*width: calc(100% - 100px); 은 가이드에 의해 임시로 적어 놓은 수치입니다.*/
 .scrollspy-nav.st-sticky + .scrollspy-cont{margin-top: 50px;}
-.scrollspy-nav ul{display:flex;overflow:hidden;}
+.scrollspy-nav ul{display:flex;}
 .scrollspy-nav ul li{margin-left:7px;}
 .scrollspy-nav .nav-item{display:flex;height:36px;padding:6px 10px;border:1px solid var(--bdc-01);border-radius:15px;color:var(--fc-05);align-items:center;}
 .scrollspy-nav .nav-item.cs_active{border-color:var(--main);background-color:var(--main);font-size:16px;color:var(--fc-00);}

@@ -2515,11 +2515,11 @@
 	<!--  st-sticky -->
 	<nav class="scrollspy-nav">
 		<ul>
-			<li><a href="javascript:;" data-bill-menu="dbm01" aria-selected="true" class="nav-item cs_active" anchor-title="dem01">First</a></li>
-			<li><a href="javascript:;" data-bill-menu="dbm02" aria-selected="false" class="nav-item" anchor-title="dem02">Second</a></li>
-			<li><a href="javascript:;" data-bill-menu="dbm03" aria-selected="false" class="nav-item" anchor-title="dem03">Third</a></li>
-			<li><a href="javascript:;" data-bill-menu="dbm04" aria-selected="false" class="nav-item" anchor-title="dem04">Fourth</a></li>
-			<li><a href="javascript:;" data-bill-menu="dbm05" aria-selected="false" class="nav-item" anchor-title="dem05">Fifth</a></li>
+			<li><a href="javascript:;" role="button" data-bill-menu="dbm01" aria-selected="true" class="nav-item cs_active" anchor-title="dem01">First</a></li>
+			<li><a href="javascript:;" role="button" data-bill-menu="dbm02" aria-selected="false" class="nav-item" anchor-title="dem02">Second</a></li>
+			<li><a href="javascript:;" role="button" data-bill-menu="dbm03" aria-selected="false" class="nav-item" anchor-title="dem03">Third</a></li>
+			<li><a href="javascript:;" role="button" data-bill-menu="dbm04" aria-selected="false" class="nav-item" anchor-title="dem04">Fourth</a></li>
+			<li><a href="javascript:;" role="button" data-bill-menu="dbm05" aria-selected="false" class="nav-item" anchor-title="dem05">Fifth</a></li>
 		</ul>
 	</nav>
 	<div class="scrollspy-cont">
@@ -2569,115 +2569,7 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		$(function(){
-			const $headerHeight = $(".ng_header-inner").outerHeight()
-			const $thisTop = $(".scrollspy-nav").offset().top;
-			const $spyItem = $(".scrollspy-nav .nav-item");
-			$(window).on("scroll",function(){
-				const $scrollTop = $("html, body").scrollTop();
-				const $scrollMove = $thisTop - $headerHeight;
-				if($scrollTop > $scrollMove){
-					$(".scrollspy-nav").addClass("st-sticky");
-				}else{
-					$(".scrollspy-nav").removeClass("st-sticky");
-				}
-			});
-
-			$spyItem.on("click", function() {
-				const $thisBtn = $(this);
-				const $thisAttrMenu = $thisBtn.attr('anchor-title');
-
-				const $scrollspy = $thisBtn.closest(".scrollspy"); // closest(".scrollspy")를 사용하여 현재 메뉴의 부모 요소를 찾습니다.
-        		const $contList = $scrollspy.find('.cont-list'); // 해당 스크롤 스파이 컨테이너 내에서 컨텐츠 리스트를 찾습니다.
-				
-				$contList.each(function() {
-					const $cont = $(this);
-					const $thisAttrCont = $cont.attr('anchor-cont');
-					
-					// console.log($thisAttrCont)
-					if ($thisAttrCont === $thisAttrMenu) {
-						const $thisOffSet = $cont.offset().top;
-
-						$(".scrollspy-nav .nav-item").removeClass('cs_active').attr('aria-selected', 'false');
-						$thisBtn.addClass('cs_active').attr('aria-selected', 'true');
-						
-						console.log($thisOffSet)
-						$('html, body').stop().animate({ scrollTop: $thisOffSet - 50 - 36 }, 400, function() {
-							$cont.find('.cont-header').focus();
-						});
-					}
-				});
-
-			});
-
-			// $('.btnBillMenu').focus(function(){
-			// 	var $this = $(this);
-			// 	var $thisPosLeft = $this.position().left;
-			// 	//console.log($thisPosLeft)
-			// 	$('.billLisMenu').stop().animate({scrollLeft:$thisPosLeft},400,function(){});
-				
-			// });
-
-			// anchorWrap();
-
-			//앵커이동
-			// function anchorWrap() {
-			// 	$('.billLisMenu a').click(function(){
-			// 		var $this = $(this);
-			// 		var $thisAttr = $this.attr('anchor-title');
-			// 		$('.inoutListWrap').each(function(){
-			// 			var $thisTarget = $(this);
-			// 			var $targetPo = $(this).offset().top;
-			// 			var $heightHeader = $('.header').outerHeight();
-			// 			var $heightTab = $('.billLisMenu').outerHeight();
-			// 			var $hightM = $heightHeader + $heightTab;
-			// 			if ($(this).attr('anchor-cont') == $thisAttr ) {
-			// 				$(this).addClass('active');
-			// 				$('html, body').stop().animate({scrollTop:$targetPo - $hightM -10},400,function(){
-			// 					$('.billLisMenu a').removeClass('active').attr('aria-selected','false'); //2022-10-18 수정
-			// 					$this.addClass('active').attr('aria-selected','true'); //2022-10-18 수정
-			// 					$thisTarget.find('h3.tit').focus();
-			// 				});
-			// 			}
-			// 		});
-			// 	});
-			// }
-			// 
-		})
-	</script>
 </div>
-<!-- <nav id="nav-example" class="nav-wrap">
-	<ul class="nav">
-		<li class="nav-list">
-			<a href="#scrollspy-heading1" class="nav-item cs_active">First</a>
-		</li>
-		<li class="nav-list">
-			<a href="#scrollspy-heading2" class="nav-item">Second</a>
-		</li>
-		<li class="nav-list">
-			<a href="#scrollspy-heading3" class="nav-item">Third</a>
-		</li>
-		<li class="nav-list">
-			<a href="#scrollspy-heading4" class="nav-item">Fourth</a>
-		</li>
-		<li class="nav-list">
-			<a href="#scrollspy-heading5" class="nav-item">Fifth</a>
-		</li>
-	</ul>
-</nav>
-<div data-bs-smooth-scroll="true" data-bs-spy="scroll" data-bs-target="#nav-example" class="scrollspy-example">
-	<p id="scrollspy-heading1" class="h5">First heading</p>
-	<p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
-	<p id="scrollspy-heading2" class="h5">Second heading</p>
-	<p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
-	<p id="scrollspy-heading3" class="h5">Third heading</p>
-	<p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
-	<p id="scrollspy-heading4" class="h5">Fourth heading</p>
-	<p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
-	<p id="scrollspy-heading5" class="h5">Fifth heading</p>
-	<p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
-</div> -->
 </div>					
 						</div>
 					</article>

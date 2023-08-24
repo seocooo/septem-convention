@@ -189,3 +189,61 @@ $(function () {
       .removeClass("cs_active");
   });
 });
+
+//스크롤 스파이
+$(function () {
+  //가이드 헤더크기로 잡혀있음 차후 수정 필요
+  const $headerHeight = $(".ng_header-inner").outerHeight();
+  const $thisTop = $(".scrollspy-nav").offset().top;
+  const $spyItem = $(".scrollspy-nav .nav-item");
+  $(window).on("scroll", function () {
+    const $scrollTop = $("html, body").scrollTop();
+    const $scrollMove = $thisTop - $headerHeight;
+    const $contHeight = $(".scrollspy-cont").outerHeight();
+    const $scrollMoveEnd = $scrollMove + $contHeight;
+    if ($scrollTop > $scrollMove && $scrollTop <= $scrollMoveEnd) {
+      $(".scrollspy-nav").addClass("st-sticky");
+    } else {
+      $(".scrollspy-nav").removeClass("st-sticky");
+    }
+  });
+
+  $spyItem.focus(function () {
+    var $this = $(this);
+    var $thisPosLeft = $this.position().left;
+    console.log($thisPosLeft);
+    $(".scrollspy-nav")
+      .stop()
+      .animate({ scrollLeft: $thisPosLeft }, 400, function () {});
+  });
+
+  $spyItem.on("click", function () {
+    const $thisBtn = $(this);
+    const $thisAttrMenu = $thisBtn.attr("anchor-title");
+    const $scrollspy = $thisBtn.closest(".scrollspy"); // closest(".scrollspy")를 사용하여 현재 메뉴의 부모 요소를 찾습니다.
+    const $contList = $scrollspy.find(".cont-list"); // 해당 스크롤 스파이 컨테이너 내에서 컨텐츠 리스트를 찾습니다.
+
+    $contList.each(function () {
+      const $cont = $(this);
+      const $thisAttrCont = $cont.attr("anchor-cont");
+
+      if ($thisAttrCont === $thisAttrMenu) {
+        const $thisOffSet = $cont.offset().top;
+
+        $("html, body")
+          .stop()
+          .animate(
+            { scrollTop: $thisOffSet - $headerHeight - 36 },
+            400,
+            function () {
+              $(".scrollspy-nav .nav-item")
+                .removeClass("cs_active")
+                .attr("aria-selected", "false");
+              $thisBtn.addClass("cs_active").attr("aria-selected", "true");
+              $cont.find(".cont-header").focus();
+            }
+          );
+      }
+    });
+  });
+});
