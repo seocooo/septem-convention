@@ -211,7 +211,7 @@ $(function () {
   $spyItem.focus(function () {
     var $this = $(this);
     var $thisPosLeft = $this.position().left;
-    console.log($thisPosLeft);
+    // console.log($thisPosLeft);
     $(".scrollspy-nav")
       .stop()
       .animate({ scrollLeft: $thisPosLeft }, 400, function () {});
