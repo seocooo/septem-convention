@@ -1266,16 +1266,16 @@
 			<div class="accordion-collapse cs_show">
 				<div class="form-group type2">
 					<div class="form-radio">
-						<input type="radio" name="rdo11" id="rdo1101" class="check-input" checked>
-						<label for="rdo1101" class="form-check-label">2천만원 미만</label>
+						<input type="radio" name="rdo11" id="rdo001" class="check-input" checked>
+						<label for="rdo001" class="form-check-label">2천만원 미만</label>
 					</div>
 					<div class="form-radio">
-						<input type="radio" name="rdo11" id="rdo1102" class="check-input">
-						<label for="rdo1102" class="form-check-label">2천만 ~ 5천만원 미만</label>
+						<input type="radio" name="rdo11" id="rdo002" class="check-input">
+						<label for="rdo002" class="form-check-label">2천만 ~ 5천만원 미만</label>
 					</div>
 					<div class="form-radio">
-						<input type="radio" name="rdo11" id="rdo1103" class="check-input">
-						<label for="rdo1103" class="form-check-label">5천만 ~ 1억원 미만</label>
+						<input type="radio" name="rdo11" id="rdo003" class="check-input">
+						<label for="rdo003" class="form-check-label">5천만 ~ 1억원 미만</label>
 					</div>
 				</div>
 			</div>
@@ -1365,6 +1365,11 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			// $(function(){
+			// 	const termItemBtn = document.
+			// })
+		</script>
 	</div>
 	<div class="term-item">
 		<div class="form-check">
@@ -1868,11 +1873,11 @@
 							<div class="ng_code-preview">
 <div class="form-group">
 	<strong class="form-label">주민등록번호</strong>
-	<div class="form-item">
-		<input type="tel" title="주민번호 앞자리" class="text-input">
+	<form class="form-item" action>
+		<input type="text" title="주민번호 앞자리 6자리" class="text-input" pattern="\d{6}" autocomplete="off" required>
 		<span class="symbol">-</span>
-		<input type="password" title="주민번호 뒷자리" class="text-input">
-	</div>
+		<input type="password" title="주민번호 뒷자리 7자리" class="text-input" pattern="\d{7}" autocomplete="current-password" required>
+	</form>
 </div>
 		</div>
 		<div class="ng_code-preview">
@@ -2205,8 +2210,8 @@
 					<div class="ng_code-box">
 					<h2 class="ng_h2-title">텍스트 버튼</h2>
 						<div class="ng_code-preview">
-<a href="javascript:;" title="링크페이지로 이동" class="link st_default">link-default</a>
-<a href="javascript:;" title="링크페이지로 이동" class="link st_primary">link-primary</a>
+<a href="javascript:;" title="링크페이지로 이동" role="button" class="link st_default">link-default</a>
+<a href="javascript:;" title="링크페이지로 이동" role="button" class="link st_primary">link-primary</a>
 						</div>
 					</div>
 					<div class="ng_code-box">
@@ -2948,8 +2953,8 @@ observer 옵션을 true로 설정하게 되면
 	<div class="tooltip">
 		<strong>내 검진 결과 비교</strong>
 		<div class="tooltip-container">
-			<button type="button" class="ic-ico-help"><span class="blind">툴팁</span></button>
-			<div class="tooltip-cont" style="display: block;">
+			<button type="button" class="ic-ico-help cs_active"><span class="blind">툴팁</span></button>
+			<div class="tooltip-cont">
 				<ul class="text-list st_dot">
 					<li>내용이 들어갑니다.</li>
 					<li>상품가입이 원활하게 완료되지 않으신 경우, 상품가입 내역에서 처리결과를 반드시 확인하시기 바랍니다.</li>

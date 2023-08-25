@@ -60,15 +60,62 @@
 })(window, jQuery);
 
 // 툴팁
-$(function () {
-  const bodyW = $(document.body).width();
-  const tooltipCont = $(".tooltip .tooltip-cont");
-  const tootipFull = $(".tooltip.js_tooltip-full .tooltip-cont");
-  const tooltipW = Math.floor(bodyW / 2);
-  const tooltipMargin = 40;
+document.addEventListener("DOMContentLoaded", function () {
+  const tooltips = document.querySelectorAll(".tooltip");
+  const bodyW = document.body.clientWidth;
 
-  tooltipCont.css("width", tooltipW + "px");
-  tootipFull.css("width", bodyW - tooltipMargin + "px");
+  tooltips.forEach(function (tooltip) {
+    const tooltipBtn = tooltip.querySelector("button");
+    const tooltipCont = tooltip.querySelector(".tooltip-cont");
+    const tooltipClose = tooltip.querySelector(".tooltip-close");
+    const tooltipFull = tooltip.classList.contains("js_tooltip-full");
+
+    const tooltipW = Math.floor(bodyW / 2);
+    const tooltipMargin = 40;
+
+    if (tooltipCont) {
+      if (tooltipFull) {
+        tooltipCont.style.width = bodyW - tooltipMargin + "px";
+      } else {
+        tooltipCont.style.width = tooltipW + "px";
+      }
+    }
+
+    if (tooltipBtn) {
+      tooltipBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+
+        if (event.target === tooltipClose) {
+          tooltip.classList.remove("cs_active");
+        } else {
+          const isActive = tooltip.classList.toggle("cs_active");
+          if (tooltipCont) {
+            tooltipCont.setAttribute("aria-hidden", !isActive);
+          }
+        }
+      });
+    }
+
+    if (tooltipClose) {
+      tooltipClose.addEventListener("click", function (event) {
+        event.stopPropagation();
+        tooltip.classList.remove("cs_active");
+        if (tooltipCont) {
+          tooltipCont.setAttribute("aria-hidden", "true");
+        }
+      });
+    }
+  });
+
+  document.addEventListener("click", function () {
+    tooltips.forEach(function (tooltip) {
+      tooltip.classList.remove("cs_active");
+      const tooltipCont = tooltip.querySelector(".tooltip-cont");
+      if (tooltipCont) {
+        tooltipCont.setAttribute("aria-hidden", "true");
+      }
+    });
+  });
 });
 
 // 팝업
@@ -194,17 +241,23 @@ $(function () {
 $(function () {
   //가이드 헤더크기로 잡혀있음 차후 수정 필요
   const $headerHeight = $(".ng_header-inner").outerHeight();
-  const $thisTop = $(".scrollspy-nav").offset().top;
+  const $scrollspyNav = $(".scrollspy-nav");
+  //   const $thisTop = $(".scrollspy-nav").offset().top;
+  const $thisTop = $scrollspyNav.length > 0 ? $scrollspyNav.offset().top : 0;
   const $spyItem = $(".scrollspy-nav .nav-item");
+
   $(window).on("scroll", function () {
     const $scrollTop = $("html, body").scrollTop();
     const $scrollMove = $thisTop - $headerHeight;
     const $contHeight = $(".scrollspy-cont").outerHeight();
     const $scrollMoveEnd = $scrollMove + $contHeight;
-    if ($scrollTop > $scrollMove && $scrollTop <= $scrollMoveEnd) {
-      $(".scrollspy-nav").addClass("st-sticky");
-    } else {
-      $(".scrollspy-nav").removeClass("st-sticky");
+
+    if ($scrollspyNav.length > 0) {
+      if ($scrollTop > $scrollMove && $scrollTop <= $scrollMoveEnd) {
+        $(".scrollspy-nav").addClass("st-sticky");
+      } else {
+        $(".scrollspy-nav").removeClass("st-sticky");
+      }
     }
   });
 
@@ -245,5 +298,13 @@ $(function () {
           );
       }
     });
+  });
+});
+
+// 약관 클릭시 관련 모달 호출
+$(".term-list").each(function (term) {
+  const $termItemBtn = term.$(".toggle-item .form-check label");
+  $termItemBtn.on("click", function () {
+    console.log($(this));
   });
 });

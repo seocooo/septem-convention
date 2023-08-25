@@ -157,6 +157,7 @@
 
 /* 툴팁 */
 .tooltip{position: relative;}
+.tooltip.cs_active .tooltip-cont{display: block;}
 .tooltip .tooltip-container{ display:inline-block;position: relative; vertical-align: middle;}
 .tooltip .tooltip-cont{display:none; position: absolute; left:0;z-index:1; 
 	margin-top:10px; padding: 20px 40px 20px 20px; border: 1px solid var(--bdc-black); border-radius: 15px; background-color: var(--white); text-align: left;}
