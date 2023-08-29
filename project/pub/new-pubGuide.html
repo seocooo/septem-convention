@@ -1335,27 +1335,27 @@
 		<div class="toggle-item">
 			<div class="toggle-header">
 				<div class="form-check">
-					<input type="checkbox" aria-expanded="true" value id="chk0400" class="check-input js_toggle-btn">
+					<input type="checkbox" aria-expanded="true" value id="chk0400" class="check-input js_term-all">
 					<label for="chk0400" class="form-check-label">전체동의</label>
 				</div>
 			</div>
 			<div class="toggle-body">
 				<div class="toggle-collapse cs_show">
-					<div class="sub-term-item">
+					<div data-modal="term-modal1" class="sub-term-item js_modal-open">
 						<div class="form-check type2">
 							<input type="checkbox" title="약관상세보기 팝업열림" value id="chk0401" class="check-input">
 							<label for="chk0401">기본약관</label>
 						</div>
 						<button title="약관상세보기 팝업열림" class="term-arrow"></button>
 					</div>
-					<div class="sub-term-item">
+					<div data-modal="term-modal2" class="sub-term-item js_modal-open">
 						<div class="form-check type2">
 							<input type="checkbox" title="약관상세보기 팝업열림" value id="chk0402" class="check-input">
 							<label for="chk0402">개인(신용)정보수집이용 및 제공 관련 고객 권리 안내문</label>
 						</div>
 						<button title="약관상세보기 팝업열림" class="term-arrow"></button>
 					</div>
-					<div class="sub-term-item">
+					<div data-modal="term-modal3" class="sub-term-item js_modal-open">
 						<div class="form-check type2">
 							<input type="checkbox" title="약관상세보기 팝업열림" value id="chk0403" class="check-input">
 							<label for="chk0403">[필수] (비여신)개인(신용)정보 수집·이용 동의서</label>
@@ -1366,36 +1366,59 @@
 			</div>
 		</div>
 		<!-- 임시 모달 -->
-		<!-- <div id="myModal" class="modal">
-			<div class="modal-content">
-				<span class="close">&times;</span>
-				<p>약관 내용을 여기에 표시합니다.</p>
-				<button id="confirmBtn">동의</button>
+		<div role="dialog" aria-hidden="true" aria-labelledby="modal1-label" id="term-modal1" class="modal st_bottom-sheet">
+			<div class="modal-dim"></div>
+			<div class="modal-inner">
+				<div class="modal-header">
+					<div class="modal-title">기본약관 - term-modal1</div>
+				</div>
+				<div class="modal-content">
+					<p class="modal-cont-text">기본약관에 동의 하십니까?</p>
+				</div>
+				<div class="modal-footer btn-group-progress">
+					<button type="button" class="btn st_line-default js_term-disagree js_modal-close">취소</button>
+					<button type="button" class="btn st_primary js_term-agree js_modal-close">확인</button>
+				</div>
+				<button title="닫기" class="modal-close js_modal-close"><i class="ic-btn-close"></i></button>
 			</div>
-		</div> -->
-		<!-- <script>
-			// 필요한 체크박스와 모달 요소 가져오기
-			const toggleBtn = document.getElementById("chk0400");
-			const modal = document.getElementById("myModal");
-			const closeModal = document.querySelector(".close");
-			const confirmBtn = document.getElementById("confirmBtn");
-
-			// 체크박스 클릭 시 모달 열기
-			toggleBtn.addEventListener("click", () => {
-				modal.style.display = "block";
-			});
-
-			// 모달 닫기 버튼 클릭 시 모달 닫기
-			closeModal.addEventListener("click", () => {
-				modal.style.display = "none";
-			});
-
-			// 동의 버튼 클릭 시 체크박스 체크하고 모달 닫기
-			confirmBtn.addEventListener("click", () => {
-				toggleBtn.checked = true;
-				modal.style.display = "none";
-			});
-		</script> -->
+		</div>
+		<!-- // -->
+		<!-- 임시 모달 -->
+		<div role="dialog" aria-hidden="true" aria-labelledby="modal1-label" id="term-modal2" class="modal st_bottom-sheet">
+			<div class="modal-dim"></div>
+			<div class="modal-inner">
+				<div class="modal-header">
+					<div class="modal-title">기본약관 - term-modal2</div>
+				</div>
+				<div class="modal-content">
+					<p class="modal-cont-text">기본약관에 동의 하십니까?</p>
+				</div>
+				<div class="modal-footer btn-group-progress">
+					<button type="button" class="btn st_line-default js_term-disagree js_modal-close">취소</button>
+					<button type="button" class="btn st_primary js_term-agree js_modal-close">확인</button>
+				</div>
+				<button title="닫기" class="modal-close js_modal-close"><i class="ic-btn-close"></i></button>
+			</div>
+		</div>
+		<!-- // -->
+		<!-- 임시 모달 -->
+		<div role="dialog" aria-hidden="true" aria-labelledby="modal1-label" id="term-modal3" class="modal st_bottom-sheet">
+			<div class="modal-dim"></div>
+			<div class="modal-inner">
+				<div class="modal-header">
+					<div class="modal-title">기본약관 - term-modal3</div>
+				</div>
+				<div class="modal-content">
+					<p class="modal-cont-text">기본약관에 동의 하십니까?</p>
+				</div>
+				<div class="modal-footer btn-group-progress">
+					<button type="button" class="btn st_line-default js_term-disagree js_modal-close">취소</button>
+					<button type="button" class="btn st_primary js_term-agree js_modal-close">확인</button>
+				</div>
+				<button title="닫기" class="modal-close js_modal-close"><i class="ic-btn-close"></i></button>
+			</div>
+		</div>
+		<!-- // -->
 	</div>
 	<div class="term-item">
 		<div class="form-check">
@@ -1408,7 +1431,7 @@
 		<div class="toggle-item">
 			<div class="toggle-header">
 				<div class="form-check">
-					<input type="checkbox" aria-expanded="true" value id="chk0601" class="check-input js_toggle-btn">
+					<input type="checkbox" aria-expanded="true" value id="chk0601" class="check-input js_term-all">
 					<label for="chk0601" class="form-check-label">[필수] 불법/탈법 차명거래 금지 실명 확인</label>
 				</div>
 			</div>
@@ -1429,7 +1452,7 @@
 		<div class="toggle-item">
 			<div class="toggle-header">
 				<div class="form-check">
-					<input type="checkbox" aria-expanded="true" value id="chk0602" class="check-input js_toggle-btn">
+					<input type="checkbox" aria-expanded="true" value id="chk0602" class="check-input js_term-all">
 					<label for="chk0602" class="form-check-label">[필수] 이체 한도 확인</label>
 				</div>
 			</div>
@@ -1473,7 +1496,7 @@
 		<div class="toggle-item">
 			<div class="toggle-header">
 				<div class="form-check">
-					<input type="checkbox" aria-expanded="true" value id="chk0603" class="check-input js_toggle-btn">
+					<input type="checkbox" aria-expanded="true" value id="chk0603" class="check-input js_term-all">
 					<label for="chk0603" class="form-check-label">[선택] 개인(신용)정보 수집, 이용, 제공 동의 (상품서비스 안내 등)</label>
 				</div>
 			</div>
@@ -1510,8 +1533,8 @@
 </div>
 
 </div>
-						</div>
-					</article>
+						</div></article></div>
+					
 					<article id="form_input" class="ng ng_form">
 						<h1 class="ng_h1-title">인풋과 셀렉트</h1>
 						<div class="ng_code-box">
@@ -3186,8 +3209,8 @@ observer 옵션을 true로 설정하게 되면
 						</div>
 					</article>
 
-				</div>
-			</section>
+				</section></div>
+			
 		</div>
 	</div>
 
@@ -3200,7 +3223,7 @@ observer 옵션을 true로 설정하게 되면
 		</div>
 	</footer>
 	<!-- //Footer -->
-</div><!-- //wrap -->
+<!-- //wrap -->
 
 <script>
 $('.ng_code-preview').each(function(){

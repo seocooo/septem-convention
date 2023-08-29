@@ -154,6 +154,7 @@
 /* 모달 셀렉트 */
 .modal-select-item a{display: block; width:100%; padding: 18px 0; border-bottom: 1px solid var(--gray-01);}
 .modal-select-item.cs_active a{position: relative; padding: 18px 34px 18px 0; background:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcgMTIuMzU2NkwxMC4zNTY2IDE1LjcxMzNMMTYuMjMwOCA5IiBzdHJva2U9IiM1MEIyNzAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=') calc(100% - 10px) /24px 24px no-repeat; color: var(--main);content: "";}
+.js_modal-open{cursor: pointer;}
 
 /* 툴팁 */
 .tooltip{position: relative;}

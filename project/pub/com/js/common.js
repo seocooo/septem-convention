@@ -302,9 +302,129 @@ $(function () {
 });
 
 // 약관 클릭시 관련 모달 호출
-$(".term-list").each(function (term) {
-  const $termItemBtn = term.$(".toggle-item .form-check label");
-  $termItemBtn.on("click", function () {
-    console.log($(this));
+$(function () {
+  const termAgreeBtn = document.querySelectorAll(".js_term-agree");
+  const termDisagreeBtn = document.querySelectorAll(".js_term-disagree");
+  const masterCheckbox = document.querySelector(".js_term-all");
+
+  function updateCheckboxes(modalId, checked) {
+    const inputModal = document.querySelectorAll(`[data-modal='${modalId}']`);
+    inputModal.forEach((modal) => {
+      const checkInput = modal.querySelector(".check-input");
+      checkInput.checked = checked;
+    });
+  }
+
+  function updateMasterCheckbox() {
+    const subCheckBoxes = document.querySelectorAll(
+      ".check-input:not(.js_term-all)"
+    );
+    if (Array.from(subCheckBoxes).every((checkInput) => checkInput.checked)) {
+      masterCheckbox.checked = true;
+    } else {
+      masterCheckbox.checked = false;
+    }
+  }
+
+  termAgreeBtn.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      const target = event.target;
+      const modalId = target.closest(".modal").getAttribute("id");
+      //   console.log(modalId);
+      updateCheckboxes(modalId, true);
+    });
   });
+
+  termDisagreeBtn.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      const target = event.target;
+      const modalId = target.closest(".modal").getAttribute("id");
+      //   console.log(modalId);
+      updateCheckboxes(modalId, false);
+      updateMasterCheckbox();
+    });
+  });
+
+  masterCheckbox.addEventListener("change", (event) => {
+    const checked = event.target.checked;
+    const subCheckboxes = document.querySelectorAll(
+      ".check-input:not(.js_term-all)"
+    );
+    subCheckboxes.forEach((checkInput) => {
+      checkInput.checked = checked;
+    });
+  });
+
+  // 초기 상태에서 전체 동의 상태를 업데이트
+  updateMasterCheckbox();
 });
+// ----------------------------------------//
+// $(function () {
+// 	const termAgreeBtn = document.querySelectorAll(".js_term-agree");
+// 	const termDisagreeBtn = document.querySelectorAll(".js_term-disagree");
+// 	const masterCheckbox = document.querySelector(".js_term-all");
+
+// 	function updateCheckboxState(modalId, checked) {
+// 	  const modalCheckboxes = document.querySelectorAll(`[data-modal='${modalId}'] .check-input`);
+// 	  modalCheckboxes.forEach((checkbox) => {
+// 		checkbox.checked = checked;
+// 	  });
+// 	}
+
+// 	function updateMasterCheckbox() {
+// 	  const subCheckboxes = document.querySelectorAll(".check-input:not(.js_term-all)");
+// 	  masterCheckbox.checked = Array.from(subCheckboxes).every((checkbox) => checkbox.checked);
+// 	}
+
+// 	termAgreeBtn.forEach((button) => {
+// 	  button.addEventListener("click", (event) => {
+// 		const modalId = event.currentTarget.closest(".modal").getAttribute("id");
+// 		updateCheckboxState(modalId, true);
+// 		updateMasterCheckbox();
+// 	  });
+// 	});
+
+// 	termDisagreeBtn.forEach((button) => {
+// 	  button.addEventListener("click", (event) => {
+// 		const modalId = event.currentTarget.closest(".modal").getAttribute("id");
+// 		updateCheckboxState(modalId, false);
+// 		updateMasterCheckbox();
+// 	  });
+// 	});
+
+// 	masterCheckbox.addEventListener("change", () => {
+// 	  const checked = masterCheckbox.checked;
+// 	  const subCheckboxes = document.querySelectorAll(".check-input:not(.js_term-all)");
+// 	  subCheckboxes.forEach((checkbox) => {
+// 		checkbox.checked = checked;
+// 	  });
+// 	});
+
+// 	// 초기 상태에서 전체 동의 상태를 업데이트
+// 	updateMasterCheckbox();
+//   });
+
+// ----------------------------------------//
+// $(function () {
+//   const termAgreeBtn = document.querySelectorAll(".js_term-agree");
+//   const termDisagreeBtn = document.querySelectorAll(".js_term-disagree");
+
+//   function updateCheckboxes(modal, checked) {
+//     const checkInput = modal.querySelector(".check-input");
+//     checkInput.checked = checked;
+//   }
+
+//   termAgreeBtn.forEach((btn) => {
+//     btn.addEventListener("click", (event) => {
+//       const modal = event.currentTarget.closest(".modal");
+//       updateCheckboxes(modal, true);
+//     });
+//   });
+
+//   termDisagreeBtn.forEach((btn) => {
+//     btn.addEventListener("click", (event) => {
+//       const modal = event.currentTarget.closest(".modal");
+//       updateCheckboxes(modal, false);
+//     });
+//   });
+// });
