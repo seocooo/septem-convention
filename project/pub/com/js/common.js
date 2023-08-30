@@ -186,20 +186,31 @@ $(function () {
   });
 });
 
-// 아코디언
+// 아코디언 :eq(0)
 $(function () {
   const $accordionItems = $(".accordion-item");
 
   $accordionItems.each(function () {
-    const $accordionBtn = $(this).find(".js_accordion-btn");
-    const $accordionCollapse = $(this).find(".accordion-collapse");
+    const $accordionBtn = $(this).find(".js_accordion-btn:eq(0)");
+    const $accordionCollapse = $(this).find(".accordion-collapse:eq(0)");
     const $accordionWrapBtn = $(this).find(
       ".accordion-btn-wrap .js_accordion-btn"
     );
 
-    $accordionBtn.on("click", function () {
+    $accordionBtn.on("click", function (event) {
       const isCollapsed = $accordionBtn.hasClass("cs_collapsed");
 
+      // 현재 아이콘을 제외한 나머지 아이콘 닫힘
+      // $accordionItems.find(".accordion-collapse").removeClass("cs_show");
+      // $accordionItems
+      //   .find(".js_accordion-btn")
+      //   .addClass("cs_collapsed")
+      //   .attr("aria-expanded", "false");
+
+      // $accordionItems
+      //   .find(".accordion-btn-wrap .js_accordion-btn")
+      //   .text("상세보기");
+      //
       if (isCollapsed) {
         $accordionBtn.removeClass("cs_collapsed");
         $accordionBtn.attr("aria-expanded", "true");
@@ -210,10 +221,39 @@ $(function () {
         $accordionWrapBtn.text("상세보기");
       }
 
-      $accordionCollapse.toggleClass("cs_show", isCollapsed);
+      $accordionCollapse.toggleClass("cs_show", !isCollapsed);
+
+      event.stopPropagation();
     });
   });
 });
+// $(function () {
+//   const $accordionItems = $(".accordion-item");
+
+//   $accordionItems.each(function () {
+//     const $accordionBtn = $(this).find(".js_accordion-btn");
+//     const $accordionCollapse = $(this).find(".accordion-collapse");
+//     const $accordionWrapBtn = $(this).find(
+//       ".accordion-btn-wrap .js_accordion-btn"
+//     );
+
+//     $accordionBtn.on("click", function () {
+//       const isCollapsed = $accordionBtn.hasClass("cs_collapsed");
+
+//       if (isCollapsed) {
+//         $accordionBtn.removeClass("cs_collapsed");
+//         $accordionBtn.attr("aria-expanded", "true");
+//         $accordionWrapBtn.text("상세닫기");
+//       } else {
+//         $accordionBtn.addClass("cs_collapsed");
+//         $accordionBtn.attr("aria-expanded", "false");
+//         $accordionWrapBtn.text("상세보기");
+//       }
+
+//       $accordionCollapse.toggleClass("cs_show", isCollapsed);
+//     });
+//   });
+// });
 
 // 탭
 $(function () {
