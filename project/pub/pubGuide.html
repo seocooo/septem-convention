@@ -33,7 +33,7 @@
 		hljs.highlightAll();
 	</script>
 	<style>
-		.ng_aside a{ border:2px solid #fff; }
+		/* .ng_aside a{ border:2px solid #fff; } */
 		.ng_code-preview{max-width:589px; border:1px solid #02aa5f;padding:2rem;border-radius:10px;}
 		.guide-icon + .guide-icon{margin-top: 10px;}
 		.guide-icon .guide-icon-title{padding: 10px; text-align: center; border: 1px solid var(--bdc-05); border-radius: 15px 15px 0 0; background-color: var(--bgc-green-01);}
@@ -50,6 +50,29 @@
 		.ng_nav .ng_nav-list + .ng_nav-list{margin-left:40px;}
 		.ng_nav .ng_nav-list.ng-active::before{position: absolute;right: -4px;bottom: -18px;left: -4px;height: 3px;background-color: #fff; content: '';}
 		.ng_nav .ng_nav-list a{padding: 10px 0;}
+		/* 추가 */
+		.guide-nav .guide-nav-title{ font-size:12px;}
+		.guide-nav-item + .guide-nav-item{margin-top:35px;}
+		.ng_aside .guide-nav-cont {margin-top:20px}
+		.ng_aside .guide-nav-cont ul{margin: 0;}
+		.ng_aside .guide-nav-cont ul a{padding:0;}
+		.ng_aside .guide-nav-cont ul > li a{display: flex; gap: 5px;}
+		.ng_aside .guide-nav-cont ul > li + li{margin-top:15px;}
+		
+		.guide-nav .accordion-item .accordion-title{line-height: 1.5; font-weight: 400; font-size: 1rem;}
+		.guide-nav .accordion-item >.accordion-body{margin-left:10px; padding-left:10px; border-left: 1px solid #eee;}
+		.guide-nav .accordion-item .accordion-title{display: flex; gap: 5px}
+		
+		.guide-nav .accordion-item + .accordion-item{margin-top:17px;}
+		.guide-nav .accordion-item .accordion-item + .accordion-item{margin-top:15px;}
+		.guide-nav .accordion-item .accordion-item .accordion-body{padding-left: 0px;}
+		.guide-nav .accordion-item .accordion-item .accordion-body a {padding-left: 10px;}
+		.guide-nav .accordion-header .js_accordion-btn:after{transition: 0.2s ease-in-out; background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkuMjQxMzIgMTcuNzY1NkM5LjU2MzA4IDE4LjA3ODEgMTAuMDg2MiAxOC4wNzgxIDEwLjQwNzkgMTcuNzY1NkwxNS43NTkxIDEyLjU2ODlDMTUuOTIwOCAxMi40MTE4IDE2LjAwMTYgMTIuMjA1MSAxNiAxMkMxNiAxMS43OTMzIDE1LjkyMDggMTEuNTg4MiAxNS43NTkxIDExLjQzMTFMMTAuNDA3OSA2LjIzNDM2QzEwLjA4NjIgNS45MjE4OCA5LjU2MzA4IDUuOTIxODggOS4yNDEzMiA2LjIzNDM2QzguOTE5NTYgNi41NDY4NCA4LjkxOTU2IDcuMDU0ODIgOS4yNDEzMiA3LjM2NzNMMTQuMDExNyAxMkw5LjI0MTMyIDE2LjYzMjdDOC45MTk1NiAxNi45NDUyIDguOTE5NTYgMTcuNDUzMiA5LjI0MTMyIDE3Ljc2NTZaIiBmaWxsPSIjMjEyMTIxIi8+Cjwvc3ZnPgo=') no-repeat} 
+		.guide-nav .accordion-header .js_accordion-btn.cs_collapsed:after{ transform: rotate(90deg); background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkuMjQxMzIgMTcuNzY1NkM5LjU2MzA4IDE4LjA3ODEgMTAuMDg2MiAxOC4wNzgxIDEwLjQwNzkgMTcuNzY1NkwxNS43NTkxIDEyLjU2ODlDMTUuOTIwOCAxMi40MTE4IDE2LjAwMTYgMTIuMjA1MSAxNiAxMkMxNiAxMS43OTMzIDE1LjkyMDggMTEuNTg4MiAxNS43NTkxIDExLjQzMTFMMTAuNDA3OSA2LjIzNDM2QzEwLjA4NjIgNS45MjE4OCA5LjU2MzA4IDUuOTIxODggOS4yNDEzMiA2LjIzNDM2QzguOTE5NTYgNi41NDY4NCA4LjkxOTU2IDcuMDU0ODIgOS4yNDEzMiA3LjM2NzNMMTQuMDExNyAxMkw5LjI0MTMyIDE2LjYzMjdDOC45MTk1NiAxNi45NDUyIDguOTE5NTYgMTcuNDUzMiA5LjI0MTMyIDE3Ljc2NTZaIiBmaWxsPSIjMjEyMTIxIi8+Cjwvc3ZnPgo=') no-repeat} 
+	
+		
+
+	
 	</style>
 </head>
 <body>
@@ -84,56 +107,135 @@
 	<div class="ng_main">
 		<aside class="ng_aside">
 			<nav>
-				<ul>
-					<li>
-						<img src="./com/img/ico_code.svg" alt>개요 : var
-						<ul>
-							<li><a href="#start_system">시작하기</a></li>
-							<li><a href="#start_folder">색상</a></li>
-						</ul>
+				<ul class="guide-nav">
+					
+					<li class="guide-nav-item">
+						<p class="guide-nav-title">SUMMARY</p>
+						<div class="guide-nav-cont">
+							<ul>
+								<li><a href="#start_system"><img src="./com/img/ico_code.svg" alt>시작하기</a></li>
+								<!-- <li><a href="#start_folder"><img src="./com/img/ico_code.svg" alt>색상</a></li> -->
+							</ul>
+						</div>
 					</li>
-					<li><img src="./com/img/ico_format_size.svg" alt>공통 : comm
-						<ul>
-							<li><a href="#cont_icon">아이콘</a></li>
-							<li><a href="#cont_typo">타이포그래피</a></li>
-							<li><a href="#cont_table">테이블</a></li>
-							<li><a href="#cont_list">리스트</a></li>
-							<li><a href="#cont_term">약관</a></li>
-						</ul>
+					<li class="guide-nav-item">
+						<p class="guide-nav-title">APP VIEWS</p>
+						<div class="guide-nav-cont">
+							<div class="accordion-item">
+								<div class="accordion-header">
+									<button type="button" aria-expanded="false" class="js_accordion-btn">
+										<span class="accordion-title"><img src="./com/img/ico_tab.svg" alt><span>페이지</span></span>
+									</button>
+								</div>
+								<div class="accordion-body">
+									<div class="accordion-collapse">
+										<ul>
+											<li><a href="#start_system">Error</a></li>
+											<li><a href="#start_system">Error</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
 					</li>
-					<li><img src="./com/img/ico_input.svg" alt>폼 : form
-						<ul>
-							<li><a href="#form_input">인풋과 셀렉트</a></li>
-							<li><a href="#form_check">체크박스와 라디오</a></li>
-							<li><a href="#comp_btn">버튼</a></li>
-						</ul>
+					<li class="guide-nav-item">
+						<p class="guide-nav-title">UI TOOLKIT</p>
+						
+						<div class="guide-nav-cont">
+							<div class="accordion-item">
+								<div class="accordion-header">
+									<button type="button" aria-expanded="false" class="js_accordion-btn">
+										<span class="accordion-title"><img src="./com/img/ico_dashboard.svg" alt><span>레이아웃 : layout</span></span>
+									</button>
+								</div>
+								<div class="accordion-body">
+									<div class="accordion-collapse">
+										<div class="accordion-item">
+											<div class="accordion-header">
+												<button type="button" aria-expanded="false" class="js_accordion-btn">
+													<span class="accordion-title">Navigation</span>
+												</button>
+											</div>
+											<div class="accordion-body">
+												<div class="accordion-collapse">
+													<ul>
+														<li><a href="#start_system">시작하기</a></li>
+														<li><a href="#start_folder">색상</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="accordion-item">
+											<div class="accordion-header">
+												<button type="button" aria-expanded="false" class="js_accordion-btn">
+													<span class="accordion-title">Page Headers</span>
+												</button>
+											</div>
+											<div class="accordion-body">
+												<div class="accordion-collapse">
+													<ul>
+														<li><a href="#layout_header">헤더</a></li>
+														<li><a href="#!">푸터</a></li>
+														
+														<li><a href="#layout_breadcrumb">스탭</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<div class="accordion-header">
+									<button type="button" aria-expanded="false" class="js_accordion-btn">
+										<span class="accordion-title"><img src="./com/img/ico_input.svg" alt>공통 : comm</span>
+									</button>
+								</div>
+								<div class="accordion-body">
+									<div class="accordion-collapse">
+										<ul>
+											<li><a href="#start_folder">색상</a></li>
+											<li><a href="#cont_typo">타이포그래피</a></li>
+											<li><a href="#form_input">인풋과 셀렉트</a></li>
+											<li><a href="#form_check">체크박스와 라디오</a></li>
+											<li><a href="#comp_btn">버튼</a></li>
+											<li><a href="#comp_ellipsis">말줄임</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<div class="accordion-header">
+									<button type="button" aria-expanded="false" class="js_accordion-btn">
+										<span class="accordion-title"><img src="./com/img/ico_design_services.svg" alt>컴포넌트 : comp</span>
+									</button>
+								</div>
+								<div class="accordion-body">
+									<div class="accordion-collapse">
+										<ul>
+											<li><a href="#cont_table">테이블</a></li>
+											<li><a href="#cont_list">리스트</a></li>
+											<li><a href="#cont_term">약관</a></li>
+											<li><a href="#comp_acc">아코디언</a></li>
+											<li><a href="#comp_tog">토글(콜랩스)</a></li>					
+											<li><a href="#comp_tab">탭</a></li>
+											<li><a href="#comp_scroll">스크롤스파이</a></li>
+											<li><a href="#pop_popup">팝업</a></li>
+											<li><a href="#pop_tooltip">툴팁(팝오버)</a></li>
+											<li><a href="#layout_progress">프로그래스</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
 					</li>
-					<li>
-						<img src="./com/img/ico_tab.svg" alt>컴포넌트 : comp
-						<ul>
-							<li><a href="#comp_acc">아코디언</a></li>
-							<li><a href="#comp_tog">토글(콜랩스)</a></li>					
-							<li><a href="#comp_tab">탭</a></li>
-							<li><a href="#comp_scroll">스크롤스파이</a></li>
-							<li><a href="#comp_slide">슬라이드</a></li>
-							<li><a href="#comp_ellipsis">말줄임</a></li>
-						</ul>
-					</li>
-					<li>
-						<img src="./com/img/ico_tab.svg" alt>팝업 : popup
-						<ul>
-							<li><a href="#pop_popup">팝업</a></li>
-							<li><a href="#pop_tooltip">툴팁(팝오버)</a></li>
-						</ul>
-					</li><li>
-						<img src="./com/img/ico_dashboard.svg" alt>레이아웃 : layout
-						<ul>
-							<li><a href="#layout_header">헤더</a></li>
-							<li><a href="#!">푸터</a></li>
-							
-							<li><a href="#layout_breadcrumb">스탭</a></li>
-							<li><a href="#layout_progress">프로그래스</a></li>
-						</ul>
+					<li class="guide-nav-item">
+						<p class="guide-nav-title">PLUGINS</p>
+						<div class="guide-nav-cont">
+							<ul>
+								<li><a href="#comp_slide"><img src="./com/img/ico_tab.svg" alt>스와이퍼 슬라이드</a></li>
+							</ul>
+						</div>
 					</li>
 				</ul>
 			</nav>
@@ -703,361 +805,6 @@
 							</ul>
 						</div>
 					</article>
-					
-					<article id="cont_icon" class="ng ng_content">
-						<h1 class="ng_h1-title">아이콘</h1>
-
-						<h2 class="ng_h2-title">svg 사용가이드</h2>
-						<p class="ng_text">
-							svg 사용 가이드입니다.<br>
-							확장팩 다운로드 : Image To Base64, vscode-base64<br>
-							1. svg 코드 전체선택 (복사X)<br>
-							2. ctrl + shift + p → base64 encode 클릭 (base64로 변환됨)<br>
-							3. 변환된 코드를 복사한 후 data:image/svg+xml;base64, 뒤에 불여넣기<br>
-							(background:url(data:image/svg+xml;base64,복사한코드;))<br>
-						</p>
-						<div class="ng_code-box">
-							<h2 class="ng_h2-title">아이콘</h2>
-							<p class="ng_text">
-								- 아이콘의 기본 크기는 24*24 입니다.<br>
-								- 예외 스타일은 다중 클래스를 활용하고<br>
-									상위요소의 크기를 상속 받아서 사용할 수 있습니다.<br>
-								- 클래스의 이름 충돌을 방지하고 가독성을 높이기 위해 접두어(ic-)를 붙입니다. <br>
-								- ic-ico-error
-
-							</p>
-							<div class="guide-icon">
-								<div class="guide-icon-title">기본 </div>
-								<ul class="guide-icon-list">
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-ico-error"></i>
-										</div>
-										<div class="icon-title">ic-ico-error</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-ico-help"></i>
-										</div>
-										<div class="icon-title">ic-ico-help</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class=""></i>
-										</div>
-										<div class="icon-title"></div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class=""></i>
-										</div>
-										<div class="icon-title"></div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class=""></i>
-										</div>
-										<div class="icon-title"></div>
-									</li>
-								</ul>
-							</div>
-							<div class="guide-icon">
-								<div class="guide-icon-title">arrow </div>
-								<ul class="guide-icon-list">
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-arr-down"></i>
-										</div>
-										<div class="icon-title">ic-arr-down</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-arr-right"></i>
-										</div>
-										<div class="icon-title">ic-arr-right</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-arr-up"></i>
-										</div>
-										<div class="icon-title">ic-arr-up</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class=""></i>
-										</div>
-										<div class="icon-title"></div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class=""></i>
-										</div>
-										<div class="icon-title"></div>
-									</li>
-								</ul>
-							</div>
-							<div class="guide-icon">
-								<div class="guide-icon-title">arrow 버튼</div>
-								<ul class="guide-icon-list">
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-btn-back"></i>
-										</div>
-										<div class="icon-title">ic-btn-back</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-btn-cal"></i>
-										</div>
-										<div class="icon-title">ic-btn-cal</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-btn-close"></i>
-										</div>
-										<div class="icon-title">ic-btn-close</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-btn-enu"></i>
-										</div>
-										<div class="icon-title">ic-btn-enu</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-btn-home"></i>
-										</div>
-										<div class="icon-title">ic-btn-home</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-btn-info"></i>
-										</div>
-										<div class="icon-title">ic-btn-info</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-btn-menu"></i>
-										</div>
-										<div class="icon-title">ic-btn-menu</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-btn-plus"></i>
-										</div>
-										<div class="icon-title">ic-btn-plus</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class=""></i>
-										</div>
-										<div class="icon-title"></div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class=""></i>
-										</div>
-										<div class="icon-title"></div>
-									</li>
-								</ul>
-							</div>
-							<div class="guide-icon">
-								<div class="guide-icon-title">input </div>
-								<ul class="guide-icon-list">
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-input-chk"></i>
-										</div>
-										<div class="icon-title">ic-input-chk</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-input-chk-chkd"></i>
-										</div>
-										<div class="icon-title">ic-input-chk-chkd</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-input-chk-dis"></i>
-										</div>
-										<div class="icon-title">ic-input-chk-dis</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-input-chk-on"></i>
-										</div>
-										<div class="icon-title">ic-input-chk-on</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-input-chk-ph"></i>
-										</div>
-										<div class="icon-title">ic-input-chk-ph</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-input-chk-s"></i>
-										</div>
-										<div class="icon-title">ic-input-chk-s</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-input-error"></i>
-										</div>
-										<div class="icon-title">ic-input-error</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-input-ok"></i>
-										</div>
-										<div class="icon-title">ic-input-ok</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-input-rdo-chkd"></i>
-										</div>
-										<div class="icon-title">ic-input-rdo-chkd</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-input-rdo-dis"></i>
-										</div>
-										<div class="icon-title">ic-input-rdo-dis</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-input-rdo-dischkd"></i>
-										</div>
-										<div class="icon-title">ic-input-rdo-dischkd</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-input-rdo-ph"></i>
-										</div>
-										<div class="icon-title">ic-input-rdo-ph</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-input-reset"></i>
-										</div>
-										<div class="icon-title">ic-input-reset</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class=""></i>
-										</div>
-										<div class="icon-title"></div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class=""></i>
-										</div>
-										<div class="icon-title"></div>
-									</li>
-								</ul>
-							</div>
-							<div class="guide-icon">
-								<div class="guide-icon-title">컬러값을 변경할 수 있는 아이콘  style="background-color: var(--red-01);"</div>
-								<ul class="guide-icon-list">
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-ico-bg-error" style="background-color: var(--red-01);"></i>
-										</div>
-										<div class="icon-title">ic-ico-bg-error</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-ico-bg-help" style="background-color: var(--red-01);"></i>
-										</div>
-										<div class="icon-title">ic-ico-bg-help</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-ico-bg-info" style="background-color: var(--red-01);"></i>
-										</div>
-										<div class="icon-title">ic-ico-bg-info</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class="ic-ico-bg-plus" style="background-color: var(--red-01);"></i>
-										</div>
-										<div class="icon-title">ic-ico-bg-plus</div>
-									</li>
-									<li class="guide-icon-item">
-										<div class="icon-img">
-											<i class=""></i>
-										</div>
-										<div class="icon-title"></div>
-									</li>
-								</ul>
-							</div>
-						</div>
-						
-					<div class="ng_code-box">
-						<h2 class="ng_h2-title">예시</h2>
-				<div class="ng_code-preview">
-//버튼에 적용된 아이콘 
-<div>
-	<button type="button" class="btn st_primary">primary<i class="ic-ico-help"></i></button>
-	<button type="button" class="btn st_line-primary"><i class="ic-ico-help"></i></button>
-	<a href="javascript:;" title="링크페이지로 이동" class="link st_default">link-default<i class="ic-ico-help"></i></a>
-</div>
-<div class="mb-20">
-
-	<button type="button" title="닫기" class="ic-input-reset"></button>
-	<button type="button" title="메인으로가기"><i class="ic-btn-home"></i></button>
-
-</div>
-//텍스트 콘텐츠에 적용된 아이콘
-<div class="mb-10">
-	
-	<i class="ic-ico-error"></i><span class="h1">Heading</span>
-
-	<div class="tooltip">
-		<strong>내 검진 결과 비교 툴팁</strong>
-		<div class="tooltip-container">
-			<button type="button" title="툴팁버튼" class="ic-ico-help"></button>
-		</div>
-	</div>
-
-	<div class="info-list">
-		<div class="accordion-item">
-			<div class="accordion-header">
-				<p class="accordion-title">알아두세요</p>
-				<button type="button" aria-expanded="true" class="ic-arr-up js_accordion-btn"></button>
-			</div>
-		</div>
-	</div>
-</div>
-// 헤더적용에 적용된 아이콘
-<div>
-	<header class="header">
-		<div class="header-start">
-			<button title="뒤로가기"><i class="ic-btn-back"></i></button>
-		</div>
-		<h1>대출신청</h1>
-		<div class="header-end">
-			<button title="메인으로"><i class="ic-btn-home"></i></button>
-			<button title="전체메뉴"><i class="ic-btn-menu"></i></button>
-		</div>
-	</header>
-</div>
-
-					</div>
-
-						</div>
-						
-						<!-- <div class="ng_code-box">
-							<h2 class="ng_h2-title">svg 사용 가이드</h2>
-							
-<div class="ng_code-preview">
-	<div class="ex-icon"></div>
-	<div class="mask-ico-error"></div>
-	<div class="mask-ico-help"></div>
-					</div>
-						</div> -->
-
-					</article>
 					<article id="cont_typo" class="ng ng_content">
 						<h1 class="ng_h1-title">타이포그래피</h1>
 						<div class="ng_code-box">
@@ -1351,26 +1098,6 @@
 								<strong class="c-primary">아코디언 버튼</strong> : 아코디언 확장시 <code class="badge">.cs_collapsed</code> 클래스 삭제<br>
 								<strong class="c-primary">아코디언 컨텐츠</strong> : 아코디언 확장시 <code class="badge">.cs_show</code> 클래스 추가
 							</p>
-<!-- <div class="ng_code-preview">
-<div class="info-list">
-	<div class="accordion-item">
-		<div class="accordion-header">
-			<button type="button" aria-expanded="false" class="js_accordion-btn cs_collapsed">
-				<span class="accordion-title">알아두세요</span>
-			</button>
-		</div>
-		<div class="accordion-body">
-			<div class="accordion-collapse">
-				<ul class="text-list st_dot">
-					<li>내용이 들어갑니다.</li>
-					<li>상품가입이 원활하게 완료되지 않으신 경우, 상품가입 내역에서 처리결과를 반드시 확인하시기 바랍니다.</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-</div> -->
-
 <div class="ng_code-preview">
 <div class="info-list">
 	<div class="accordion-item">
@@ -1390,25 +1117,6 @@
 	</div>
 </div>
 </div>
-
-<script>
-	$(function(){
-		const $accordionBtn = $('.accordion-item .js_accordion-btn');
-		const $this = $(this)
-		$accordionBtn.on('click', function(){
-			console.log($this)
-			if($accordionBtn.hasClass('cs_collapsed')){
-				$accordionBtn.removeClass('cs_collapsed');
-				$accordionBtn.attr('aria-expanded','true')
-
-			}else{
-				$accordionBtn.addClass('cs_collapsed')
-				$accordionBtn.attr('aria-expanded','false')
-			}
-			$this.find('.accordion-collapse').toggleClass('cs_show');
-		})
-	});
-</script>
 							<h2 class="ng_h2-title">Info List - 텍스트형</h2>
 <div class="ng_code-preview">
 <div class="info-list">
@@ -1493,9 +1201,56 @@
 				</p>
 			</li>
 		</ul>
+		<div class="accordion-body">
+			<div class="accordion-collapse">
+				<ul class="table-list-sub">
+					<li>
+						<p class="table-list-title">기준금리(A)</p>
+						<p class="table-list-desc"><strong class="data-wrap"><em class="data">3.42</em><span class="unit">%</span></strong></p>
+					</li>
+					<li>
+						<span class="table-list-title">가산금리(B)</span>
+						<p class="table-list-desc"><strong class="data-wrap"><em class="data">1.90</em><span class="unit">%</span></strong></p>
+					</li>
+					<li>
+						<span class="table-list-title">우대금리(C)</span>
+						<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.50</em><span class="unit">%</span></strong></p>
+						<ul class="table-list-form">
+							<li>
+								<div class="form-check type2">
+									<input type="checkbox" id="chk0301" class="check-input">
+									<label for="chk0301" class="form-check-label">급여이체 50만원 이상</label>
+									<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.50</em><span class="unit">%</span></strong></p>
+								</div>
+							</li>
+							<li>
+								<div class="form-check type2">
+									<input type="checkbox" id="chk0302" class="check-input">
+									<label for="chk0302" class="form-check-label">신용카드보유 (NH채움카드)</label>
+									<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.20</em><span class="unit">%</span></strong></p>
+								</div>
+							</li>
+							<li>
+								<div class="form-check type2">
+									<input type="checkbox" id="chk0303" class="check-input">
+									<label for="chk0303" class="form-check-label">우량등급 우대금리<br>(통신등급 1~3등급)</label>
+									<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.20</em><span class="unit">%</span></strong></p>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="table-list-total">
+					<li>
+						<p class="table-list-title">예상금리(A+B-C)</p>
+						<p class="table-list-desc"><strong class="table-list-value c-primary"><em class="data">4.82</em><span class="unit">%</span></strong></p>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 	<div class="accordion-btn-wrap">
-		<button type="button" aria-expanded="false" class="js_accordion-btn cs_collapsed">상세보기</button>
+		<button type="button" aria-expanded="false" class="js_accordion-btn">상세보기</button>
 	</div>
 </div>
 
@@ -1530,23 +1285,23 @@
 						<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.50</em><span class="unit">%</span></strong></p>
 						<ul class="table-list-form">
 							<li>
-								<div class="form-check">
-									<input type="checkbox" value id="chk0301" class="sub-check-input">
-									<label for="chk0301" class="form-check-label">급여이체 50만원 이상</label>
+								<div class="form-check type2">
+									<input type="checkbox" id="chk03011" class="check-input">
+									<label for="chk03011" class="form-check-label">급여이체 50만원 이상</label>
 									<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.50</em><span class="unit">%</span></strong></p>
 								</div>
 							</li>
 							<li>
-								<div class="form-check">
-									<input type="checkbox" value id="chk0302" class="sub-check-input">
-									<label for="chk0302" class="form-check-label">신용카드보유 (NH채움카드)</label>
+								<div class="form-check type2">
+									<input type="checkbox" id="chk03012" class="check-input">
+									<label for="chk03012" class="form-check-label">신용카드보유 (NH채움카드)</label>
 									<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.20</em><span class="unit">%</span></strong></p>
 								</div>
 							</li>
 							<li>
-								<div class="form-check">
-									<input type="checkbox" value id="chk0303" class="sub-check-input">
-									<label for="chk0303" class="form-check-label">우량등급 우대금리<br>(통신등급 1~3등급)</label>
+								<div class="form-check type2">
+									<input type="checkbox" id="chk03013" class="check-input">
+									<label for="chk03013" class="form-check-label">우량등급 우대금리<br>(통신등급 1~3등급)</label>
 									<p class="table-list-desc"><strong class="data-wrap"><em class="data">0.20</em><span class="unit">%</span></strong></p>
 								</div>
 							</li>
@@ -1563,7 +1318,7 @@
 		</div>
 	</div>
 	<div class="accordion-btn-wrap">
-		<button type="button" aria-expanded="true" class="js_accordion-btn">상세닫기</button>
+		<button type="button" aria-expanded="true" class="js_accordion-btn cs_collapsed">상세닫기</button>
 	</div>
 </div>
 
@@ -1576,26 +1331,26 @@
 <div class="select-list">
 	<div class="accordion-item">
 		<div class="accordion-header">
-			<button type="button" aria-expanded="false" class="js_accordion-btn cs_collapsed">
+			<button type="button" aria-expanded="false" class="js_accordion-btn">
 				<span class="accordion-title">1. 대출 신청 목적</span>
 			</button>
 		</div>
 		<div class="accordion-body">
 			<div class="accordion-collapse">
-				<div class="form-items-check st_row-5">
-					<div class="form-check">
+				<div class="form-group st_row-5">
+					<div class="form-radio">
 						<input type="radio" name="rdo10" id="rdo1001" class="check-input">
 						<label for="rdo1001" class="form-check-label">가계자금</label>
 					</div>
-					<div class="form-check">
+					<div class="form-radio">
 						<input type="radio" name="rdo10" id="rdo1002" class="check-input">
 						<label for="rdo1002" class="form-check-label">사업자금</label>
 					</div>
-					<div class="form-check">
+					<div class="form-radio">
 						<input type="radio" name="rdo10" id="rdo1003" class="check-input" checked>
 						<label for="rdo1003" class="form-check-label">주택자금</label>
 					</div>
-					<div class="form-check">
+					<div class="form-radio">
 						<input type="radio" name="rdo10" id="rdo1004" class="check-input">
 						<label for="rdo1004" class="form-check-label">경조자금</label>
 					</div>
@@ -1606,24 +1361,24 @@
 	</div>
 	<div class="accordion-item">
 		<div class="accordion-header">
-			<button type="button" aria-expanded="true" class="js_accordion-btn">
+			<button type="button" aria-expanded="true" class="js_accordion-btn cs_collapsed">
 				<span class="accordion-title">2. 자산규모</span>
 			</button>
 		</div>
 		<div class="accordion-body">
 			<div class="accordion-collapse cs_show">
-				<div class="form-items-check form-item-row">
-					<div class="form-check">
-						<input type="radio" name="rdo11" id="rdo1101" class="check-input" checked>
-						<label for="rdo1101" class="form-check-label">2천만원 미만</label>
+				<div class="form-group type2">
+					<div class="form-radio">
+						<input type="radio" name="rdo11" id="rdo001" class="check-input" checked>
+						<label for="rdo001" class="form-check-label">2천만원 미만</label>
 					</div>
-					<div class="form-check">
-						<input type="radio" name="rdo11" id="rdo1102" class="check-input">
-						<label for="rdo1102" class="form-check-label">2천만 ~ 5천만원 미만</label>
+					<div class="form-radio">
+						<input type="radio" name="rdo11" id="rdo002" class="check-input">
+						<label for="rdo002" class="form-check-label">2천만 ~ 5천만원 미만</label>
 					</div>
-					<div class="form-check">
-						<input type="radio" name="rdo11" id="rdo1103" class="check-input">
-						<label for="rdo1103" class="form-check-label">5천만 ~ 1억원 미만</label>
+					<div class="form-radio">
+						<input type="radio" name="rdo11" id="rdo003" class="check-input">
+						<label for="rdo003" class="form-check-label">5천만 ~ 1억원 미만</label>
 					</div>
 				</div>
 			</div>
@@ -1632,18 +1387,18 @@
 	</div>
 	<div class="accordion-item">
 		<div class="accordion-header">
-			<button type="button" aria-expanded="true" class="js_accordion-btn">
+			<button type="button" aria-expanded="true" class="js_accordion-btn cs_collapsed">
 				<span class="accordion-title">3.연체여부</span>
 			</button>
 		</div>
 		<div class="accordion-body">
 			<div class="accordion-collapse cs_show">
-				<div class="form-items-check st_row-5">
-					<div class="form-check">
+				<div class="form-group st_row-5">
+					<div class="form-radio">
 						<input type="radio" name="rdo12" id="rdo1201" class="check-input" checked>
 						<label for="rdo1201" class="form-check-label">없음</label>
 					</div>
-					<div class="form-check">
+					<div class="form-radio">
 						<input type="radio" name="rdo12" id="rdo1202" class="check-input">
 						<label for="rdo1202" class="form-check-label">있음</label>
 					</div>
@@ -1652,8 +1407,13 @@
 		</div>
 	</div>
 	<div class="agree-item">
+		
+		<!-- <div class="form-check2">
+			<input type="checkbox" id="chk1702" class="check-input">
+			<label for="chk1702" class="form-check-label">신청하신 대출상품 적합 여부 확인을 위해 본인의 개인 정보를 수집, 이용, 제공 동의하는 것에 동의합니다.</label>
+		</div> -->
 		<div class="form-check">
-			<input type="checkbox" value id="chk1701" class="check-input">
+			<input type="checkbox" id="chk1701" class="check-input">
 			<label for="chk1701" class="form-check-label">신청하신 대출상품 적합 여부 확인을 위해 본인의 개인 정보를 수집, 이용, 제공 동의하는 것에 동의합니다.</label>
 		</div>
 	</div>
@@ -1671,6 +1431,7 @@
 							<p class="ng_text">
 								<strong class="c-primary">토글 버튼</strong> : 컨텐츠 확장시 <code class="badge">.cs_collapsed</code> 클래스 삭제<br>
 								<strong class="c-primary">토글 컨텐츠</strong> : 컨텐츠 확장시 <code class="badge">.cs_show</code> 클래스 추가
+								<strong class="">cs_show</strong>
 							</p>
 <div class="ng_code-preview">
 <div class="term-list">
@@ -1678,29 +1439,29 @@
 		<div class="toggle-item">
 			<div class="toggle-header">
 				<div class="form-check">
-					<input type="checkbox" aria-expanded="true" value id="chk0400" class="check-input js_toggle-btn">
+					<input type="checkbox" aria-expanded="true" value id="chk0400" class="check-input js_term-all">
 					<label for="chk0400" class="form-check-label">전체동의</label>
 				</div>
 			</div>
 			<div class="toggle-body">
 				<div class="toggle-collapse cs_show">
-					<div class="sub-term-item">
-						<div class="form-check">
-							<input type="checkbox" title="약관상세보기 팝업열림" value id="chk0401" class="sub-check-input">
+					<div data-modal="term-modal1" class="sub-term-item js_modal-open">
+						<div class="form-check type2">
+							<input type="checkbox" title="약관상세보기 팝업열림" value id="chk0401" class="check-input">
 							<label for="chk0401">기본약관</label>
 						</div>
 						<button title="약관상세보기 팝업열림" class="term-arrow"></button>
 					</div>
-					<div class="sub-term-item">
-						<div class="form-check">
-							<input type="checkbox" title="약관상세보기 팝업열림" value id="chk0402" class="sub-check-input">
+					<div data-modal="term-modal2" class="sub-term-item js_modal-open">
+						<div class="form-check type2">
+							<input type="checkbox" title="약관상세보기 팝업열림" value id="chk0402" class="check-input">
 							<label for="chk0402">개인(신용)정보수집이용 및 제공 관련 고객 권리 안내문</label>
 						</div>
 						<button title="약관상세보기 팝업열림" class="term-arrow"></button>
 					</div>
-					<div class="sub-term-item">
-						<div class="form-check">
-							<input type="checkbox" title="약관상세보기 팝업열림" value id="chk0403" class="sub-check-input">
+					<div data-modal="term-modal3" class="sub-term-item js_modal-open">
+						<div class="form-check type2">
+							<input type="checkbox" title="약관상세보기 팝업열림" value id="chk0403" class="check-input">
 							<label for="chk0403">[필수] (비여신)개인(신용)정보 수집·이용 동의서</label>
 						</div>
 						<button title="약관상세보기 팝업열림" class="term-arrow"></button>
@@ -1708,6 +1469,60 @@
 				</div>
 			</div>
 		</div>
+		<!-- 임시 모달 -->
+		<div role="dialog" aria-hidden="true" aria-labelledby="modal1-label" id="term-modal1" class="modal st_bottom-sheet">
+			<div class="modal-dim"></div>
+			<div class="modal-inner">
+				<div class="modal-header">
+					<div class="modal-title">기본약관 - term-modal1</div>
+				</div>
+				<div class="modal-content">
+					<p class="modal-cont-text">기본약관에 동의 하십니까?</p>
+				</div>
+				<div class="modal-footer btn-group-progress">
+					<button type="button" class="btn st_line-default js_term-disagree js_modal-close">취소</button>
+					<button type="button" class="btn st_primary js_term-agree js_modal-close">확인</button>
+				</div>
+				<button title="닫기" class="modal-close js_modal-close"><i class="ic-btn-close"></i></button>
+			</div>
+		</div>
+		<!-- // -->
+		<!-- 임시 모달 -->
+		<div role="dialog" aria-hidden="true" aria-labelledby="modal1-label" id="term-modal2" class="modal st_bottom-sheet">
+			<div class="modal-dim"></div>
+			<div class="modal-inner">
+				<div class="modal-header">
+					<div class="modal-title">기본약관 - term-modal2</div>
+				</div>
+				<div class="modal-content">
+					<p class="modal-cont-text">기본약관에 동의 하십니까?</p>
+				</div>
+				<div class="modal-footer btn-group-progress">
+					<button type="button" class="btn st_line-default js_term-disagree js_modal-close">취소</button>
+					<button type="button" class="btn st_primary js_term-agree js_modal-close">확인</button>
+				</div>
+				<button title="닫기" class="modal-close js_modal-close"><i class="ic-btn-close"></i></button>
+			</div>
+		</div>
+		<!-- // -->
+		<!-- 임시 모달 -->
+		<div role="dialog" aria-hidden="true" aria-labelledby="modal1-label" id="term-modal3" class="modal st_bottom-sheet">
+			<div class="modal-dim"></div>
+			<div class="modal-inner">
+				<div class="modal-header">
+					<div class="modal-title">기본약관 - term-modal3</div>
+				</div>
+				<div class="modal-content">
+					<p class="modal-cont-text">기본약관에 동의 하십니까?</p>
+				</div>
+				<div class="modal-footer btn-group-progress">
+					<button type="button" class="btn st_line-default js_term-disagree js_modal-close">취소</button>
+					<button type="button" class="btn st_primary js_term-agree js_modal-close">확인</button>
+				</div>
+				<button title="닫기" class="modal-close js_modal-close"><i class="ic-btn-close"></i></button>
+			</div>
+		</div>
+		<!-- // -->
 	</div>
 	<div class="term-item">
 		<div class="form-check">
@@ -1720,7 +1535,7 @@
 		<div class="toggle-item">
 			<div class="toggle-header">
 				<div class="form-check">
-					<input type="checkbox" aria-expanded="true" value id="chk0601" class="check-input js_toggle-btn">
+					<input type="checkbox" aria-expanded="true" value id="chk0601" class="check-input js_term-all">
 					<label for="chk0601" class="form-check-label">[필수] 불법/탈법 차명거래 금지 실명 확인</label>
 				</div>
 			</div>
@@ -1741,7 +1556,7 @@
 		<div class="toggle-item">
 			<div class="toggle-header">
 				<div class="form-check">
-					<input type="checkbox" aria-expanded="true" value id="chk0602" class="check-input js_toggle-btn">
+					<input type="checkbox" aria-expanded="true" value id="chk0602" class="check-input js_term-all">
 					<label for="chk0602" class="form-check-label">[필수] 이체 한도 확인</label>
 				</div>
 			</div>
@@ -1785,27 +1600,27 @@
 		<div class="toggle-item">
 			<div class="toggle-header">
 				<div class="form-check">
-					<input type="checkbox" aria-expanded="true" value id="chk0603" class="check-input js_toggle-btn">
+					<input type="checkbox" aria-expanded="true" value id="chk0603" class="check-input js_term-all">
 					<label for="chk0603" class="form-check-label">[선택] 개인(신용)정보 수집, 이용, 제공 동의 (상품서비스 안내 등)</label>
 				</div>
 			</div>
 			<div class="toggle-body">
 				<div class="toggle-collapse cs_show">
 					<div class="term-check-group col-5">
-						<div class="form-check">
-							<input type="checkbox" title value id="chk0701" class="sub-check-input">
+						<div class="form-check type2">
+							<input type="checkbox" title value id="chk0701" class="check-input">
 							<label for="chk0701">이메일</label>
 						</div>
-						<div class="form-check">
-							<input type="checkbox" title value id="chk0702" class="sub-check-input">
+						<div class="form-check type2">
+							<input type="checkbox" title value id="chk0702" class="check-input">
 							<label for="chk0702">문자메시지</label>
 						</div>
-						<div class="form-check">
-							<input type="checkbox" title value id="chk0703" class="sub-check-input">
+						<div class="form-check type2">
+							<input type="checkbox" title value id="chk0703" class="check-input">
 							<label for="chk0703">우편물</label>
 						</div>
-						<div class="form-check">
-							<input type="checkbox" title value id="chk0704" class="sub-check-input">
+						<div class="form-check type2">
+							<input type="checkbox" title value id="chk0704" class="check-input">
 							<label for="chk0704">전화</label>
 						</div>
 					</div>
@@ -1822,8 +1637,8 @@
 </div>
 
 </div>
-						</div>
-					</article>
+						</div></article></div>
+					
 					<article id="form_input" class="ng ng_form">
 						<h1 class="ng_h1-title">인풋과 셀렉트</h1>
 						<div class="ng_code-box">
@@ -1832,7 +1647,28 @@
 <div class="form-group">
 	<strong class="form-label">선택</strong>
 	<div class="form-item">
-		<button title="선택" class="form-select">선택</button>
+		<button title="선택" data-modal="modal-select" class="form-select js_modal-open">선택</button>
+	</div>
+</div>
+
+<div role="dialog" aria-hidden="true" aria-labelledby="modal1-label" id="modal-select" class="modal st_bottom-sheet">
+	<div class="modal-dim"></div>
+	<div class="modal-inner">
+		<div class="modal-header">
+			<div class="modal-title">셀렉트모달</div>
+		</div>
+		<div class="modal-content">
+			<div class="modal-select-list">
+				<ul>
+					<!-- [D] :  cs_active 추가 시 아이템이 활성화 됨 -->
+					<li class="modal-select-item"><a href="javascript:;">셀렉트 옵션1</a></li>
+					<li class="modal-select-item"><a href="javascript:;">셀렉트 옵션2</a></li>
+					<li class="modal-select-item"><a href="javascript:;">셀렉트 옵션3</a></li>
+					<li class="modal-select-item"><a href="javascript:;">셀렉트 옵션4</a></li>
+				</ul>
+			</div>
+		</div>
+		<button title="닫기" class="modal-close js_modal-close"><i class="ic-btn-close"></i></button>
 	</div>
 </div>
 							</div>
@@ -1841,7 +1677,28 @@
 <div class="form-group">
 	<strong class="form-label">선택</strong>
 	<div class="form-item cs_val">
-		<button title="선택" class="form-select">선택된 값</button>
+		<button title="선택" data-modal="modal-select2" class="form-select js_modal-open">선택된 값</button>
+	</div>
+</div>
+
+<div role="dialog" aria-hidden="true" aria-labelledby="modal1-label" id="modal-select2" class="modal st_bottom-sheet">
+	<div class="modal-dim"></div>
+	<div class="modal-inner">
+		<div class="modal-header">
+			<div class="modal-title">셀렉트모달</div>
+		</div>
+		<div class="modal-content">
+			<div class="modal-select-list">
+				<ul>
+					<!-- [D] :  cs_active 추가 시 아이템이 활성화 됨 -->
+					<li class="modal-select-item"><a href="javascript:;">셀렉트 옵션1</a></li>
+					<li class="modal-select-item"><a href="javascript:;">셀렉트 옵션2</a></li>
+					<li class="modal-select-item"><a href="javascript:;">셀렉트 옵션3</a></li>
+					<li class="modal-select-item"><a href="javascript:;">셀렉트 옵션4</a></li>
+				</ul>
+			</div>
+		</div>
+		<button title="닫기" class="modal-close js_modal-close"><i class="ic-btn-close"></i></button>
 	</div>
 </div>
 
@@ -2140,16 +1997,16 @@
 <div class="form-group">
 	<strong class="form-label">휴대폰 번호</strong>
 	<div class="form-items">
-		<div class="form-items-check st_row">
-			<div class="form-check">
+		<div class="form-group st_row">
+			<div class="form-radio">
 				<input type="radio" value name="rdo07" id="rdo0701" class="check-input">
 				<label for="rdo0701" class="form-check-label">SKT<br>(알뜰폰 포함)</label>
 			</div>
-			<div class="form-check">
+			<div class="form-radio">
 				<input type="radio" value name="rdo07" id="rdo0702" class="check-input">
 				<label for="rdo0702" class="form-check-label">KT<br>(알뜰폰 포함)</label>
 			</div>
-			<div class="form-check">
+			<div class="form-radio">
 				<input type="radio" value name="rdo07" id="rdo0703" class="check-input">
 				<label for="rdo0703" class="form-check-label">LG U+<br>(알뜰폰 포함)</label>
 			</div>
@@ -2169,11 +2026,11 @@
 							<div class="ng_code-preview">
 <div class="form-group">
 	<strong class="form-label">주민등록번호</strong>
-	<div class="form-item">
-		<input type="tel" title="주민번호 앞자리" class="text-input">
+	<form class="form-item" action>
+		<input type="text" title="주민번호 앞자리 6자리" class="text-input" pattern="\d{6}" autocomplete="off" required>
 		<span class="symbol">-</span>
-		<input type="password" title="주민번호 뒷자리" class="text-input">
-	</div>
+		<input type="password" title="주민번호 뒷자리 7자리" class="text-input" pattern="\d{7}" autocomplete="current-password" required>
+	</form>
 </div>
 		</div>
 		<div class="ng_code-preview">
@@ -2217,36 +2074,41 @@
 						<div class="ng_code-box">
 							<h2 class="ng_h2-title">체크박스</h2>
 							<div class="ng_code-preview">
-
+<!-- 체크박스 수정 -->
 <div class="form-check">
-	<input type="checkbox" value id="chk0101" class="check-input">
-	<label for="chk0101" class="form-check-label">
+	<input type="checkbox" id="chk21" class="check-input">
+	<label for="chk21" class="form-check-label">
 		Default checkbox
 	</label>
 </div>
-
 <div class="form-check">
-	<input type="checkbox" value id="chk0102" class="check-input" checked>
-	<label for="chk0102" class="form-check-label">
-		Checked checkbox
+	<input type="checkbox" id="chk22" class="check-input" checked>
+	<label for="chk22" class="form-check-label">
+		Default checkbox
 	</label>
 </div>
 <div class="form-check">
-	<input type="checkbox" value id="chk0103" class="check-input" disabled>
-	<label for="chk0103" class="form-check-label">
-		Checked disabled checkbox
+	<input type="checkbox" id="chk23" class="check-input" disabled>
+	<label for="chk23" class="form-check-label">
+		Default checkbox
 	</label>
 </div>
 <div class="form-check">
-	<input type="checkbox" value id="chk0104" class="check-input" checked disabled>
-	<label for="chk0104" class="form-check-label">
-		Checked disabled checkbox
+	<input type="checkbox" id="chk24" class="check-input" disabled checked>
+	<label for="chk24" class="form-check-label">
+		Default checkbox
 	</label>
 </div>
-<div class="form-check">
-	<input type="checkbox" value id="chk0105" class="sub-check-input">
-	<label for="chk0105" class="form-check-label">
-		Default Sub checkbox
+<div class="form-check type2">
+	<input type="checkbox" id="chk25" class="check-input">
+	<label for="chk25" class="form-check-label">
+		Default type1 checkbox
+	</label>
+</div>
+<div class="form-check type2">
+	<input type="checkbox" id="chk26" class="check-input" checked>
+	<label for="chk26" class="form-check-label">
+		Default type1 checkbox
 	</label>
 </div>
 		</div>
@@ -2256,27 +2118,28 @@
 		<h2 class="ng_h2-title">라디오</h2>
 		<p class="ng_desc-type1"> - input checkbox와 rario에서 id와 for의 <code class="badge">.rdo01</code>은 name. 그 뒤 <code class="badge">01</code>은 name 내의 번호로 정합니다.</p>
 		<div class="ng_code-preview">
-<div class="form-check">
-	<input type="radio" name="rdo01" id="rdo0101" class="check-input">
-	<label for="rdo0101" class="form-check-label">
+<!--  -->
+<div class="form-radio">
+	<input type="radio" name="rdo00" id="rdo099" class="check-input">
+	<label for="rdo099" class="form-check-label">
 		Default radio
 	</label>
 </div>
-<div class="form-check">
-	<input type="radio" name="rdo01" id="rdo0102" class="check-input" checked>
-	<label for="rdo0102" class="form-check-label">
+<div class="form-radio">
+	<input type="radio" name="rdo00" id="rdo0100" class="check-input" checked>
+	<label for="rdo0100" class="form-check-label">
 		Checked radio
 	</label>
 </div>
-<div class="form-check">
-	<input type="radio" name="rdo11" id="rdo1101" class="check-input" disabled>
-	<label for="rdo0101" class="form-check-label">
+<div class="form-radio">
+	<input type="radio" name="rdo00" id="rdo01011" class="check-input" disabled>
+	<label for="rdo01011" class="form-check-label">
 		Disabled radio
 	</label>
 </div>
-<div class="form-check">
-	<input type="radio" name="rdo11" id="rdo1102" class="check-input" disabled checked>
-	<label for="rdo0102" class="form-check-label">
+<div class="form-radio">
+	<input type="radio" name="rdo00" id="rdo01022" class="check-input" disabled checked>
+	<label for="rdo01022" class="form-check-label">
 		Checked disabled radio
 	</label>
 </div>
@@ -2317,23 +2180,38 @@
 							<h2 class="ng_h2-title">라디오 그룹 - 세로정렬</h2>
 							<p class="ng_desc-type1"> - input checkbox와 rario에서 id와 for의 <code class="badge">.rdo01</code>은 name. 그 뒤 <code class="badge">01</code>은 name 내의 번호로 정합니다.</p>
 							<div class="ng_code-preview">
-<div class="form-items-check">
-	<div class="form-check">
-		<input type="radio" name="rdo05" id="rdo0501" class="check-input">
-		<label for="rdo0501" class="form-check-label">
-			Default radio
+<div class="form-group">
+	<div class="form-radio">
+		<input type="radio" name="rdo016" id="rdo05011" class="check-input">
+		<label for="rdo05011" class="form-check-label">
+			Default form-group radio
 		</label>
 	</div>
-	<div class="form-check">
-		<input type="radio" name="rdo05" id="rdo0502" class="check-input" checked>
-		<label for="rdo0502" class="form-check-label">
-			Default checked radio
+	<div class="form-radio">
+		<input type="radio" name="rdo016" id="rdo05012" class="check-input">
+		<label for="rdo05012" class="form-check-label">
+			Default form-group checked radio
 		</label>
 	</div>
-	<div class="form-check">
-		<input type="radio" name="rdo05" id="rdo0503" class="check-input" checked>
-		<label for="rdo0503" class="form-check-label">
-			Default checked radio
+	<div class="form-radio">
+		<input type="radio" name="rdo016" id="rdo05013" class="check-input">
+		<label for="rdo05013" class="form-check-label">
+			Default form-group checked radio
+		</label>
+	</div>
+</div>
+<hr>
+<div class="form-group type2">
+	<div class="form-radio">
+		<input type="radio" name="rdo0116" id="rdo050111" class="check-input">
+		<label for="rdo050111" class="form-check-label">
+			Default form-group type2 radio
+		</label>
+	</div>
+	<div class="form-radio">
+		<input type="radio" name="rdo0116" id="rdo050112" class="check-input">
+		<label for="rdo050112" class="form-check-label">
+			Default form-group type2 checked radio Default form-group type2 checked radio 
 		</label>
 	</div>
 </div>
@@ -2344,14 +2222,14 @@
 							<h2 class="ng_h2-title">라디오 그룹 - 1/n</h2>
 							<p class="ng_desc-type1"> - input checkbox와 rario에서 id와 for의 <code class="badge">.rdo01</code>은 name. 그 뒤 <code class="badge">01</code>은 name 내의 번호로 정합니다.</p>
 							<div class="ng_code-preview">
-<div class="form-items-check st_row">
-	<div class="form-check">
+<div class="form-group st_row">
+	<div class="form-radio">
 		<input type="radio" name="rdo02" id="rdo0201" class="check-input">
 		<label for="rdo0201" class="form-check-label">
 			Default radio
 		</label>
 	</div>
-	<div class="form-check">
+	<div class="form-radio">
 		<input type="radio" name="rdo02" id="rdo0202" class="check-input" checked>
 		<label for="rdo0202" class="form-check-label">
 			Default checked radio
@@ -2359,20 +2237,20 @@
 	</div>
 </div>
 <br>
-<div class="form-items-check st_row">
-	<div class="form-check">
+<div class="form-group st_row">
+	<div class="form-radio">
 		<input type="radio" name="rdo03" id="rdo0301" class="check-input">
 		<label for="rdo0301" class="form-check-label">
 			Default radio
 		</label>
 	</div>
-	<div class="form-check">
+	<div class="form-radio">
 		<input type="radio" name="rdo03" id="rdo0302" class="check-input">
 		<label for="rdo0302" class="form-check-label">
 			Default checked radio
 		</label>
 	</div>
-	<div class="form-check">
+	<div class="form-radio">
 		<input type="radio" name="rdo03" id="rdo0303" class="check-input" checked>
 		<label for="rdo0303" class="form-check-label">
 			Default checked radio
@@ -2380,26 +2258,26 @@
 	</div>
 </div>
 <br>
-<div class="form-items-check st_row">
-	<div class="form-check">
+<div class="form-group st_row">
+	<div class="form-radio">
 		<input type="radio" name="rdo04" id="rdo0401" class="check-input">
 		<label for="rdo0401" class="form-check-label">
 			Default radio
 		</label>
 	</div>
-	<div class="form-check">
+	<div class="form-radio">
 		<input type="radio" name="rdo04" id="rdo0402" class="check-input">
 		<label for="rdo0402" class="form-check-label">
 			Default checked radio
 		</label>
 	</div>
-	<div class="form-check">
+	<div class="form-radio">
 		<input type="radio" name="rdo04" id="rdo0403" class="check-input" checked>
 		<label for="rdo0403" class="form-check-label">
 			Default checked radio
 		</label>
 	</div>
-	<div class="form-check">
+	<div class="form-radio">
 		<input type="radio" name="rdo04" id="rdo0404" class="check-input">
 		<label for="rdo0404" class="form-check-label">
 			Default checked radio
@@ -2413,20 +2291,20 @@
 						<h2 class="ng_h2-title">라디오 그룹 - 1/2</h2>
 						<p class="ng_desc-type1"> </p>
 						<div class="ng_code-preview">
-<div class="form-items-check st_row-5">
-	<div class="form-check">
+<div class="form-group st_row-5">
+	<div class="form-radio">
 		<input type="radio" name="rdo06" id="rdo0601" class="check-input">
 		<label title for="rdo0601" class="form-check-label">
 			Default radio
 		</label>
 	</div>
-	<div class="form-check">
+	<div class="form-radio">
 		<input type="radio" name="rdo06" id="rdo0602" class="check-input" checked>
 		<label for="rdo0602" class="form-check-label">
 			Default checked radio
 		</label>
 	</div>
-	<div class="form-check">
+	<div class="form-radio">
 		<input type="radio" name="rdo06" id="rdo0603" class="check-input" checked>
 		<label for="rdo0603" class="form-check-label">
 			Default checked radio
@@ -2461,15 +2339,32 @@
 	<button type="button" class="btn st_line-secondary">line-secondary</button>
 	<button type="button" class="btn st_line-dark">line-dark</button>
 </div>
+</div>
+</div>
 
+<div class="ng_code-box">
+<h2 class="ng_h2-title">버튼 라운드형</h2>
+<p class="ng_desc-type1">
+	- 버튼의 형태를 <code class="badge">.btn.st_round</code>을 적용해 변경할 수 있습니다.<br>
+</p>
+<div class="ng_code-preview">
+<div>
+	<button type="button" class="btn st_primary st_round">primary</button>
+	<a href="javascript:;" role="button" class="btn st_primary st_round">primary</a>
+	<button type="button" class="btn cs_disabled st_round" disabled>btn:disabled</button>
+	<button type="button" class="btn st_line-default st_round">line-default</button>
+	<button type="button" class="btn st_line-primary st_round">line-primary</button>
+	<button type="button" class="btn st_line-secondary st_round">line-secondary</button>
+	<button type="button" class="btn st_line-dark st_round">line-dark</button>
+</div>
 </div>
 </div>
 
 					<div class="ng_code-box">
 					<h2 class="ng_h2-title">텍스트 버튼</h2>
 						<div class="ng_code-preview">
-<a href="javascript:;" title="링크페이지로 이동" class="link st_default">link-default</a>
-<a href="javascript:;" title="링크페이지로 이동" class="link st_primary">link-primary</a>
+<a href="javascript:;" title="링크페이지로 이동" role="button" class="link st_default">link-default</a>
+<a href="javascript:;" title="링크페이지로 이동" role="button" class="link st_primary">link-primary</a>
 						</div>
 					</div>
 					<div class="ng_code-box">
@@ -2589,14 +2484,14 @@
 						<div class="ng_code-box">
 							<h2 class="ng_h2-title">아코디언 일반</h2>
 							<p class="ng_text">
-								<strong class="c-primary">아코디언 버튼</strong> : 아코디언 확장시 <code class="badge">.cs_collapsed</code> 클래스 삭제<br>
+								<strong class="c-primary">아코디언 버튼</strong> : 아코디언 확장시 <code class="badge">.cs_collapsed</code> 클래스 추가<br>
 								<strong class="c-primary">아코디언 컨텐츠</strong> : 아코디언 확장시 <code class="badge">.cs_show</code> 클래스 추가
 							</p>
 							<div class="ng_code-preview">
 <div class="accordion-wrap">
 	<div class="accordion-item">
 		<div class="accordion-header">
-			<button type="button" aria-expanded="false" class="js_accordion-btn cs_collapsed">
+			<button type="button" aria-expanded="false" class="js_accordion-btn">
 				<span class="accordion-title">title1</span>
 			</button>
 		</div>
@@ -2608,7 +2503,7 @@
 	</div>
 	<div class="accordion-item">
 		<div class="accordion-header">
-			<button type="button" aria-expanded="false" class="js_accordion-btn cs_collapsed">
+			<button type="button" aria-expanded="false" class="js_accordion-btn">
 				<span class="accordion-title">title2</span>
 			</button>
 		</div>
@@ -2620,7 +2515,7 @@
 	</div>
 	<div class="accordion-item">
 		<div class="accordion-header">
-			<button type="button" aria-expanded="false" class="js_accordion-btn">
+			<button type="button" aria-expanded="false" class="js_accordion-btn cs_collapsed">
 				<span class="accordion-title">title3</span>
 			</button>
 		</div>
@@ -2666,15 +2561,15 @@
 <div class="tab-wrap st_line">
 	<ul class="tab-nav">
 		<li role="presentation" class="tab-list">
-			<button role="tab" aria-selected="true" class="tab-item cs_active">tab menu1</button>
+			<button role="tab" aria-controls="tab-panel1" aria-selected="true" class="tab-item cs_active">tab menu1</button>
 		</li>
 		<li role="presentation" class="tab-list">
-			<button role="tab" aria-selected="false" class="tab-item">tab menu2</button>
+			<button role="tab" aria-controls="tab-panel2" aria-selected="false" class="tab-item">tab menu2</button>
 		</li>
 	</ul>
 	<div class="tab-container">
-		<div role="tabpanel" class="tab-panel cs_active"><p>탭 컨텐츠1</p></div>
-		<div role="tabpanel" class="tab-panel"><p>탭 컨텐츠2</p></div>
+		<div role="tabpanel" id="tab-panel1" class="tab-panel cs_active"><p>탭 컨텐츠1</p></div>
+		<div role="tabpanel" id="tab-panel2" class="tab-panel"><p>탭 컨텐츠2</p></div>
 	</div>
 </div>
 							</div>
@@ -2687,19 +2582,19 @@
 <div class="tab-wrap st_ellipse">
 	<ul role="tablist" class="tab-nav">
 		<li role="presentation" class="tab-list">
-			<button role="tab" aria-selected="true" class="tab-item cs_active">tab menu1</button>
+			<button role="tab" aria-controls="tab-panel3" aria-selected="true" class="tab-item cs_active">tab menu1</button>
 		</li>
 		<li role="presentation" class="tab-list">
-			<button role="tab" aria-selected="false" class="tab-item">tab menu2</button>
+			<button role="tab" aria-controls="tab-panel4" aria-selected="false" class="tab-item">tab menu2</button>
 		</li>
 		<li role="presentation" class="tab-list">
-			<button role="tab" aria-selected="false" class="tab-item">tab menu3</button>
+			<button role="tab" aria-controls="tab-panel5" aria-selected="false" class="tab-item">tab menu3</button>
 		</li>
 	</ul>
 	<div class="tab-container">
-		<div role="tabpanel" class="tab-panel cs_active"><p>탭 컨텐츠1</p></div>
-		<div role="tabpanel" class="tab-panel"><p>탭 컨텐츠2</p></div>
-		<div role="tabpanel" class="tab-panel"><p>탭 컨텐츠3</p></div>
+		<div role="tabpanel" id="tab-panel3" class="tab-panel cs_active"><p>탭 컨텐츠1</p></div>
+		<div role="tabpanel" id="tab-panel4" class="tab-panel"><p>탭 컨텐츠2</p></div>
+		<div role="tabpanel" id="tab-panel5" class="tab-panel"><p>탭 컨텐츠3</p></div>
 	</div>
 </div>	
 
@@ -2773,42 +2668,66 @@
 								스크롤 스파이 하고 싶은 요소에 <code class="badge">data-bs-spy="scroll"</code> 추가
 							</p>
 <div class="ng_code-preview">
-<nav id="nav-example" class="nav-wrap">
-	<ul class="nav">
-		<li class="nav-list">
-			<a href="#scrollspy-heading1" class="nav-item cs_active">First</a>
-		</li>
-		<li class="nav-list">
-			<a href="#scrollspy-heading2" class="nav-item">Second</a>
-		</li>
-		<li class="nav-list">
-			<a href="#scrollspy-heading3" class="nav-item">Third</a>
-		</li>
-		<li class="nav-list">
-			<a href="#scrollspy-heading4" class="nav-item">Fourth</a>
-		</li>
-		<li class="nav-list">
-			<a href="#scrollspy-heading5" class="nav-item">Fifth</a>
-		</li>
-	</ul>
-</nav>
-<div data-bs-smooth-scroll="true" data-bs-spy="scroll" data-bs-target="#nav-example" class="scrollspy-example">
-	<p id="scrollspy-heading1" class="h5">First heading</p>
-	<p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
-	<p id="scrollspy-heading2" class="h5">Second heading</p>
-	<p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
-	<p id="scrollspy-heading3" class="h5">Third heading</p>
-	<p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
-	<p id="scrollspy-heading4" class="h5">Fourth heading</p>
-	<p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
-	<p id="scrollspy-heading5" class="h5">Fifth heading</p>
-	<p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
+
+<div class="scrollspy">
+	<!--  st-sticky -->
+	<nav class="scrollspy-nav">
+		<ul>
+			<li><a href="javascript:;" role="button" data-bill-menu="dbm01" aria-selected="true" class="nav-item cs_active" anchor-title="dem01">First</a></li>
+			<li><a href="javascript:;" role="button" data-bill-menu="dbm02" aria-selected="false" class="nav-item" anchor-title="dem02">Second</a></li>
+			<li><a href="javascript:;" role="button" data-bill-menu="dbm03" aria-selected="false" class="nav-item" anchor-title="dem03">Third</a></li>
+			<li><a href="javascript:;" role="button" data-bill-menu="dbm04" aria-selected="false" class="nav-item" anchor-title="dem04">Fourth</a></li>
+			<li><a href="javascript:;" role="button" data-bill-menu="dbm05" aria-selected="false" class="nav-item" anchor-title="dem05">Fifth</a></li>
+		</ul>
+	</nav>
+	<div class="scrollspy-cont">
+		<div class="cont-list" anchor-cont="dem01">
+			<div class="cont-header">First</div>
+			<div class="cont-body">
+				<ul>
+					<li>content</li>
+					<li>content</li>
+				</ul>
+			</div>
+		</div>
+		<div class="cont-list" anchor-cont="dem02">
+			<div class="cont-header">Second</div>
+			<div class="cont-body">
+				<ul>
+					<li>content</li>
+					<li>content</li>
+				</ul>
+			</div>
+		</div>
+		<div class="cont-list" anchor-cont="dem03">
+			<div class="cont-header">Third</div>
+			<div class="cont-body">
+				<ul>
+					<li>content</li>
+					<li>content</li>
+				</ul>
+			</div>
+		</div>
+		<div class="cont-list" anchor-cont="dem04">
+			<div class="cont-header">Fourth</div>
+			<div class="cont-body">
+				<ul>
+					<li>content</li>
+					<li>content</li>
+				</ul>
+			</div>
+		</div>
+		<div class="cont-list" anchor-cont="dem05">
+			<div class="cont-header">Fifth</div>
+			<div class="cont-body">
+				<ul>
+					<li>content</li>
+					<li>content</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
-<script>
-	$(function(){
-		let link = $('.nav-item')
-	})
-</script>
 </div>					
 						</div>
 					</article>
@@ -3042,7 +2961,7 @@ observer 옵션을 true로 설정하게 되면
 						<div class="ng_code-box">
 							<h2 class="ng_h2-title">비밀번호 설정 </h2>
 <div class="ng_code-preview">
-	<button type="button" aria-controls="modal4" class="btn st_primary btn-modal">비밀번호 설정창</button>
+	<button type="button" data-modal="modal4" class="btn st_primary js_modal-open">비밀번호 설정창</button>
 	
 	<div role="dialog" aria-hidden="true" id="modal4" class="modal st_bottom-sheet">
 		<div class="modal-dim"></div>
@@ -3083,7 +3002,7 @@ observer 옵션을 true로 설정하게 되면
 			<div class="modal-footer btn-group-progress">
 				<button type="button" class="btn st_primary">확인</button>
 			</div>
-			<button title="닫기" class="modal-close btn-close"><i class="ic-btn-close"></i></button>
+			<button title="닫기" class="modal-close js_modal-close"><i class="ic-btn-close"></i></button>
 		</div>
 	</div>
 </div>					
@@ -3096,10 +3015,10 @@ observer 옵션을 true로 설정하게 되면
 						<div class="ng_code-box">
 							<h2 class="ng_h2-title">모달 팝업</h2>
 							<p class="ng_text">
-								팝업은 style <code class="badge">block / none</code> 으로 제어
+								팝업은팝업 노출 시 버튼에 <code class="badge">data-modal="modalID"</code>와 <code class="badge">.js_modal-open</code>클래스를 추가 해주세요<br> 팝업 클로드할 영역에 <code class="badge">.js_modal-close</code>를 추가해 주세요 
 							</p>
 <div class="ng_code-preview">
-<button type="button" aria-controls="modal1" class="btn st_primary btn-modal">모달 팝업 버튼</button>
+<button type="button" data-modal="modal1" class="btn st_primary js_modal-open">모달 팝업 버튼</button>
 
 <div role="dialog" aria-hidden="true" id="modal1" class="modal">
 	<div class="modal-dim"></div>
@@ -3109,10 +3028,10 @@ observer 옵션을 true로 설정하게 되면
 		</div>
 		<div class="modal-content">모달 콘텐츠</div>
 		<div class="modal-footer btn-group-progress">
-			<button type="button" class="btn st_line-default btn-close">취소</button>
+			<button type="button" class="btn st_line-default btn-close js_modal-close">취소</button>
 			<button type="button" class="btn st_primary">확인</button>
 		</div>
-		<button title="닫기" class="modal-close"><i class="ic-btn-close"></i></button>
+		<button title="닫기" class="modal-close js_modal-close"><i class="ic-btn-close"></i></button>
 	</div>
 </div>
 </div>					
@@ -3123,7 +3042,7 @@ observer 옵션을 true로 설정하게 되면
 								중앙정렬 타입 <code class="badge">class="st_center"</code> 추가
 							</p>
 <div class="ng_code-preview">
-<button type="button" aria-controls="modal2" class="btn st_primary btn-modal">중앙 정렬 팝업 팝업 버튼</button>
+<button type="button" data-modal="modal2" class="btn st_primary js_modal-open">중앙 정렬 팝업 팝업 버튼</button>
 
 <div role="dialog" aria-hidden="true" id="modal2" class="modal st_center">
 	<div class="modal-dim"></div>
@@ -3137,10 +3056,10 @@ observer 옵션을 true로 설정하게 되면
 <p class="modal-cont-text">거래를 진행하시겠습니까?</p>
 		</div>
 		<div class="modal-footer btn-group-progress">
-			<button type="button" class="btn st_line-default btn-close">취소</button>
+			<button type="button" class="btn st_line-default js_modal-close">취소</button>
 			<button type="button" class="btn st_primary">확인</button>
 		</div>
-		<button title="닫기" class="modal-close btn-close"><i class="ic-btn-close"></i></button>
+		<button title="닫기" class="modal-close js_modal-close"><i class="ic-btn-close"></i></button>
 	</div>
 </div>
 </div>					
@@ -3148,12 +3067,13 @@ observer 옵션을 true로 설정하게 되면
 						<div class="ng_code-box">
 							<h2 class="ng_h2-title">슬라이드 팝업 (바텁시트)</h2>
 							<p class="ng_text">
-								중앙정렬 타입 <code class="badge">class="st_bottom-sheet"</code> 추가
+								슬라이드 타입 <code class="badge">class="st_bottom-sheet"</code> 추가
 							</p>
 <div class="ng_code-preview">
-<button type="button" class="btn st_primary">슬라이드 팝업 버튼</button>
+<button type="button" data-modal="modal3" class="btn st_primary js_modal-open">modal3슬라이드 팝업 버튼</button>
+<a href="#modal3" role="button" class=" js_modal-open">link버튼</a>
 
-<div role="dialog" aria-hidden="true" class="modal st_bottom-sheet">
+<div role="dialog" aria-hidden="true" aria-labelledby="modal1-label" id="modal3" class="modal st_bottom-sheet">
 	<div class="modal-dim"></div>
 	<div class="modal-inner">
 		<div class="modal-header">
@@ -3165,10 +3085,10 @@ observer 옵션을 true로 설정하게 되면
 			<p class="modal-cont-text">거래를 진행하시겠습니까?</p>
 		</div>
 		<div class="modal-footer btn-group-progress">
-			<button type="button" class="btn st_line-default">취소</button>
+			<button type="button" class="btn st_line-default js_modal-close">취소</button>
 			<button type="button" class="btn st_primary">확인</button>
 		</div>
-		<button title="닫기" class="modal-close"><i class="ic-btn-close"></i></button>
+		<button title="닫기" class="modal-close js_modal-close"><i class="ic-btn-close"></i></button>
 	</div>
 </div>
 </div>					
@@ -3186,8 +3106,8 @@ observer 옵션을 true로 설정하게 되면
 	<div class="tooltip">
 		<strong>내 검진 결과 비교</strong>
 		<div class="tooltip-container">
-			<button type="button" class="ic-ico-help"><span class="blind">툴팁</span></button>
-			<div class="tooltip-cont" style="display: block;">
+			<button type="button" class="ic-ico-help cs_active"><span class="blind">툴팁</span></button>
+			<div class="tooltip-cont">
 				<ul class="text-list st_dot">
 					<li>내용이 들어갑니다.</li>
 					<li>상품가입이 원활하게 완료되지 않으신 경우, 상품가입 내역에서 처리결과를 반드시 확인하시기 바랍니다.</li>
@@ -3393,8 +3313,8 @@ observer 옵션을 true로 설정하게 되면
 						</div>
 					</article>
 
-				</div>
-			</section>
+				</section></div>
+			
 		</div>
 	</div>
 
@@ -3407,7 +3327,7 @@ observer 옵션을 true로 설정하게 되면
 		</div>
 	</footer>
 	<!-- //Footer -->
-</div><!-- //wrap -->
+<!-- //wrap -->
 
 <script>
 $('.ng_code-preview').each(function(){
@@ -3446,7 +3366,7 @@ const eventHandler = {
 </script>
 <script>
 
-// 기본형
+// swiper 기본형
 var swiper1 = new Swiper('#swiper1', {
 	slidesPerView: 1,
 	spaceBetween: 10,

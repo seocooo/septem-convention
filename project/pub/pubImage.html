@@ -92,8 +92,25 @@
 					<h1 class="ng_h1-title">아이콘 리스트</h1>
 					
 					<article id="cont_icon" class="ng ng_content">
-						<h2 class="ng_h2-title">Common</h2>
+						<!-- <h2 class="ng_h2-title">Common</h2> -->
+						<h2 class="ng_h2-title">svg 사용가이드</h2>
+						<p class="ng_text">
+							svg 사용 가이드입니다.<br>
+							확장팩 다운로드 : Image To Base64, vscode-base64<br>
+							1. svg 코드 전체선택 (복사X)<br>
+							2. ctrl + shift + p → base64 encode 클릭 (base64로 변환됨)<br>
+							3. 변환된 코드를 복사한 후 data:image/svg+xml;base64, 뒤에 불여넣기<br>
+							(background:url(data:image/svg+xml;base64,복사한코드;))<br>
+						</p>
+						<h2 class="ng_h2-title">아이콘</h2>
+							<p class="ng_text">
+								- 아이콘의 기본 크기는 24*24 입니다.<br>
+								- 예외 스타일은 다중 클래스를 활용하고<br>
+									상위요소의 크기를 상속 받아서 사용할 수 있습니다.<br>
+								- 클래스의 이름 충돌을 방지하고 가독성을 높이기 위해 접두어(ic-)를 붙입니다. <br>
+								- ic-ico-error
 
+							</p>
 						<div class="ng_code-box">
 							<!-- <ul>
 								<li><span>ic-ico-error</span><i class="ic-ico-error"></i><i class="ic-ico-error"></i></li>
@@ -390,6 +407,59 @@
 								</ul>
 							</div>
 						</div>
+						<div class="ng_code-box">
+							<h2 class="ng_h2-title">예시</h2>
+					<div class="ng_code-preview">
+	//버튼에 적용된 아이콘 
+	<div>
+		<button type="button" class="btn st_primary">primary<i class="ic-ico-help"></i></button>
+		<button type="button" class="btn st_line-primary"><i class="ic-ico-help"></i></button>
+		<a href="javascript:;" title="링크페이지로 이동" class="link st_default">link-default<i class="ic-ico-help"></i></a>
+	</div>
+	<div class="mb-20">
+	
+		<button type="button" title="닫기" class="ic-input-reset"></button>
+		<button type="button" title="메인으로가기"><i class="ic-btn-home"></i></button>
+	
+	</div>
+	//텍스트 콘텐츠에 적용된 아이콘
+	<div class="mb-10">
+		
+		<i class="ic-ico-error"></i><span class="h1">Heading</span>
+	
+		<div class="tooltip">
+			<strong>내 검진 결과 비교 툴팁</strong>
+			<div class="tooltip-container">
+				<button type="button" title="툴팁버튼" class="ic-ico-help"></button>
+			</div>
+		</div>
+	
+		<div class="info-list">
+			<div class="accordion-item">
+				<div class="accordion-header">
+					<p class="accordion-title">알아두세요</p>
+					<button type="button" aria-expanded="true" class="ic-arr-up js_accordion-btn"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	// 헤더적용에 적용된 아이콘
+	<div>
+		<header class="header">
+			<div class="header-start">
+				<button title="뒤로가기"><i class="ic-btn-back"></i></button>
+			</div>
+			<h1>대출신청</h1>
+			<div class="header-end">
+				<button title="메인으로"><i class="ic-btn-home"></i></button>
+				<button title="전체메뉴"><i class="ic-btn-menu"></i></button>
+			</div>
+		</header>
+	</div>
+	
+						</div>
+	
+							</div>
 					</article>
 				</div>
 			</section>
